@@ -181,15 +181,14 @@
     {
       "Id": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
       "Name": "Camera",
-      "Position": "-267.452,-379.653,297.7903",
-      "Rotation": "-0.1448582,0.2860239,0.4279631,0.8450171",
+      "Position": "-120.8064,50.68277,128",
       "Enabled": true,
       "Components": [
         {
           "__type": "CameraComponent",
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
           "ClearFlags": "All",
-          "FieldOfView": 60,
+          "FieldOfView": 78,
           "IsMainCamera": true,
           "Orthographic": false,
           "OrthographicHeight": 1204,
@@ -256,6 +255,13 @@
           "ZIndex": 100
         }
       ]
+    },
+    {
+      "Id": "6f257d15-af78-4a25-9942-2781b13a7f30",
+      "Name": "Player",
+      "Position": "-120.8064,50.68277,64",
+      "Enabled": true,
+      "__Prefab": "player.prefab"
     }
   ],
   "SceneProperties": {
@@ -281,6 +287,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-02-23T03:49:50.5462846\u002B03:00",
+  "LastSaved": "2024-02-23T22:53:09.6988993\u002B03:00",
   "__references": []
 }
