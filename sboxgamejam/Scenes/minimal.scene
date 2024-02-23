@@ -241,6 +241,21 @@
           "Scale": 0.2
         }
       ]
+    },
+    {
+      "Id": "125cad9d-48c3-4f8d-a587-43691a8dcf54",
+      "Name": "Screen",
+      "Position": "-125.0163,-175.625,130.2055",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -266,6 +281,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-02-22T23:47:25.0770176\u002B03:00",
+  "LastSaved": "2024-02-23T03:49:50.5462846\u002B03:00",
   "__references": []
 }
