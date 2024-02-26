@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "6f257d15-af78-4a25-9942-2781b13a7f30",
+    "Id": "45f38ae3-8128-479e-8fe7-34f884a2f1c0",
     "Name": "player",
     "Enabled": true,
     "Components": [
@@ -18,23 +18,34 @@
         "__type": "PlayerController",
         "AnimationHelper": {
           "_type": "component",
-          "go": "8f616541-4946-45e2-b5d2-87e97883b017",
+          "go": "127c8d00-f66a-4b73-afeb-c539fdaf3ae7",
           "component_type": "CitizenAnimationHelper"
         },
         "CharacterController": {
           "_type": "component",
-          "go": "6f257d15-af78-4a25-9942-2781b13a7f30",
+          "go": "45f38ae3-8128-479e-8fe7-34f884a2f1c0",
           "component_type": "CharacterController"
         },
         "CrouchMoveSpeed": 64,
         "RunMoveSpeed": 190,
         "SprintMoveSpeed": 320,
         "WalkMoveSpeed": 110
+      },
+      {
+        "__type": "FireballCast",
+        "fireballPrefab": {
+          "_type": "gameobject",
+          "prefab": "fireball.prefab"
+        },
+        "fireballspawnPos": {
+          "_type": "gameobject",
+          "go": "bc43db00-89b6-44c0-b583-b7e4aacb33c5"
+        }
       }
     ],
     "Children": [
       {
-        "Id": "8f616541-4946-45e2-b5d2-87e97883b017",
+        "Id": "127c8d00-f66a-4b73-afeb-c539fdaf3ae7",
         "Name": "Player Body",
         "Enabled": true,
         "Components": [
@@ -65,7 +76,7 @@
             "LookAtEnabled": false,
             "Target": {
               "_type": "component",
-              "go": "8f616541-4946-45e2-b5d2-87e97883b017",
+              "go": "127c8d00-f66a-4b73-afeb-c539fdaf3ae7",
               "component_type": "SkinnedModelRenderer"
             }
           },
@@ -73,7 +84,7 @@
             "__type": "PlayerDresser",
             "BodyRenderer": {
               "_type": "component",
-              "go": "8f616541-4946-45e2-b5d2-87e97883b017",
+              "go": "127c8d00-f66a-4b73-afeb-c539fdaf3ae7",
               "component_type": "SkinnedModelRenderer"
             }
           },
@@ -81,14 +92,14 @@
             "__type": "PlayerFootsteps",
             "Source": {
               "_type": "component",
-              "go": "8f616541-4946-45e2-b5d2-87e97883b017",
+              "go": "127c8d00-f66a-4b73-afeb-c539fdaf3ae7",
               "component_type": "SkinnedModelRenderer"
             }
           }
         ]
       },
       {
-        "Id": "f61d06b9-2bc2-4a17-8a81-fdde22f7c3ef",
+        "Id": "43fc16ed-bbe7-4ae5-b9b4-f530a810720a",
         "Name": "Physics Pusher",
         "Position": "0,0,22.68671",
         "Components": [
@@ -103,7 +114,7 @@
         ]
       },
       {
-        "Id": "16e20393-5802-426f-9e40-7215f98690ff",
+        "Id": "6baac9ad-c983-4133-ba29-735b4c6c346f",
         "Name": "Voice",
         "Position": "42.0599,39.05991,-23.23907",
         "Enabled": true,
@@ -117,7 +128,7 @@
             "PushToTalkInput": "voice",
             "Renderer": {
               "_type": "component",
-              "go": "8f616541-4946-45e2-b5d2-87e97883b017",
+              "go": "127c8d00-f66a-4b73-afeb-c539fdaf3ae7",
               "component_type": "SkinnedModelRenderer"
             },
             "Volume": 1,
@@ -126,7 +137,7 @@
         ]
       },
       {
-        "Id": "973aff93-f21f-4054-9979-07e485cc4584",
+        "Id": "bd8e5ce3-b461-47c2-8643-0a32d18850ce",
         "Name": "World",
         "Position": "0,0,77.72417",
         "Enabled": true,
@@ -145,7 +156,7 @@
         ]
       },
       {
-        "Id": "be138ceb-766b-479b-b2c1-0e6e68f244cc",
+        "Id": "04dd222d-8679-4473-babc-14b5fcaf267c",
         "Name": "Player Pusher",
         "Position": "0,0,32",
         "Enabled": true,
@@ -153,6 +164,25 @@
           {
             "__type": "PlayerPusher",
             "Radius": 32
+          }
+        ]
+      },
+      {
+        "Id": "bc43db00-89b6-44c0-b583-b7e4aacb33c5",
+        "Name": "FireballSpawner",
+        "Position": "43.54512,-4.965918,60.92871",
+        "Scale": "0.2780159,0.2780159,0.2780159",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "__enabled": false,
+            "BodyGroups": 18446744073709551615,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Model": "models/dev/box.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
           }
         ]
       }

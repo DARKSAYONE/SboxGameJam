@@ -157,6 +157,14 @@
       "Name": "PlayerSpawn",
       "Position": "-207.5675,-111.544,86.84273",
       "Enabled": true
+    },
+    {
+      "Id": "1e59fea5-90c8-4f80-8fc7-efd708b6c4af",
+      "Name": "Fireball",
+      "Position": "0,0,113.2878",
+      "Scale": "0.1833652,0.1833652,0.1833652",
+      "Enabled": true,
+      "__Prefab": "fireball.prefab"
     }
   ],
   "SceneProperties": {
@@ -182,6 +190,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-02-25T00:29:36.2651242\u002B03:00",
+  "LastSaved": "2024-02-26T16:27:01.0334162\u002B03:00",
   "__references": []
 }

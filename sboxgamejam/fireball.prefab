@@ -1,0 +1,56 @@
+{
+  "RootObject": {
+    "Id": "386ccced-6875-4be6-9a49-34e37fa950af",
+    "Name": "fireball",
+    "Scale": "0.1833652,0.1833652,0.1833652",
+    "Networked": true,
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "ModelRenderer",
+        "BodyGroups": 18446744073709551615,
+        "MaterialGroup": null,
+        "MaterialOverride": "materials/models/editor/unused/orange.vmat",
+        "Model": "models/dev/sphere.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Rigidbody",
+        "AngularDamping": 0,
+        "Gravity": false,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "SphereCollider",
+        "Center": "0,0,0",
+        "IsTrigger": false,
+        "Radius": 10,
+        "Static": false,
+        "Surface": "surfaces/brick.surface"
+      },
+      {
+        "__type": "BoxCollider",
+        "Center": "0,0,0",
+        "IsTrigger": false,
+        "Scale": "50,50,50",
+        "Static": false,
+        "Surface": null
+      },
+      {
+        "__type": "Fireball",
+        "rb": null,
+        "speed": 500
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}
