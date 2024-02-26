@@ -176,7 +176,6 @@
         "Components": [
           {
             "__type": "ModelRenderer",
-            "__enabled": false,
             "BodyGroups": 18446744073709551615,
             "MaterialGroup": null,
             "MaterialOverride": null,
