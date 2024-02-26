@@ -13,9 +13,17 @@ public sealed class FireballCast : Component
 	}
 	protected override void OnUpdate()
 	{
-		if(Input.Pressed("Attack1"))
+		if ( !IsProxy )
 		{
-			GameObject fireballAttack = fireballPrefab.Clone( fireballspawnPos.Transform.Position );
+
+			if ( Input.Pressed( "Attack1" ) )
+			{
+				GameObject fireballAttack = fireballPrefab.Clone( fireballspawnPos.Transform.Position );
+			}
+		}
+		else
+		{
+			Log.Info( "IsProxy ne srabotal" );
 		}
 	}
 }
