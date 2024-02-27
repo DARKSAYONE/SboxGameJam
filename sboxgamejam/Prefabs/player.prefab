@@ -1,7 +1,8 @@
 {
   "RootObject": {
-    "Id": "45f38ae3-8128-479e-8fe7-34f884a2f1c0",
+    "Id": "9f9a9846-3257-41cd-9d48-38170c26a7f4",
     "Name": "player",
+    "Tags": "player",
     "Enabled": true,
     "Components": [
       {
@@ -18,12 +19,12 @@
         "__type": "PlayerController",
         "AnimationHelper": {
           "_type": "component",
-          "go": "127c8d00-f66a-4b73-afeb-c539fdaf3ae7",
+          "go": "383873b7-e4e8-4f67-ad1d-2da2dd49bfc2",
           "component_type": "CitizenAnimationHelper"
         },
         "CharacterController": {
           "_type": "component",
-          "go": "45f38ae3-8128-479e-8fe7-34f884a2f1c0",
+          "go": "9f9a9846-3257-41cd-9d48-38170c26a7f4",
           "component_type": "CharacterController"
         },
         "CrouchMoveSpeed": 64,
@@ -36,17 +37,20 @@
         "CameraFind": null,
         "FireballPrefab": {
           "_type": "gameobject",
-          "prefab": "fireball.prefab"
+          "prefab": "prefabs/fireball.prefab"
         },
         "FireballSpawnPos": {
           "_type": "gameobject",
-          "go": "bc43db00-89b6-44c0-b583-b7e4aacb33c5"
+          "go": "17209ca9-f3ec-4b31-bdcd-202678192422"
         }
+      },
+      {
+        "__type": "PlayerStats"
       }
     ],
     "Children": [
       {
-        "Id": "127c8d00-f66a-4b73-afeb-c539fdaf3ae7",
+        "Id": "383873b7-e4e8-4f67-ad1d-2da2dd49bfc2",
         "Name": "Player Body",
         "Enabled": true,
         "Components": [
@@ -77,7 +81,7 @@
             "LookAtEnabled": false,
             "Target": {
               "_type": "component",
-              "go": "127c8d00-f66a-4b73-afeb-c539fdaf3ae7",
+              "go": "383873b7-e4e8-4f67-ad1d-2da2dd49bfc2",
               "component_type": "SkinnedModelRenderer"
             }
           },
@@ -85,7 +89,7 @@
             "__type": "PlayerDresser",
             "BodyRenderer": {
               "_type": "component",
-              "go": "127c8d00-f66a-4b73-afeb-c539fdaf3ae7",
+              "go": "383873b7-e4e8-4f67-ad1d-2da2dd49bfc2",
               "component_type": "SkinnedModelRenderer"
             }
           },
@@ -93,14 +97,14 @@
             "__type": "PlayerFootsteps",
             "Source": {
               "_type": "component",
-              "go": "127c8d00-f66a-4b73-afeb-c539fdaf3ae7",
+              "go": "383873b7-e4e8-4f67-ad1d-2da2dd49bfc2",
               "component_type": "SkinnedModelRenderer"
             }
           }
         ]
       },
       {
-        "Id": "43fc16ed-bbe7-4ae5-b9b4-f530a810720a",
+        "Id": "91e07d55-abfb-403c-8e84-f9d2fbe75296",
         "Name": "Physics Pusher",
         "Position": "0,0,22.68671",
         "Components": [
@@ -115,7 +119,7 @@
         ]
       },
       {
-        "Id": "6baac9ad-c983-4133-ba29-735b4c6c346f",
+        "Id": "afd1811d-7394-416a-82ce-9819d443db97",
         "Name": "Voice",
         "Position": "42.0599,39.05991,-23.23907",
         "Enabled": true,
@@ -129,7 +133,7 @@
             "PushToTalkInput": "voice",
             "Renderer": {
               "_type": "component",
-              "go": "127c8d00-f66a-4b73-afeb-c539fdaf3ae7",
+              "go": "383873b7-e4e8-4f67-ad1d-2da2dd49bfc2",
               "component_type": "SkinnedModelRenderer"
             },
             "Volume": 1,
@@ -138,7 +142,7 @@
         ]
       },
       {
-        "Id": "bd8e5ce3-b461-47c2-8643-0a32d18850ce",
+        "Id": "c2b2a900-20c5-4072-bfb4-a408270c7b2a",
         "Name": "World",
         "Position": "0,0,77.72417",
         "Enabled": true,
@@ -157,7 +161,7 @@
         ]
       },
       {
-        "Id": "04dd222d-8679-4473-babc-14b5fcaf267c",
+        "Id": "6bb6a29e-1c80-4fc6-9a71-152d018ecb0c",
         "Name": "Player Pusher",
         "Position": "0,0,32",
         "Enabled": true,
@@ -169,7 +173,7 @@
         ]
       },
       {
-        "Id": "bc43db00-89b6-44c0-b583-b7e4aacb33c5",
+        "Id": "17209ca9-f3ec-4b31-bdcd-202678192422",
         "Name": "FireballSpawner",
         "Position": "43.54512,-4.965918,60.92871",
         "Scale": "0.2780159,0.2780159,0.2780159",

@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "386ccced-6875-4be6-9a49-34e37fa950af",
+    "Id": "df81884d-d7d7-4bff-a129-32f4ab6eb23a",
     "Name": "fireball",
     "Scale": "0.1833652,0.1833652,0.1833652",
     "Networked": true,
@@ -28,22 +28,18 @@
       {
         "__type": "SphereCollider",
         "Center": "0,0,0",
-        "IsTrigger": false,
+        "IsTrigger": true,
         "Radius": 10,
         "Static": false,
         "Surface": "surfaces/brick.surface"
       },
       {
-        "__type": "BoxCollider",
-        "Center": "0,0,0",
-        "IsTrigger": false,
-        "Scale": "50,50,50",
-        "Static": false,
-        "Surface": null
-      },
-      {
         "__type": "Fireball",
-        "rb": null,
+        "rb": {
+          "_type": "component",
+          "go": "df81884d-d7d7-4bff-a129-32f4ab6eb23a",
+          "component_type": "Rigidbody"
+        },
         "speed": 500
       }
     ],

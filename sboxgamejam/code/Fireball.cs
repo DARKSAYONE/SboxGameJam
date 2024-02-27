@@ -1,6 +1,6 @@
 using Sandbox;
 
-public sealed class Fireball : Component
+public sealed class Fireball : Component, Component.ITriggerListener
 {
 	[Property] private Rigidbody rb;
 	[Property] public float speed = 100;
@@ -21,7 +21,21 @@ public sealed class Fireball : Component
 		{
 			GameObject.Destroy();
 		}
-		//rb.ApplyForce( Vector3.Forward * speed*Time.Delta ); попытка использовать Rigidbody
-		Transform.Position += Transform.Rotation.Forward * speed * Time.Delta;
+		rb.Velocity = Transform.Rotation.Forward * speed; // попытка использовать Rigidbody
+		//Transform.Position += Transform.Rotation.Forward * speed * Time.Delta; // Use when need no move it without gravity
+	}
+
+	public void OnTriggerEnter( Collider other )
+	{
+		if (other.GameObject.Tags.Has("player"))
+		{
+			Log.Info("The fireball hit its target!");
+			GameObject.Destroy();
+		}
+	}
+
+	public void OnTriggerExit( Collider other )
+	{
+		
 	}
 }

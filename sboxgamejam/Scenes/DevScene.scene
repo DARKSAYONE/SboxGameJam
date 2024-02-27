@@ -70,7 +70,7 @@
     {
       "Id": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
       "Name": "Camera",
-      "Position": "0,0,64",
+      "Position": "-125.1459,-196.9508,127.2752",
       "Enabled": true,
       "Components": [
         {
@@ -140,7 +140,7 @@
           "__type": "NetworkHelper",
           "PlayerPrefab": {
             "_type": "gameobject",
-            "prefab": "player.prefab"
+            "prefab": "prefabs/player.prefab"
           },
           "SpawnPoints": [
             {
@@ -216,6 +216,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-02-27T03:09:46.4321656\u002B03:00",
+  "LastSaved": "2024-02-28T00:38:25.7948111\u002B03:00",
   "__references": []
 }
