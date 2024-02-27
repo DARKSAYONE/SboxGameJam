@@ -165,6 +165,32 @@
       "Scale": "0.1833652,0.1833652,0.1833652",
       "Enabled": true,
       "__Prefab": "fireball.prefab"
+    },
+    {
+      "Id": "f0acba90-726e-4846-848c-2ee77df35c83",
+      "Name": "Wall",
+      "Position": "194.3498,-7.606064,53.00799",
+      "Scale": "0.2335878,5.117368,2.256136",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "0.43333,1,0,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -190,6 +216,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-02-26T16:53:51.7006561\u002B03:00",
+  "LastSaved": "2024-02-27T03:09:46.4321656\u002B03:00",
   "__references": []
 }

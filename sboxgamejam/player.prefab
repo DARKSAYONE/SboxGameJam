@@ -33,11 +33,12 @@
       },
       {
         "__type": "FireballCast",
-        "fireballPrefab": {
+        "CameraFind": null,
+        "FireballPrefab": {
           "_type": "gameobject",
           "prefab": "fireball.prefab"
         },
-        "fireballspawnPos": {
+        "FireballSpawnPos": {
           "_type": "gameobject",
           "go": "bc43db00-89b6-44c0-b583-b7e4aacb33c5"
         }
@@ -176,6 +177,7 @@
         "Components": [
           {
             "__type": "ModelRenderer",
+            "__enabled": false,
             "BodyGroups": 18446744073709551615,
             "MaterialGroup": null,
             "MaterialOverride": null,
