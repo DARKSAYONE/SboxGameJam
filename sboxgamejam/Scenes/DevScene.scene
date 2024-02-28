@@ -45,7 +45,7 @@
     {
       "Id": "6ad70641-3c6c-4402-9c85-9a4969af4764",
       "Name": "Plane",
-      "Scale": "5,5,5",
+      "Scale": "15,15,3",
       "Enabled": true,
       "Components": [
         {
@@ -216,6 +216,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-02-28T00:38:25.7948111\u002B03:00",
+  "LastSaved": "2024-02-28T20:14:18.2495006\u002B03:00",
   "__references": []
 }
