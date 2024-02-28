@@ -27,9 +27,14 @@ public sealed class Fireball : Component, Component.ITriggerListener
 
 	public void OnTriggerEnter( Collider other )
 	{
-		if (other.GameObject.Tags.Has("player"))
+		if ( other.GameObject.Tags.Has( "player" ) )
 		{
-			Log.Info("The fireball hit its target!");
+			Log.Info( "The fireball hit its target!" );
+			GameObject.Destroy();
+		}
+		else
+		{
+			Log.Info( "fireball hit the obj" );
 			GameObject.Destroy();
 		}
 	}
