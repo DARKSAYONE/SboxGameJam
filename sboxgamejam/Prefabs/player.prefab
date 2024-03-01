@@ -50,7 +50,18 @@
         }
       },
       {
-        "__type": "PlayerStats"
+        "__type": "PlayerStats",
+        "Experience": 0,
+        "Fortitude": 1,
+        "HitSpeed": 1,
+        "HP": 100,
+        "Level": 0,
+        "Mana": 100,
+        "ManaRegen": 5,
+        "MindPower": 1,
+        "MovementSpeed": 1,
+        "PhysicalPower": 1,
+        "Protection": 1
       }
     ],
     "Children": [

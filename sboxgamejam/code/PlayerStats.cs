@@ -2,15 +2,15 @@ using Sandbox;
 
 public sealed class PlayerStats : Component
 {
-	[Sync] public int Level { get; set; }
-	[Sync] public int Experience { get; set; }
-	[Sync] public int HP { get; set; }
-	[Sync] public int Mana { get; set; }
-	[Sync] public float ManaRegen { get; set; }
-	[Sync] public int PhysicalPower { get; set; }
-	[Sync] public int MindPower { get; set; }
-	[Sync] public int Protection { get; set; }
-	[Sync] public int Fortitude { get; set; }
-	[Sync] public float MovementSpeed { get; set; }
-	[Sync] public float HitSpeed { get; set; }
+	[Sync] [Property] public int Level { get; set; }
+	[Sync] [Property] public int Experience { get; set; }
+	[Sync] [Property] public int HP { get; set; }
+	[Sync] [Property] public int Mana { get; set; }
+	[Sync] [Property] public float ManaRegen { get; set; }
+	[Sync] [Property] public int PhysicalPower { get; set; }
+	[Sync] [Property] public int MindPower { get; set; }
+	[Sync] [Property] public int Protection { get; set; }
+	[Sync] [Property] public int Fortitude { get; set; }
+	[Sync] [Property] public float MovementSpeed { get; set; }
+	[Sync] [Property] public float HitSpeed { get; set; }
 }
