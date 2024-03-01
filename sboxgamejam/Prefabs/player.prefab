@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "a3ea6c6e-923b-4225-af25-ec7195ada008",
+    "Id": "030b12a6-757d-493b-9f6f-3b8c3e96fd1e",
     "Name": "player",
     "Tags": "player",
     "Enabled": true,
@@ -17,14 +17,19 @@
       },
       {
         "__type": "PlayerController",
+        "Cam": {
+          "_type": "component",
+          "go": "30e70096-b625-48bd-a42e-b5743d50108c",
+          "component_type": "CameraComponent"
+        },
         "AnimationHelper": {
           "_type": "component",
-          "go": "85958e27-046f-470f-ba7e-2b80a4bbfcd6",
+          "go": "c57f4596-e17d-4783-91af-4ba3993db6ea",
           "component_type": "CitizenAnimationHelper"
         },
         "CharacterController": {
           "_type": "component",
-          "go": "a3ea6c6e-923b-4225-af25-ec7195ada008",
+          "go": "030b12a6-757d-493b-9f6f-3b8c3e96fd1e",
           "component_type": "CharacterController"
         },
         "CrouchMoveSpeed": 64,
@@ -41,7 +46,7 @@
         },
         "FireballSpawnPos": {
           "_type": "gameobject",
-          "go": "9e1c7347-53ea-4473-bf3a-274fa99c11c2"
+          "go": "5dfce719-3243-414b-9705-aa634ef5f165"
         }
       },
       {
@@ -50,7 +55,7 @@
     ],
     "Children": [
       {
-        "Id": "85958e27-046f-470f-ba7e-2b80a4bbfcd6",
+        "Id": "c57f4596-e17d-4783-91af-4ba3993db6ea",
         "Name": "Player Body",
         "Enabled": true,
         "Components": [
@@ -81,7 +86,7 @@
             "LookAtEnabled": false,
             "Target": {
               "_type": "component",
-              "go": "85958e27-046f-470f-ba7e-2b80a4bbfcd6",
+              "go": "c57f4596-e17d-4783-91af-4ba3993db6ea",
               "component_type": "SkinnedModelRenderer"
             }
           },
@@ -89,7 +94,7 @@
             "__type": "PlayerDresser",
             "BodyRenderer": {
               "_type": "component",
-              "go": "85958e27-046f-470f-ba7e-2b80a4bbfcd6",
+              "go": "c57f4596-e17d-4783-91af-4ba3993db6ea",
               "component_type": "SkinnedModelRenderer"
             }
           },
@@ -97,14 +102,14 @@
             "__type": "PlayerFootsteps",
             "Source": {
               "_type": "component",
-              "go": "85958e27-046f-470f-ba7e-2b80a4bbfcd6",
+              "go": "c57f4596-e17d-4783-91af-4ba3993db6ea",
               "component_type": "SkinnedModelRenderer"
             }
           }
         ]
       },
       {
-        "Id": "4c6b651e-9d2c-4df4-8765-5dcb6285e383",
+        "Id": "68cf5f87-54e7-4878-b0da-36dbedff2ea8",
         "Name": "Physics Pusher",
         "Position": "0,0,22.68671",
         "Components": [
@@ -119,7 +124,7 @@
         ]
       },
       {
-        "Id": "db81da6d-9ab6-4da8-9cc5-06785354092f",
+        "Id": "b38dc054-879f-4db4-8870-198ef324aab9",
         "Name": "Voice",
         "Position": "42.0599,39.05991,-23.23907",
         "Enabled": true,
@@ -133,7 +138,7 @@
             "PushToTalkInput": "voice",
             "Renderer": {
               "_type": "component",
-              "go": "85958e27-046f-470f-ba7e-2b80a4bbfcd6",
+              "go": "c57f4596-e17d-4783-91af-4ba3993db6ea",
               "component_type": "SkinnedModelRenderer"
             },
             "Volume": 1,
@@ -142,7 +147,7 @@
         ]
       },
       {
-        "Id": "d38ba1cc-ca0c-486b-b142-6f22ec2a2c10",
+        "Id": "4306ecf3-db32-4215-9c56-ade07f237133",
         "Name": "World",
         "Position": "0,0,77.72417",
         "Enabled": true,
@@ -161,7 +166,7 @@
         ]
       },
       {
-        "Id": "468501bd-7258-40dd-a6d7-fe0bafb7f641",
+        "Id": "bebd31a0-e84f-4c64-b7f8-7306c0ffc956",
         "Name": "Player Pusher",
         "Position": "0,0,32",
         "Enabled": true,
@@ -173,10 +178,9 @@
         ]
       },
       {
-        "Id": "6ebce9ab-d248-4ee1-b4fd-7ea9ff34a64c",
+        "Id": "30e70096-b625-48bd-a42e-b5743d50108c",
         "Name": "Camera",
         "Position": "0,0,64",
-        "Tags": "maincamera",
         "Enabled": true,
         "Components": [
           {
@@ -201,7 +205,7 @@
         ],
         "Children": [
           {
-            "Id": "9e1c7347-53ea-4473-bf3a-274fa99c11c2",
+            "Id": "5dfce719-3243-414b-9705-aa634ef5f165",
             "Name": "FireballSpawner",
             "Position": "43.54512,-4.965918,-3.071289",
             "Scale": "0.2780159,0.2780159,0.2780159",

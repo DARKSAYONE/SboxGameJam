@@ -9,6 +9,7 @@ public sealed class PlayerController : Component
 	[Property] public float WalkMoveSpeed { get; set; } = 190.0f;
 	[Property] public float RunMoveSpeed { get; set; } = 190.0f;
 	[Property] public float SprintMoveSpeed { get; set; } = 320.0f;
+	[Property] public CameraComponent Cam;
 
 	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
 
@@ -204,9 +205,13 @@ public sealed class PlayerController : Component
 
 	private void UpdateCamera()
 	{
-		var camera = Scene.GetAllComponents<CameraComponent>().Where( x => x.IsMainCamera ).FirstOrDefault();
-		if ( camera is null ) return;
+		//var camera = Scene.GetAllComponents<CameraComponent>().Where( x => x.IsMainCamera ).FirstOrDefault();
+		//if ( camera is null ) return;
 
+		
+
+
+		
 		var targetEyeHeight = Crouching ? 28 : 64;
 		EyeHeight = EyeHeight.LerpTo( targetEyeHeight, RealTime.Delta * 10.0f );
 
@@ -215,12 +220,12 @@ public sealed class PlayerController : Component
 		// smooth view z, so when going up and down stairs or ducking, it's smooth af
 		if ( lastUngrounded > 0.2f )
 		{
-			targetCameraPos.z = camera.Transform.Position.z.LerpTo( targetCameraPos.z, RealTime.Delta * 25.0f );
+			targetCameraPos.z = Cam.Transform.Position.z.LerpTo( targetCameraPos.z, RealTime.Delta * 25.0f );
 		}
 
-		camera.Transform.Position = targetCameraPos;
-		camera.Transform.Rotation = EyeAngles;
-		camera.FieldOfView = Preferences.FieldOfView;
+		Cam.Transform.Position = targetCameraPos;
+		Cam.Transform.Rotation = EyeAngles;
+		Cam.FieldOfView = Preferences.FieldOfView;
 	}
 
 	protected override void OnPreRender()
@@ -229,7 +234,8 @@ public sealed class PlayerController : Component
 
 		if ( IsProxy )
 			return;
-
+		
+		
 		UpdateCamera();
 	}
 

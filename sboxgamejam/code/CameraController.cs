@@ -8,7 +8,7 @@ public sealed class CameraController : Component
 		if ( !IsProxy )
 		{
 			Scene.Camera.Enabled = false;
-			GameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+			//GameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
 			Log.Info( $"Owner is {Network.OwnerId}" );
 		}
 	}

@@ -18,16 +18,17 @@ public sealed class FireballCast : Component
         // fireballspawnPos = GameObject.Scene.Directory.FindByName("Camera");
 
 
-		if(!IsProxy)
+		/*if(!IsProxy)
 		{
 			canShoot = true;
 		}
+		*/
 
     }
 
     protected override void OnUpdate()
     {
-        if (canShoot)
+        if (!IsProxy)
         {
             if (Input.Pressed("Attack1"))
             {
@@ -37,7 +38,7 @@ public sealed class FireballCast : Component
         }
         else
         {
-            Log.Info("IsProxy didn't work.");
+            //Log.Info("IsProxy didn't work.");
         }
     }
 }
