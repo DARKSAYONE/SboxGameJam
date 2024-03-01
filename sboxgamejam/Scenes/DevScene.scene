@@ -159,6 +159,14 @@
       "Enabled": true
     },
     {
+      "Id": "1e59fea5-90c8-4f80-8fc7-efd708b6c4af",
+      "Name": "Fireball",
+      "Position": "0,0,113.2878",
+      "Scale": "0.1833652,0.1833652,0.1833652",
+      "Enabled": true,
+      "__Prefab": "fireball.prefab"
+    },
+    {
       "Id": "f0acba90-726e-4846-848c-2ee77df35c83",
       "Name": "Wall",
       "Position": "194.3498,-7.606064,53.00799",
@@ -181,42 +189,6 @@
           "Scale": "50,50,50",
           "Static": false,
           "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "dc4b308a-4343-43f9-a5db-5114c96db6f9",
-      "Name": "8hu_kultiras_wagon01",
-      "Position": "-309.2621,-272.5949,35.79025",
-      "Rotation": "0.3826834,0,0,0.9238796",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Prop",
-          "Health": 0,
-          "IsStatic": false,
-          "Model": "models/8hu_kultiras_wagon01.vmdl",
-          "OnPropBreak": null,
-          "OnPropTakeDamage": null,
-          "ShowCreatedComponents": false
-        }
-      ]
-    },
-    {
-      "Id": "7045f528-3ca5-47c0-ab44-36e985452e7a",
-      "Name": "8hu_kultiras_wallmap02",
-      "Position": "-212.2641,-178.1269,80.45426",
-      "Rotation": "0,0,0.7071067,0.7071068",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Prop",
-          "Health": 0,
-          "IsStatic": true,
-          "Model": "models/8hu_kultiras_wallmap02.vmdl",
-          "OnPropBreak": null,
-          "OnPropTakeDamage": null,
-          "ShowCreatedComponents": false
         }
       ]
     }
@@ -244,14 +216,6 @@
   },
   "Title": "minimal",
   "Description": "",
-<<<<<<< Updated upstream
   "LastSaved": "2024-02-28T23:20:07.8142476\u002B03:00",
   "__references": []
-=======
-  "LastSaved": "2024-02-29T23:22:01.7270597\u002B03:00",
-  "__references": [
-    "orus.8hu_kultiras_wagon01",
-    "orus.8hu_kultiras_wallmap02"
-  ]
->>>>>>> Stashed changes
 }
