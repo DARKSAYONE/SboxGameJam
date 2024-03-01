@@ -10,17 +10,24 @@ public sealed class FireballCast : Component
     [Property]
     public GameObject CameraFind;
 
-    private bool findCamera;
+	private bool canShoot = false;
 
     protected override void OnAwake()
     {
         base.OnAwake();
         // fireballspawnPos = GameObject.Scene.Directory.FindByName("Camera");
+
+
+		if(!IsProxy)
+		{
+			canShoot = true;
+		}
+
     }
 
     protected override void OnUpdate()
     {
-        if (!IsProxy)
+        if (canShoot)
         {
             if (Input.Pressed("Attack1"))
             {
