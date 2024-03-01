@@ -159,18 +159,10 @@
       "Enabled": true
     },
     {
-      "Id": "1e59fea5-90c8-4f80-8fc7-efd708b6c4af",
-      "Name": "Fireball",
-      "Position": "0,0,113.2878",
-      "Scale": "0.1833652,0.1833652,0.1833652",
-      "Enabled": true,
-      "__Prefab": "fireball.prefab"
-    },
-    {
       "Id": "f0acba90-726e-4846-848c-2ee77df35c83",
       "Name": "Wall",
       "Position": "194.3498,-7.606064,53.00799",
-      "Scale": "0.2335878,5.117368,2.256136",
+      "Scale": "1.992922,5.117368,2.256136",
       "Enabled": true,
       "Components": [
         {
@@ -216,6 +208,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-02-28T23:20:07.8142476\u002B03:00",
+  "LastSaved": "2024-03-01T18:01:01.9791717\u002B03:00",
   "__references": []
 }
