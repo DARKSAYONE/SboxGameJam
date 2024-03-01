@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "a19b7123-d904-4136-9177-f92bab83ff51",
+    "Id": "0d3aaedb-2507-43ab-87a3-4b722698ea1b",
     "Name": "fireball",
     "Scale": "0.1833652,0.1833652,0.1833652",
     "Networked": true,
@@ -10,7 +10,7 @@
         "__type": "ModelRenderer",
         "BodyGroups": 18446744073709551615,
         "MaterialGroup": null,
-        "MaterialOverride": "materials/models/editor/unused/orange.vmat",
+        "MaterialOverride": "people/materials/models/eft/scavs/mats/misha_d.vmat",
         "Model": "models/dev/sphere.vmdl",
         "RenderType": "On",
         "Tint": "1,1,1,1"
@@ -37,7 +37,7 @@
         "__type": "Fireball",
         "rb": {
           "_type": "component",
-          "go": "a19b7123-d904-4136-9177-f92bab83ff51",
+          "go": "0d3aaedb-2507-43ab-87a3-4b722698ea1b",
           "component_type": "Rigidbody"
         },
         "speed": 500
@@ -45,7 +45,7 @@
     ],
     "Children": [
       {
-        "Id": "88fcb32b-c0ac-4c83-af73-fe8678edafef",
+        "Id": "e11e6045-530c-43cf-8b16-919dbe3d887a",
         "Name": "Spray",
         "Rotation": "0,0,1,0.0000001947072",
         "Tags": "particles",
@@ -217,5 +217,7 @@
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
-  "__references": []
+  "__references": [
+    "mapperskai.scav"
+  ]
 }
