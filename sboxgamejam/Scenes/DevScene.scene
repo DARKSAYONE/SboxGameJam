@@ -185,11 +185,19 @@
       ]
     },
     {
-      "Id": "7cba7d8d-2d67-4ec4-b854-e814a53a6436",
-      "Name": "enemy",
-      "Position": "-90.0078,-57.70134,4",
+      "Id": "1d425543-1d7f-4fbb-b9cc-5bc79c785329",
+      "Name": "EnemySpawner",
+      "Position": "-254.8424,240.3968,62.81738",
       "Enabled": true,
-      "__Prefab": "prefabs/enemy.prefab"
+      "Components": [
+        {
+          "__type": "EnemyNetSpawner",
+          "EnemyPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/enemy.prefab"
+          }
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -215,6 +223,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-02T20:19:58.2431651\u002B03:00",
+  "LastSaved": "2024-03-02T21:06:40.7455306\u002B03:00",
   "__references": []
 }

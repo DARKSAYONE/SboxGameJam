@@ -11,6 +11,8 @@ public sealed class EnemyAI : Component
 	*/
 	[Property]
 	private float AttackRange = 60.0f;
+	[Property]
+	private SoundBoxComponent AttackVFX;
 
 	protected override void OnAwake()
 	{
@@ -36,10 +38,18 @@ public sealed class EnemyAI : Component
 		if(DistanceToPlayer <= AttackRange)
 		{
 			Agent.Stop();
+			AttackPlayer();
 		}
 		else
 		{
 			Agent.MoveTo( Player.Transform.Position );
 		}
+	}
+
+	public void AttackPlayer()
+	{
+		//Attack//
+
+		//AttackVFX.StartSound();
 	}
 }

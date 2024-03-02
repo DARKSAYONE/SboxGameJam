@@ -16,7 +16,23 @@
       },
       {
         "__type": "EnemyAI",
-        "Agent": null
+        "Agent": null,
+        "AttackRange": 60,
+        "attackVoice": null
+      },
+      {
+        "__type": "SoundBoxComponent",
+        "Force2d": false,
+        "MaxRepeatTime": 1,
+        "MinRepeatTime": 1,
+        "Pitch": 1,
+        "PlayOnStart": false,
+        "Repeat": false,
+        "Scale": "100,100,50",
+        "SoundEvent": "sounds/soundboard/yougotmail.sound",
+        "SoundOverride": false,
+        "StopOnNew": false,
+        "Volume": 1
       }
     ],
     "Children": [
@@ -51,5 +67,7 @@
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
-  "__references": []
+  "__references": [
+    "ipvfour.yougotmail"
+  ]
 }
