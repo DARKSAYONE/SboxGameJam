@@ -183,6 +183,13 @@
           "Surface": null
         }
       ]
+    },
+    {
+      "Id": "7cba7d8d-2d67-4ec4-b854-e814a53a6436",
+      "Name": "enemy",
+      "Position": "-90.0078,-57.70134,4",
+      "Enabled": true,
+      "__Prefab": "prefabs/enemy.prefab"
     }
   ],
   "SceneProperties": {
@@ -194,7 +201,7 @@
     "TimeScale": 1,
     "UseFixedUpdate": true,
     "NavMesh": {
-      "Enabled": false,
+      "Enabled": true,
       "IncludeStaticBodies": true,
       "IncludeKeyframedBodies": true,
       "EditorAutoUpdate": true,
@@ -208,6 +215,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-01T23:08:54.4688752\u002B03:00",
+  "LastSaved": "2024-03-02T20:19:58.2431651\u002B03:00",
   "__references": []
 }
