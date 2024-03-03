@@ -1,5 +1,5 @@
 {
-  "Id": "9f832399-4887-46b0-8f21-2ee284f538e2",
+  "Id": "d7c2c0b9-ca80-4407-b4d1-3c461e226ae6",
   "GameObjects": [
     {
       "Id": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
@@ -27,7 +27,7 @@
         {
           "__type": "SkyBox2D",
           "SkyMaterial": "materials/skybox/light_test_sky_sunny03.vmat",
-          "Tint": "1,1,1,1"
+          "Tint": "0.95349,0.45679,0.45679,1"
         },
         {
           "__type": "EnvmapProbe",
@@ -198,6 +198,12 @@
           }
         }
       ]
+    },
+    {
+      "Id": "05833b5e-ee5f-4bd7-8091-cce9fda21473",
+      "Name": "Gamemanager",
+      "Position": "41.34938,-80.9453,139.6161",
+      "Enabled": true
     }
   ],
   "SceneProperties": {
@@ -223,6 +229,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-02T21:06:40.7455306\u002B03:00",
+  "LastSaved": "2024-03-03T15:07:39.7443228\u002B03:00",
   "__references": []
 }
