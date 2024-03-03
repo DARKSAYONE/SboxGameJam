@@ -1,9 +1,14 @@
 using Sandbox;
 
-public sealed class EnemyNetSpawner : Component
+public sealed class EnemyNetSpawner : Component, GeneralGame.IUse
 {
 	[Property]
 	public GameObject EnemyPrefab;
+
+	public void OnUse( Guid pickerId )
+	{
+		
+	}
 
 	protected override void OnUpdate()
 	{
