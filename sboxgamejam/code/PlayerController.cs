@@ -203,15 +203,11 @@ public sealed class PlayerController : Component
 
 	}
 
-	private void UpdateCamera()
+	private void UpdateCamera()	
 	{
 		//var camera = Scene.GetAllComponents<CameraComponent>().Where( x => x.IsMainCamera ).FirstOrDefault();
 		//if ( camera is null ) return;
 
-		
-
-
-		
 		var targetEyeHeight = Crouching ? 28 : 64;
 		EyeHeight = EyeHeight.LerpTo( targetEyeHeight, RealTime.Delta * 10.0f );
 

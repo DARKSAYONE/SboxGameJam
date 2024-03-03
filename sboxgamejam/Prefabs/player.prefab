@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "030b12a6-757d-493b-9f6f-3b8c3e96fd1e",
+    "Id": "6652c239-fb30-4619-bfc2-452a1ac9b75d",
     "Name": "player",
     "Tags": "player",
     "Enabled": true,
@@ -19,17 +19,17 @@
         "__type": "PlayerController",
         "Cam": {
           "_type": "component",
-          "go": "30e70096-b625-48bd-a42e-b5743d50108c",
+          "go": "49a67ec3-aa24-44f9-87d4-2cc7d49d477d",
           "component_type": "CameraComponent"
         },
         "AnimationHelper": {
           "_type": "component",
-          "go": "c57f4596-e17d-4783-91af-4ba3993db6ea",
+          "go": "b40b72fc-ff83-4c17-b435-807cdb54870f",
           "component_type": "CitizenAnimationHelper"
         },
         "CharacterController": {
           "_type": "component",
-          "go": "030b12a6-757d-493b-9f6f-3b8c3e96fd1e",
+          "go": "6652c239-fb30-4619-bfc2-452a1ac9b75d",
           "component_type": "CharacterController"
         },
         "CrouchMoveSpeed": 64,
@@ -46,7 +46,7 @@
         },
         "FireballSpawnPos": {
           "_type": "gameobject",
-          "go": "5dfce719-3243-414b-9705-aa634ef5f165"
+          "go": "579aae65-835c-46d0-82a5-127df29f25ec"
         }
       },
       {
@@ -66,7 +66,7 @@
     ],
     "Children": [
       {
-        "Id": "c57f4596-e17d-4783-91af-4ba3993db6ea",
+        "Id": "b40b72fc-ff83-4c17-b435-807cdb54870f",
         "Name": "Player Body",
         "Enabled": true,
         "Components": [
@@ -97,7 +97,7 @@
             "LookAtEnabled": false,
             "Target": {
               "_type": "component",
-              "go": "c57f4596-e17d-4783-91af-4ba3993db6ea",
+              "go": "b40b72fc-ff83-4c17-b435-807cdb54870f",
               "component_type": "SkinnedModelRenderer"
             }
           },
@@ -105,7 +105,7 @@
             "__type": "PlayerDresser",
             "BodyRenderer": {
               "_type": "component",
-              "go": "c57f4596-e17d-4783-91af-4ba3993db6ea",
+              "go": "b40b72fc-ff83-4c17-b435-807cdb54870f",
               "component_type": "SkinnedModelRenderer"
             }
           },
@@ -113,14 +113,21 @@
             "__type": "PlayerFootsteps",
             "Source": {
               "_type": "component",
-              "go": "c57f4596-e17d-4783-91af-4ba3993db6ea",
+              "go": "b40b72fc-ff83-4c17-b435-807cdb54870f",
               "component_type": "SkinnedModelRenderer"
             }
+          },
+          {
+            "__type": "ModelCollider",
+            "IsTrigger": false,
+            "Model": "models/citizen/citizen.vmdl",
+            "Static": false,
+            "Surface": null
           }
         ]
       },
       {
-        "Id": "68cf5f87-54e7-4878-b0da-36dbedff2ea8",
+        "Id": "22aa4c80-77d9-4aa5-bb93-8c5b942c1db1",
         "Name": "Physics Pusher",
         "Position": "0,0,22.68671",
         "Components": [
@@ -135,7 +142,7 @@
         ]
       },
       {
-        "Id": "b38dc054-879f-4db4-8870-198ef324aab9",
+        "Id": "d136542e-2143-46e2-bf72-f8098f039dbc",
         "Name": "Voice",
         "Position": "42.0599,39.05991,-23.23907",
         "Enabled": true,
@@ -149,7 +156,7 @@
             "PushToTalkInput": "voice",
             "Renderer": {
               "_type": "component",
-              "go": "c57f4596-e17d-4783-91af-4ba3993db6ea",
+              "go": "b40b72fc-ff83-4c17-b435-807cdb54870f",
               "component_type": "SkinnedModelRenderer"
             },
             "Volume": 1,
@@ -158,7 +165,7 @@
         ]
       },
       {
-        "Id": "4306ecf3-db32-4215-9c56-ade07f237133",
+        "Id": "81b63803-62a7-428a-85d8-c1cf683f6d28",
         "Name": "World",
         "Position": "0,0,77.72417",
         "Enabled": true,
@@ -177,7 +184,7 @@
         ]
       },
       {
-        "Id": "bebd31a0-e84f-4c64-b7f8-7306c0ffc956",
+        "Id": "c19dc0a0-e7f0-4696-b121-a25a410c1904",
         "Name": "Player Pusher",
         "Position": "0,0,32",
         "Enabled": true,
@@ -189,7 +196,7 @@
         ]
       },
       {
-        "Id": "30e70096-b625-48bd-a42e-b5743d50108c",
+        "Id": "49a67ec3-aa24-44f9-87d4-2cc7d49d477d",
         "Name": "Camera",
         "Position": "0,0,64",
         "Enabled": true,
@@ -216,7 +223,7 @@
         ],
         "Children": [
           {
-            "Id": "5dfce719-3243-414b-9705-aa634ef5f165",
+            "Id": "579aae65-835c-46d0-82a5-127df29f25ec",
             "Name": "FireballSpawner",
             "Position": "43.54512,-4.965918,-3.071289",
             "Scale": "0.2780159,0.2780159,0.2780159",
@@ -235,6 +242,11 @@
             ]
           }
         ]
+      },
+      {
+        "Id": "b76df990-09d7-4b1a-8b33-8110ba2e96f8",
+        "Name": "Object",
+        "Enabled": true
       }
     ]
   },

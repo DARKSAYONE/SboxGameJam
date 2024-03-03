@@ -29,7 +29,11 @@ public sealed class Fireball : Component, Component.ITriggerListener
 	{
 		if ( other.GameObject.Tags.Has( "player" ) )
 		{
+			var ownerName = GameObject.Name.Substring( 0, GameObject.Name.LastIndexOf( " - " ));
+			Log.Info( ownerName );
 			Log.Info( "The fireball hit its target!" );
+			other.GameObject.Parent.Components.Get<PlayerStats>().HP -= Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == ownerName ).Components.Get<PlayerStats>().MindPower * 10;
+			Log.Info( Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == ownerName ).Components.Get<PlayerStats>().MindPower * 10 );
 			GameObject.Destroy();
 		}
 		else

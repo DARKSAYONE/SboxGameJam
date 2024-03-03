@@ -7,38 +7,19 @@ public sealed class FireballCast : Component
     public GameObject FireballPrefab;
     [Property]
     public GameObject FireballSpawnPos;
-    [Property]
+    [Property]	
     public GameObject CameraFind;
-
-	private bool canShoot = false;
-
-    protected override void OnAwake()
-    {
-        base.OnAwake();
-        // fireballspawnPos = GameObject.Scene.Directory.FindByName("Camera");
-
-
-		/*if(!IsProxy)
-		{
-			canShoot = true;
-		}
-		*/
-
-    }
-
     protected override void OnUpdate()
     {
         if (!IsProxy)
         {
             if (Input.Pressed("Attack1"))
             {
-                var netFireball = FireballPrefab.Clone(FireballSpawnPos.Transform.Position + Vector3.Forward, FireballSpawnPos.Transform.Rotation);
-                netFireball.NetworkSpawn();
+				var netFireball = FireballPrefab.Clone( FireballSpawnPos.Transform.Position + Vector3.Forward, FireballSpawnPos.Parent.Transform.Rotation );
+				//netFireball.Tags.Add( $"{FireballSpawnPos.Parent.Parent.Name} - Fireball" );
+				netFireball.Name = $"{FireballSpawnPos.Parent.Parent.Name} - Fireball";
+				netFireball.NetworkSpawn();
             }
-        }
-        else
-        {
-            //Log.Info("IsProxy didn't work.");
         }
     }
 }
