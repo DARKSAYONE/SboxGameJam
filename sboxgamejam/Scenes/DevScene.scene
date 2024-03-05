@@ -183,6 +183,58 @@
           "Surface": null
         }
       ]
+    },
+    {
+      "Id": "5b3b4798-9875-4e37-b712-0bb127276ae2",
+      "Name": "GameManager",
+      "Position": "-291.5914,-130.7598,181.6639",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "GameManager",
+          "AllPlayersReady": false,
+          "Players": [],
+          "SpawnPositions": [
+            {
+              "_type": "gameobject",
+              "go": "3f13ece6-273a-4455-ba56-ae343f890888"
+            },
+            {
+              "_type": "gameobject",
+              "go": "b83bc32a-152b-430e-af89-3ab323b88096"
+            }
+          ],
+          "TestRoundStart": false
+        }
+      ]
+    },
+    {
+      "Id": "3f13ece6-273a-4455-ba56-ae343f890888",
+      "Name": "SpawnPointOne",
+      "Position": "-139.0432,595.7968,158.8192",
+      "Enabled": true
+    },
+    {
+      "Id": "b83bc32a-152b-430e-af89-3ab323b88096",
+      "Name": "SpawnPointTwo",
+      "Position": "-139.0432,-646.6956,158.8192",
+      "Enabled": true
+    },
+    {
+      "Id": "13a67c67-4c55-4a8a-aa1a-6cd21ef5a89a",
+      "Name": "MapLoader",
+      "Position": "-748.5256,-193.8126,562.8197",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "MapName": "pui.pui_flatgrass",
+          "OnMapLoaded": null,
+          "OnMapUnloaded": null,
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
     }
   ],
   "SceneProperties": {
@@ -208,6 +260,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-01T23:08:54.4688752\u002B03:00",
+  "LastSaved": "2024-03-06T00:53:51.1697454\u002B03:00",
   "__references": []
 }
