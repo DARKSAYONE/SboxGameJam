@@ -16,9 +16,8 @@ public sealed class FireballCast : Component
             if (Input.Pressed("Attack1"))
             {
 				var netFireball = FireballPrefab.Clone( FireballSpawnPos.Transform.Position + Vector3.Forward, FireballSpawnPos.Parent.Transform.Rotation );
-				//netFireball.Tags.Add( $"{FireballSpawnPos.Parent.Parent.Name} - Fireball" );
-				netFireball.Name = $"{FireballSpawnPos.Parent.Parent.Name} - Fireball";
-				netFireball.NetworkSpawn();
+				netFireball.Name = $"{GameObject.Name} - Fireball";
+				netFireball.NetworkSpawn( GameObject.Network.OwnerConnection );
             }
         }
     }

@@ -3,6 +3,7 @@
     "Id": "e56bbf8e-32d0-466d-81df-9293e688cc8c",
     "Name": "fireball",
     "Scale": "0.1833652,0.1833652,0.1833652",
+    "Tags": "spell",
     "Networked": true,
     "Enabled": true,
     "Components": [

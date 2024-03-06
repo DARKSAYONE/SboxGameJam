@@ -25,22 +25,26 @@ public sealed class Fireball : Component, Component.ITriggerListener
 		//Transform.Position += Transform.Rotation.Forward * speed * Time.Delta; // Use when need no move it without gravity
 	}
 
+	//[Broadcast]
 	public void OnTriggerEnter( Collider other )
 	{
+		if ( IsProxy )
+			return;
+
 		if ( other.GameObject.Tags.Has( "player" ) )
 		{
 			var ownerName = GameObject.Name.Substring( 0, GameObject.Name.LastIndexOf( " - " ));
 			Log.Info( ownerName );
-			Log.Info( "The fireball hit its target!" );
-			other.GameObject.Parent.Components.Get<PlayerStats>().HP -= Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == ownerName ).Components.Get<PlayerStats>().MindPower * 10;
-			Log.Info( Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == ownerName ).Components.Get<PlayerStats>().MindPower * 10 );
-			GameObject.Destroy();
+
+			var attackerGUID = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == ownerName ).Id;
+			other.GameObject.Parent.Components.Get<PlayerController>().TakeDamage(attackerGUID);
 		}
 		else
 		{
 			Log.Info( "fireball hit the obj" );
-			GameObject.Destroy();
 		}
+
+		GameObject.Destroy();
 	}
 
 	public void OnTriggerExit( Collider other )
