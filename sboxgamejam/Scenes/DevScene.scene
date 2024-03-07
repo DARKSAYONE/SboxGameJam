@@ -183,6 +183,22 @@
           "Surface": null
         }
       ]
+    },
+    {
+      "Id": "7dd666c9-61aa-40dd-85ce-65fc246766f2",
+      "Name": "MapLoader",
+      "Position": "158.4539,-1620.605,190.6252",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "MapName": "leeroystuff.gm_flatgrass_cl",
+          "OnMapLoaded": null,
+          "OnMapUnloaded": null,
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
     }
   ],
   "SceneProperties": {
@@ -208,6 +224,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-04T01:04:57.3157216\u002B03:00",
+  "LastSaved": "2024-03-08T01:13:28.1460892\u002B03:00",
   "__references": []
 }
