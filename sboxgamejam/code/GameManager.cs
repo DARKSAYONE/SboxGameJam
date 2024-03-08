@@ -1,4 +1,5 @@
 using Sandbox;
+using System.Diagnostics;
 using System.IO;
 
 public sealed class GameManager : Component
@@ -6,25 +7,32 @@ public sealed class GameManager : Component
 
 	[Property] private List<GameObject> Players = new List<GameObject>();
 	[Property] private List<GameObject> SpawnPositions = new List<GameObject>();
+	[Property] private List<int> PlayersScore = new List<int>() { 0, 0 };
 	
-	[Property] private bool AllPlayersReady = false;
-	[Property] private bool TestRoundStart = false;
-	
-	
+	private bool AllPlayersReady = false;
+	private bool PVPRoundActive = false;
+
+	private float timer = 10f;
+	private bool timerGo = false;
+
 	protected override void OnStart()
 	{
 		base.OnStart();
+		
 
 	}
 	protected override void OnUpdate()
 	{
 		if(!AllPlayersReady)
 		PlayerInitialization();
-		else if(AllPlayersReady && TestRoundStart)
-		{
-			DeployPlayersToArena();
-			TestRoundStart = false;
-		}	
+
+		if(AllPlayersReady && !PVPRoundActive)
+		{	
+			PVPRound();
+			timerGo = true;
+		}
+
+		
 	}
 
 	void PlayerInitialization()
@@ -35,20 +43,30 @@ public sealed class GameManager : Component
 		}
 		else
 		{
-			TestRoundStart = true;
+			
 			AllPlayersReady = true;
 			Log.Info ( "All players connect" );
 		}
 		Log.Info( Players.Count );		
 	}
 
-	void DeployPlayersToArena()
+	
+	void PVPRound()
 	{
-			for(int i = 0; i < Players.Count; i++)
-			{
-				Players[i].Transform.Position = SpawnPositions[i].Transform.Position;
-			}
-		Log.Info( "Players tele to spawn positions" );
+		
 	}
 
+	void TimerStart()
+	{
+		if ( timer > 0 )
+		{
+			timer -= Time.Delta;
+			Log.Info( timer );
+		}
+		else if(timer < 0)
+		{
+			timerGo = false;
+			timer = 10f;
+		}
+	}
 }
