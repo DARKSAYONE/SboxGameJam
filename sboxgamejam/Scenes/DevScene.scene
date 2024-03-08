@@ -188,12 +188,20 @@
       "Id": "5b3b4798-9875-4e37-b712-0bb127276ae2",
       "Name": "GameManager",
       "Position": "-291.5914,-130.7598,181.6639",
+      "Networked": true,
       "Enabled": true,
       "Components": [
         {
           "__type": "GameManager",
-          "AllPlayersReady": false,
+          "BaseSpawnPos": {
+            "_type": "gameobject",
+            "go": "d4b8cfa2-49f2-4024-9213-b0d077563c14"
+          },
           "Players": [],
+          "PlayersScore": [
+            0,
+            0
+          ],
           "SpawnPositions": [
             {
               "_type": "gameobject",
@@ -203,8 +211,7 @@
               "_type": "gameobject",
               "go": "b83bc32a-152b-430e-af89-3ab323b88096"
             }
-          ],
-          "TestRoundStart": false
+          ]
         }
       ]
     },
@@ -260,6 +267,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-06T00:53:51.1697454\u002B03:00",
+  "LastSaved": "2024-03-08T20:17:21.697719\u002B03:00",
   "__references": []
 }
