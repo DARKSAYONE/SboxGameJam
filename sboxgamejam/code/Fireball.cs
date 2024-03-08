@@ -1,10 +1,10 @@
 using Sandbox;
 
-public sealed class Fireball : Component, Component.ITriggerListener
+public sealed class Fireball : Component, Component.ICollisionListener
 {
-	[Property] private Rigidbody rb;
 	[Property] public float speed = 100;
 
+	private Rigidbody rb;
 	private float creationTime;
 	protected override void OnStart()
 	{
@@ -26,18 +26,18 @@ public sealed class Fireball : Component, Component.ITriggerListener
 	}
 
 	//[Broadcast]
-	public void OnTriggerEnter( Collider other )
+	public void OnCollisionStart( Collision other )
 	{
 		if ( IsProxy )
 			return;
 
-		if ( other.GameObject.Tags.Has( "player" ) )
+		if ( other.Self.Collider.GameObject.Tags.Has( "player" ) )
 		{
-			var ownerName = GameObject.Name.Substring( 0, GameObject.Name.LastIndexOf( " - " ));
+			var ownerName = GameObject.Name.Substring( 0, GameObject.Name.LastIndexOf( " - " ) );
 			Log.Info( ownerName );
 
 			var attackerGUID = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == ownerName ).Id;
-			other.GameObject.Parent.Components.Get<PlayerController>().TakeDamage(attackerGUID);
+			other.Self.Collider.GameObject.Parent.Components.Get<PlayerController>().TakeDamage( attackerGUID );
 		}
 		else
 		{
@@ -47,8 +47,13 @@ public sealed class Fireball : Component, Component.ITriggerListener
 		GameObject.Destroy();
 	}
 
-	public void OnTriggerExit( Collider other )
+	public void OnCollisionUpdate( Collision other )
 	{
-		
+		throw new NotImplementedException();
+	}
+
+	public void OnCollisionStop( CollisionStop other )
+	{
+		throw new NotImplementedException();
 	}
 }
