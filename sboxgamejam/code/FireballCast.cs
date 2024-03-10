@@ -14,6 +14,9 @@ public sealed class FireballCast : Component
 	private bool OnCooldown = false;
 	private float TimerCooldown;
 
+	[Property]
+	public SoundPointComponent SoundPoint;
+
 
 	protected override void OnStart()
 	{
@@ -39,6 +42,7 @@ public sealed class FireballCast : Component
 				netFireball.Name = $"{GameObject.Name} - Fireball";
 				netFireball.NetworkSpawn( GameObject.Network.OwnerConnection );
 				OnCooldown = true;
+				
 			}
 		}
 	}
@@ -51,6 +55,7 @@ public sealed class FireballCast : Component
 		}
 		else if ( TimerCooldown < 0 ) 
 		{
+			SoundPoint.StartSound();
 			OnCooldown = false;
 			TimerCooldown = CooldownTime;
 		}
