@@ -31,13 +31,13 @@ public sealed class Fireball : Component, Component.ICollisionListener
 		if ( IsProxy )
 			return;
 
-		if ( other.Self.Collider.GameObject.Tags.Has( "player" ) )
+		if ( other.Other.GameObject.Tags.Has( "player" ) )
 		{
 			var ownerName = GameObject.Name.Substring( 0, GameObject.Name.LastIndexOf( " - " ) );
 			Log.Info( ownerName );
 
 			var attackerGUID = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == ownerName ).Id;
-			other.Self.Collider.GameObject.Parent.Components.Get<PlayerController>().TakeDamage( attackerGUID );
+			other.Other.GameObject.Parent.Components.Get<PlayerController>().TakeDamage( attackerGUID );
 		}
 		else
 		{
@@ -49,11 +49,11 @@ public sealed class Fireball : Component, Component.ICollisionListener
 
 	public void OnCollisionUpdate( Collision other )
 	{
-		throw new NotImplementedException();
+
 	}
 
 	public void OnCollisionStop( CollisionStop other )
 	{
-		throw new NotImplementedException();
+		
 	}
 }

@@ -46,7 +46,6 @@
       "Id": "6ad70641-3c6c-4402-9c85-9a4969af4764",
       "Name": "Plane",
       "Scale": "15,15,3",
-      "Enabled": true,
       "Components": [
         {
           "__type": "ModelRenderer",
@@ -138,6 +137,7 @@
       "Components": [
         {
           "__type": "NetworkHelper",
+          "ActivePlayers": [],
           "PlayerPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/player.prefab"
@@ -224,6 +224,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-08T01:13:28.1460892\u002B03:00",
+  "LastSaved": "2024-03-10T01:49:01.1210339\u002B03:00",
   "__references": []
 }

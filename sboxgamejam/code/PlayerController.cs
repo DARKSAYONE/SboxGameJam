@@ -304,18 +304,29 @@ public sealed class PlayerController : Component
 	public void TakeDamage(Guid attackerGUID)
 	{
 		//Log.Info( "hi lol" );
-		if ( !IsProxy/* && DamageDelay <= 0*/)
+		if ( !IsProxy && DamageDelay <= 0)
 		{
 			Log.Info( "The fireball hit its target!" );
 			Log.Info( "Damage delay is set to 2." );
 			DamageDelay = 2f;
 			GameObject attacker = Scene.Directory.FindByGuid( attackerGUID );
 			Log.Info( $"Target HP before reduction: {HP}" );
-			var playerDamage = attacker.Components.Get<PlayerController>().MindPower * 10;
+			var playerDamage = attacker.Components.Get<PlayerController>().MindPower * 5;
 			HP = MathF.Max( HP - playerDamage, 0f );
 			HP -= playerDamage;
 			Log.Info( $"Damage dealt: {playerDamage}" );
 			Log.Info( $"Target REAL HP: {HP}" );
+
+			if (HP <= 0f)
+			{
+				Log.Info( "Oh damn it! You died! :<" );
+				ActivatePreDeathState();	
+			}
 		}
+	}
+
+	public void ActivatePreDeathState()
+	{
+
 	}
 }
