@@ -9,16 +9,51 @@ public sealed class FireballCast : Component
     public GameObject FireballSpawnPos;
     [Property]	
     public GameObject CameraFind;
-    protected override void OnUpdate()
+	[Property]
+	public float CooldownTime = 2.0f;
+	private bool OnCooldown = false;
+	private float TimerCooldown;
+
+
+	protected override void OnStart()
+	{
+		base.OnStart();
+		TimerCooldown = CooldownTime;
+	}
+
+	protected override void OnUpdate()
     {
-        if (!IsProxy)
-        {
-            if (Input.Pressed("Attack1"))
-            {
+		if ( OnCooldown )
+			CooldownTimer();
+
+        CastFireball();
+    }
+
+	void CastFireball()
+	{
+		if ( !IsProxy )
+		{
+			if ( Input.Pressed( "Attack1" ) && !OnCooldown )
+			{
 				var netFireball = FireballPrefab.Clone( FireballSpawnPos.Transform.Position + Vector3.Forward, FireballSpawnPos.Parent.Transform.Rotation );
 				netFireball.Name = $"{GameObject.Name} - Fireball";
 				netFireball.NetworkSpawn( GameObject.Network.OwnerConnection );
-            }
-        }
-    }
+				OnCooldown = true;
+			}
+		}
+	}
+
+	void CooldownTimer()
+	{
+		if ( TimerCooldown > 0 )
+		{
+			TimerCooldown -= Time.Delta;
+		}
+		else if ( TimerCooldown < 0 ) 
+		{
+			OnCooldown = false;
+			TimerCooldown = CooldownTime;
+		}
+
+	}
 }
