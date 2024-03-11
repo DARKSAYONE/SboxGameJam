@@ -5,13 +5,14 @@ using System.IO;
 public sealed class GameManager : Component
 {
 
-	[Property] private List<GameObject> Players = new List<GameObject>();
+	[Property] public List<GameObject> Players = new List<GameObject>();
 	[Property] private List<GameObject> PVPRoundSpawnPos = new List<GameObject>();
 	[Property] private List<GameObject> PVERoundSpawnPos = new List<GameObject>();
 	[Property] private List<int> PlayersScore = new List<int>() { 0, 0 };
 	[Property] private GameObject BaseSpawnPos;
 	[Property] private float PVPRoundTime = 30.0f;
 	[Property] private float PVERoundTime = 30.0f;
+	[Property] public EnemyNetSpawner ENS;
 
 	private bool AllPlayersReady = false;
 	private bool PVPTime = false;
@@ -20,7 +21,7 @@ public sealed class GameManager : Component
 	
 	private bool timerGo = false;
 	private bool DeployPlayersToPVP = false;
-	private bool DeployPlayersToPVE = false;
+	public bool DeployPlayersToPVE = false;
 	private bool PVPRoundIsComplete = false;
 	private bool PVERoundIsComplete = false;
 	protected override void OnStart()
@@ -161,6 +162,12 @@ public sealed class GameManager : Component
 		PVERoundIsComplete = true;
 		PVPRoundIsComplete = false;
 		PVERoundTime = 30.0f;
+
+		foreach(var Enemy in ENS.Enemies)
+		{
+			Enemy.Destroy();
+		}
+		ENS.Enemies.Clear();
 	}
 
 	/*[Broadcast]

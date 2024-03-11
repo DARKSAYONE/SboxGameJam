@@ -1,8 +1,10 @@
 {
   "RootObject": {
-    "Id": "88a70b80-db62-4775-944a-b98ef08fbe8e",
+    "Id": "bcfa533a-d76f-4751-b0a9-646d3cd91c0e",
     "Name": "enemy",
+    "Tags": "npc",
     "Enabled": true,
+    "NetworkMode": 2,
     "Components": [
       {
         "__type": "NavMeshAgent",
@@ -16,9 +18,8 @@
       },
       {
         "__type": "EnemyAI",
-        "Agent": null,
         "AttackRange": 60,
-        "attackVoice": null
+        "Players": []
       },
       {
         "__type": "SoundBoxComponent",
@@ -37,16 +38,16 @@
     ],
     "Children": [
       {
-        "Id": "e22c018b-825b-4a45-8e85-b1af255bc635",
+        "Id": "cb01e348-581f-47ca-a714-224c78fb64a0",
         "Name": "Sphere",
         "Position": "0,0,35.90504",
         "Scale": "0.4949173,0.4949173,1.217531",
         "Enabled": true,
+        "NetworkMode": 2,
         "Components": [
           {
             "__type": "ModelRenderer",
             "BodyGroups": 18446744073709551615,
-            "MaterialGroup": null,
             "MaterialOverride": "models/citizen/skin/citizen_skin.vmat",
             "Model": "models/dev/sphere.vmdl",
             "RenderType": "On",
@@ -57,8 +58,7 @@
             "Center": "0,0,0",
             "IsTrigger": false,
             "Scale": "50,50,50",
-            "Static": false,
-            "Surface": null
+            "Static": false
           }
         ]
       }
@@ -67,7 +67,5 @@
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
-  "__references": [
-    "ipvfour.yougotmail"
-  ]
+  "__references": []
 }

@@ -7,6 +7,7 @@
       "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
       "Tags": "light_directional,light",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "DirectionalLight",
@@ -23,6 +24,7 @@
       "Name": "2D Skybox",
       "Tags": "skybox",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "SkyBox2D",
@@ -47,6 +49,7 @@
       "Name": "Camera",
       "Position": "-125.1459,-196.9508,127.2752",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "CameraComponent",
@@ -110,6 +113,7 @@
       "Name": "Network(Maybe)",
       "Position": "-43.87151,12.12111,80.64072",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "NetworkHelper",
@@ -131,7 +135,8 @@
       "Id": "d4b8cfa2-49f2-4024-9213-b0d077563c14",
       "Name": "PlayerSpawn",
       "Position": "-207.5675,-111.544,86.84273",
-      "Enabled": true
+      "Enabled": true,
+      "NetworkMode": 2
     },
     {
       "Id": "94c48db5-5dd9-46b2-974b-5ab1cdb2ba9d",
@@ -139,6 +144,7 @@
       "Position": "-309.6895,53.81025,53.0498",
       "Scale": "1.296915,1.703792,1.504388",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "WorldPanel",
@@ -159,6 +165,7 @@
       "Name": "GameManager",
       "Position": "-94.99576,-28.18832,156.6965",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "GameManager",
@@ -197,6 +204,7 @@
       "Name": "MapLoader",
       "Position": "-335.2686,45.33685,-82.76392",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "MapInstance",
@@ -209,12 +217,14 @@
     {
       "Id": "44c1a926-f707-45ae-9791-16e3842667f4",
       "Name": "Testmap",
+      "NetworkMode": 2,
       "Children": [
         {
           "Id": "6ad70641-3c6c-4402-9c85-9a4969af4764",
           "Name": "Plane",
           "Scale": "15,15,3",
           "Enabled": true,
+          "NetworkMode": 2,
           "Components": [
             {
               "__type": "ModelRenderer",
@@ -239,6 +249,7 @@
           "Position": "194.3498,-7.606064,53.00799",
           "Scale": "1.992922,5.117368,2.256136",
           "Enabled": true,
+          "NetworkMode": 2,
           "Components": [
             {
               "__type": "ModelRenderer",
@@ -262,67 +273,93 @@
       "Id": "3fc74111-de18-4286-9160-2d557c3d425c",
       "Name": "Object",
       "Position": "901.9273,2654.035,1335.521",
-      "Enabled": true
+      "Enabled": true,
+      "NetworkMode": 2
     },
     {
       "Id": "a3a4b7f1-4465-4c40-9074-09356aa883c4",
       "Name": "SpawnPositions",
       "Position": "901.9273,2654.035,1335.521",
       "Enabled": true,
+      "NetworkMode": 2,
       "Children": [
         {
           "Id": "79cfdde1-08f1-4838-827d-090b0c15043c",
           "Name": "PVPSpawnPos1",
           "Position": "-1977.376,-3128.338,-1187.162",
-          "Enabled": true
+          "Enabled": true,
+          "NetworkMode": 2
         },
         {
           "Id": "5c73d03f-62c9-49d2-967e-cf5d7b001f73",
           "Name": "PVPSpawnPos2",
           "Position": "-354.5336,-3353.976,-1170.3",
-          "Enabled": true
+          "Enabled": true,
+          "NetworkMode": 2
         },
         {
           "Id": "af0f8d2e-f701-4e88-8642-ced233dd171d",
           "Name": "PVESpawnPos1",
           "Position": "615.826,-1041.63,-1187.162",
-          "Enabled": true
+          "Enabled": true,
+          "NetworkMode": 2
         },
         {
           "Id": "171b7c76-2fac-4335-8b51-3a045dc9f088",
           "Name": "PVESpawnPos2",
           "Position": "-1977.376,-920.0416,-1187.162",
-          "Enabled": true
+          "Enabled": true,
+          "NetworkMode": 2
         }
       ]
     },
     {
       "Id": "81249a40-2bfe-4aeb-b029-d6e0b7e0bbff",
       "Name": "MobSpawner",
-      "Position": "901.9273,1459.826,256.1647",
+      "Position": "901.9273,1459.826,91.69547",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "EnemyNetSpawner",
+          "Enemies": [],
           "EnemyPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/enemy.prefab"
-          }
+          },
+          "GM": {
+            "_type": "component",
+            "go": "62755e2a-81ca-4ecf-918b-9c9d522479dc",
+            "component_type": "GameManager"
+          },
+          "MobSpawnPos": [
+            {
+              "_type": "gameobject",
+              "go": "0dd46a58-115a-4d14-9d78-b544cc84d742"
+            },
+            {
+              "_type": "gameobject",
+              "go": "ef7e257a-dd7e-4bab-82ca-a5bf7cbc752f"
+            }
+          ],
+          "Players": [],
+          "SpawnDelay": 5
         }
-      ]
-    },
-    {
-      "Id": "4e7069f8-06ce-453d-9da4-227d2c6252b6",
-      "Name": "MobSpawner2",
-      "Position": "-1368.526,1126.135,74.50866",
-      "Enabled": true,
-      "Components": [
+      ],
+      "Children": [
         {
-          "__type": "EnemyNetSpawner",
-          "EnemyPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/enemy.prefab"
-          }
+          "Id": "0dd46a58-115a-4d14-9d78-b544cc84d742",
+          "Name": "NPCSpawn1",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2
+        },
+        {
+          "Id": "ef7e257a-dd7e-4bab-82ca-a5bf7cbc752f",
+          "Name": "NPCSpawn2",
+          "Position": "-1771.62,0,0",
+          "Enabled": true,
+          "NetworkMode": 2
         }
       ]
     }
@@ -336,7 +373,7 @@
     "TimeScale": 1,
     "UseFixedUpdate": true,
     "NavMesh": {
-      "Enabled": false,
+      "Enabled": true,
       "IncludeStaticBodies": true,
       "IncludeKeyframedBodies": true,
       "EditorAutoUpdate": true,
@@ -350,6 +387,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-11T15:40:27.778868\u002B03:00",
+  "LastSaved": "2024-03-11T20:40:33.7043026\u002B03:00",
   "__references": []
 }
