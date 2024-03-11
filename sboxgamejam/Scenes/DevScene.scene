@@ -46,7 +46,6 @@
       "Id": "6ad70641-3c6c-4402-9c85-9a4969af4764",
       "Name": "Plane",
       "Scale": "15,15,3",
-      "Enabled": true,
       "Components": [
         {
           "__type": "ModelRenderer",
@@ -138,6 +137,7 @@
       "Components": [
         {
           "__type": "NetworkHelper",
+          "ActivePlayers": [],
           "PlayerPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/player.prefab"
@@ -185,25 +185,22 @@
       ]
     },
     {
-      "Id": "1d425543-1d7f-4fbb-b9cc-5bc79c785329",
-      "Name": "EnemySpawner",
-      "Position": "-254.8424,240.3968,62.81738",
+
+      "Id": "7dd666c9-61aa-40dd-85ce-65fc246766f2",
+      "Name": "MapLoader",
+      "Position": "158.4539,-1620.605,190.6252",
       "Enabled": true,
       "Components": [
         {
-          "__type": "EnemyNetSpawner",
-          "EnemyPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/enemy.prefab"
-          }
+          "__type": "MapInstance",
+          "MapName": "leeroystuff.gm_flatgrass_cl",
+          "OnMapLoaded": null,
+          "OnMapUnloaded": null,
+          "UseMapFromLaunch": false
         }
-      ]
-    },
-    {
-      "Id": "05833b5e-ee5f-4bd7-8091-cce9fda21473",
-      "Name": "Gamemanager",
-      "Position": "41.34938,-80.9453,139.6161",
-      "Enabled": true
+      ],
+      "Children": []
+
     }
   ],
   "SceneProperties": {
@@ -229,6 +226,8 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-03T15:07:39.7443228\u002B03:00",
+
+  "LastSaved": "2024-03-10T01:49:01.1210339\u002B03:00",
+
   "__references": []
 }

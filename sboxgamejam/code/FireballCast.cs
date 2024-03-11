@@ -7,38 +7,58 @@ public sealed class FireballCast : Component
     public GameObject FireballPrefab;
     [Property]
     public GameObject FireballSpawnPos;
-    [Property]
+    [Property]	
     public GameObject CameraFind;
+	[Property]
+	public float CooldownTime = 2.0f;
+	private bool OnCooldown = false;
+	private float TimerCooldown;
 
-	private bool canShoot = false;
+	[Property]
+	public SoundPointComponent SoundPoint;
 
-    protected override void OnAwake()
+
+	protected override void OnStart()
+	{
+		base.OnStart();
+		TimerCooldown = CooldownTime;
+	}
+
+	protected override void OnUpdate()
     {
-        base.OnAwake();
-        // fireballspawnPos = GameObject.Scene.Directory.FindByName("Camera");
+		if ( OnCooldown )
+			CooldownTimer();
 
+        CastFireball();
+    }
 
-		/*if(!IsProxy)
+	void CastFireball()
+	{
+		if ( !IsProxy )
 		{
-			canShoot = true;
+			if ( Input.Pressed( "Attack1" ) && !OnCooldown )
+			{
+				var netFireball = FireballPrefab.Clone( FireballSpawnPos.Transform.Position + Vector3.Forward, FireballSpawnPos.Parent.Transform.Rotation );
+				netFireball.Name = $"{GameObject.Name} - Fireball";
+				netFireball.NetworkSpawn( GameObject.Network.OwnerConnection );
+				OnCooldown = true;
+				
+			}
 		}
-		*/
+	}
 
-    }
+	void CooldownTimer()
+	{
+		if ( TimerCooldown > 0 )
+		{
+			TimerCooldown -= Time.Delta;
+		}
+		else if ( TimerCooldown < 0 ) 
+		{
+			SoundPoint.StartSound();
+			OnCooldown = false;
+			TimerCooldown = CooldownTime;
+		}
 
-    protected override void OnUpdate()
-    {
-        if (!IsProxy)
-        {
-            if (Input.Pressed("Attack1"))
-            {
-                var netFireball = FireballPrefab.Clone(FireballSpawnPos.Transform.Position + Vector3.Forward, FireballSpawnPos.Transform.Rotation);
-                netFireball.NetworkSpawn();
-            }
-        }
-        else
-        {
-            //Log.Info("IsProxy didn't work.");
-        }
-    }
+	}
 }

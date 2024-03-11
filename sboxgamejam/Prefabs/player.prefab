@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "030b12a6-757d-493b-9f6f-3b8c3e96fd1e",
+    "Id": "37d606b1-6784-4c52-b4f3-bfa2519f8e80",
     "Name": "player",
     "Tags": "player",
     "Enabled": true,
@@ -19,34 +19,50 @@
         "__type": "PlayerController",
         "Cam": {
           "_type": "component",
-          "go": "30e70096-b625-48bd-a42e-b5743d50108c",
+          "go": "ddd41188-5af1-47a9-959c-1ce1ed831ffd",
           "component_type": "CameraComponent"
         },
         "AnimationHelper": {
           "_type": "component",
-          "go": "c57f4596-e17d-4783-91af-4ba3993db6ea",
+          "go": "8498b525-eb15-4dda-9f95-3d99462aa7da",
           "component_type": "CitizenAnimationHelper"
         },
         "CharacterController": {
           "_type": "component",
-          "go": "030b12a6-757d-493b-9f6f-3b8c3e96fd1e",
+          "go": "37d606b1-6784-4c52-b4f3-bfa2519f8e80",
           "component_type": "CharacterController"
         },
         "CrouchMoveSpeed": 64,
+        "Experience": 0,
+        "Fortitude": 0,
+        "HitSpeed": 0,
+        "HP": 0,
+        "Level": 0,
+        "Mana": 0,
+        "ManaRegen": 0,
+        "MindPower": 0,
+        "MovementSpeed": 0,
+        "PhysicalPower": 0,
+        "Protection": 0,
         "RunMoveSpeed": 190,
         "SprintMoveSpeed": 320,
         "WalkMoveSpeed": 110
       },
       {
         "__type": "FireballCast",
-        "CameraFind": null,
+        "CooldownTime": 2,
         "FireballPrefab": {
           "_type": "gameobject",
           "prefab": "prefabs/fireball.prefab"
         },
         "FireballSpawnPos": {
           "_type": "gameobject",
-          "go": "5dfce719-3243-414b-9705-aa634ef5f165"
+          "go": "8f3ad2ee-8eaa-4d55-907f-a4b693db9571"
+        },
+        "SoundPoint": {
+          "_type": "component",
+          "go": "0b348e9a-1ce8-4dc1-9ff6-9575482c2a1b",
+          "component_type": "SoundPointComponent"
         }
       },
       {
@@ -66,18 +82,14 @@
     ],
     "Children": [
       {
-        "Id": "c57f4596-e17d-4783-91af-4ba3993db6ea",
+        "Id": "8498b525-eb15-4dda-9f95-3d99462aa7da",
         "Name": "Player Body",
         "Enabled": true,
         "Components": [
           {
             "__type": "SkinnedModelRenderer",
-            "AnimationGraph": null,
             "BodyGroups": 341,
-            "BoneMergeTarget": null,
             "CreateBoneObjects": false,
-            "MaterialGroup": null,
-            "MaterialOverride": null,
             "Model": "models/citizen/citizen.vmdl",
             "RenderType": "ShadowsOnly",
             "Tint": "1,1,1,1"
@@ -85,19 +97,13 @@
           {
             "__type": "CitizenAnimationHelper",
             "BodyWeight": 1,
-            "EyeSource": null,
             "EyesWeight": 1,
             "HeadWeight": 1,
             "Height": 1,
-            "IkLeftFoot": null,
-            "IkLeftHand": null,
-            "IkRightFoot": null,
-            "IkRightHand": null,
-            "LookAt": null,
             "LookAtEnabled": false,
             "Target": {
               "_type": "component",
-              "go": "c57f4596-e17d-4783-91af-4ba3993db6ea",
+              "go": "8498b525-eb15-4dda-9f95-3d99462aa7da",
               "component_type": "SkinnedModelRenderer"
             }
           },
@@ -105,7 +111,7 @@
             "__type": "PlayerDresser",
             "BodyRenderer": {
               "_type": "component",
-              "go": "c57f4596-e17d-4783-91af-4ba3993db6ea",
+              "go": "8498b525-eb15-4dda-9f95-3d99462aa7da",
               "component_type": "SkinnedModelRenderer"
             }
           },
@@ -113,14 +119,14 @@
             "__type": "PlayerFootsteps",
             "Source": {
               "_type": "component",
-              "go": "c57f4596-e17d-4783-91af-4ba3993db6ea",
+              "go": "8498b525-eb15-4dda-9f95-3d99462aa7da",
               "component_type": "SkinnedModelRenderer"
             }
           }
         ]
       },
       {
-        "Id": "68cf5f87-54e7-4878-b0da-36dbedff2ea8",
+        "Id": "d801a93b-c73b-44d7-bc17-fd4a139b2308",
         "Name": "Physics Pusher",
         "Position": "0,0,22.68671",
         "Components": [
@@ -129,13 +135,12 @@
             "Center": "0,0,0",
             "IsTrigger": false,
             "Scale": "36,36,40",
-            "Static": false,
-            "Surface": null
+            "Static": false
           }
         ]
       },
       {
-        "Id": "b38dc054-879f-4db4-8870-198ef324aab9",
+        "Id": "1592a067-a216-44f8-868f-71163f27be13",
         "Name": "Voice",
         "Position": "42.0599,39.05991,-23.23907",
         "Enabled": true,
@@ -149,7 +154,7 @@
             "PushToTalkInput": "voice",
             "Renderer": {
               "_type": "component",
-              "go": "c57f4596-e17d-4783-91af-4ba3993db6ea",
+              "go": "8498b525-eb15-4dda-9f95-3d99462aa7da",
               "component_type": "SkinnedModelRenderer"
             },
             "Volume": 1,
@@ -158,7 +163,7 @@
         ]
       },
       {
-        "Id": "4306ecf3-db32-4215-9c56-ade07f237133",
+        "Id": "b1b83cee-0abc-421e-a255-5695bed3bd2e",
         "Name": "World",
         "Position": "0,0,77.72417",
         "Enabled": true,
@@ -173,11 +178,15 @@
           },
           {
             "__type": "NameTagPanel"
+          },
+          {
+            "__type": "RazorTest",
+            "MyStringValue": "Hello World!"
           }
         ]
       },
       {
-        "Id": "bebd31a0-e84f-4c64-b7f8-7306c0ffc956",
+        "Id": "3eab6753-7b35-46e2-8d73-a4a724f3293b",
         "Name": "Player Pusher",
         "Position": "0,0,32",
         "Enabled": true,
@@ -189,7 +198,7 @@
         ]
       },
       {
-        "Id": "30e70096-b625-48bd-a42e-b5743d50108c",
+        "Id": "ddd41188-5af1-47a9-959c-1ce1ed831ffd",
         "Name": "Camera",
         "Position": "0,0,64",
         "Enabled": true,
@@ -216,7 +225,7 @@
         ],
         "Children": [
           {
-            "Id": "5dfce719-3243-414b-9705-aa634ef5f165",
+            "Id": "8f3ad2ee-8eaa-4d55-907f-a4b693db9571",
             "Name": "FireballSpawner",
             "Position": "43.54512,-4.965918,-3.071289",
             "Scale": "0.2780159,0.2780159,0.2780159",
@@ -226,13 +235,32 @@
                 "__type": "ModelRenderer",
                 "__enabled": false,
                 "BodyGroups": 18446744073709551615,
-                "MaterialGroup": null,
-                "MaterialOverride": null,
                 "Model": "models/dev/box.vmdl",
                 "RenderType": "On",
                 "Tint": "1,1,1,1"
               }
             ]
+          }
+        ]
+      },
+      {
+        "Id": "0b348e9a-1ce8-4dc1-9ff6-9575482c2a1b",
+        "Name": "Sound",
+        "Position": "-29.0657,79.24033,67.7169",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "SoundPointComponent",
+            "Force2d": false,
+            "MaxRepeatTime": 1,
+            "MinRepeatTime": 1,
+            "Pitch": 1,
+            "PlayOnStart": false,
+            "Repeat": false,
+            "SoundEvent": "sound/reloadtestsound.sound",
+            "SoundOverride": false,
+            "StopOnNew": false,
+            "Volume": 1
           }
         ]
       }

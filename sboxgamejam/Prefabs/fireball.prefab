@@ -1,8 +1,9 @@
 {
   "RootObject": {
-    "Id": "0d3aaedb-2507-43ab-87a3-4b722698ea1b",
+    "Id": "91c37b3f-d544-4f52-8f21-b01498a13928",
     "Name": "fireball",
     "Scale": "0.1833652,0.1833652,0.1833652",
+    "Tags": "spell",
     "Networked": true,
     "Enabled": true,
     "Components": [
@@ -10,7 +11,7 @@
         "__type": "ModelRenderer",
         "BodyGroups": 18446744073709551615,
         "MaterialGroup": null,
-        "MaterialOverride": "people/materials/models/eft/scavs/mats/misha_d.vmat",
+        "MaterialOverride": "materials/effects/fire_cloud1.vmat",
         "Model": "models/dev/sphere.vmdl",
         "RenderType": "On",
         "Tint": "1,1,1,1"
@@ -18,7 +19,7 @@
       {
         "__type": "Rigidbody",
         "AngularDamping": 0,
-        "Gravity": false,
+        "Gravity": true,
         "LinearDamping": 0,
         "Locking": {},
         "MassOverride": 0,
@@ -28,24 +29,19 @@
       {
         "__type": "SphereCollider",
         "Center": "0,0,0",
-        "IsTrigger": true,
+        "IsTrigger": false,
         "Radius": 10,
         "Static": false,
         "Surface": "surfaces/brick.surface"
       },
       {
         "__type": "Fireball",
-        "rb": {
-          "_type": "component",
-          "go": "0d3aaedb-2507-43ab-87a3-4b722698ea1b",
-          "component_type": "Rigidbody"
-        },
         "speed": 500
       }
     ],
     "Children": [
       {
-        "Id": "e11e6045-530c-43cf-8b16-919dbe3d887a",
+        "Id": "0f14bb67-5fcc-41a2-886c-6f31d4a7f288",
         "Name": "Spray",
         "Rotation": "0,0,1,0.0000001947072",
         "Tags": "particles",
@@ -217,7 +213,5 @@
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
-  "__references": [
-    "mapperskai.scav"
-  ]
+  "__references": []
 }

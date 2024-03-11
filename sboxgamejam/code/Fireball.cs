@@ -1,10 +1,10 @@
 using Sandbox;
 
-public sealed class Fireball : Component, Component.ITriggerListener
+public sealed class Fireball : Component, Component.ICollisionListener
 {
-	[Property] private Rigidbody rb;
 	[Property] public float speed = 100;
 
+	private Rigidbody rb;
 	private float creationTime;
 	protected override void OnStart()
 	{
@@ -25,21 +25,34 @@ public sealed class Fireball : Component, Component.ITriggerListener
 		//Transform.Position += Transform.Rotation.Forward * speed * Time.Delta; // Use when need no move it without gravity
 	}
 
-	public void OnTriggerEnter( Collider other )
+	//[Broadcast]
+	public void OnCollisionStart( Collision other )
 	{
-		if ( other.GameObject.Tags.Has( "player" ) )
+		if ( IsProxy )
+			return;
+
+		if ( other.Other.GameObject.Tags.Has( "player" ) )
 		{
-			Log.Info( "The fireball hit its target!" );
-			GameObject.Destroy();
+			var ownerName = GameObject.Name.Substring( 0, GameObject.Name.LastIndexOf( " - " ) );
+			Log.Info( ownerName );
+
+			var attackerGUID = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == ownerName ).Id;
+			other.Other.GameObject.Parent.Components.Get<PlayerController>().TakeDamage( attackerGUID );
 		}
 		else
 		{
 			Log.Info( "fireball hit the obj" );
-			GameObject.Destroy();
 		}
+
+		GameObject.Destroy();
 	}
 
-	public void OnTriggerExit( Collider other )
+	public void OnCollisionUpdate( Collision other )
+	{
+
+	}
+
+	public void OnCollisionStop( CollisionStop other )
 	{
 		
 	}
