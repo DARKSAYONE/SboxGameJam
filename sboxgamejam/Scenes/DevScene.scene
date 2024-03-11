@@ -169,6 +169,11 @@
       "Components": [
         {
           "__type": "GameManager",
+          "ENS": {
+            "_type": "component",
+            "go": "81249a40-2bfe-4aeb-b029-d6e0b7e0bbff",
+            "component_type": "EnemyNetSpawner"
+          },
           "Players": [],
           "PlayersScore": [
             0,
@@ -387,6 +392,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-11T20:40:33.7043026\u002B03:00",
+  "LastSaved": "2024-03-11T20:55:45.855388\u002B03:00",
   "__references": []
 }
