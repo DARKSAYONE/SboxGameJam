@@ -1,5 +1,5 @@
 {
-  "Id": "d7c2c0b9-ca80-4407-b4d1-3c461e226ae6",
+  "Id": "9f832399-4887-46b0-8f21-2ee284f538e2",
   "GameObjects": [
     {
       "Id": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
@@ -27,7 +27,7 @@
         {
           "__type": "SkyBox2D",
           "SkyMaterial": "materials/skybox/light_test_sky_sunny03.vmat",
-          "Tint": "0.95349,0.45679,0.45679,1"
+          "Tint": "1,1,1,1"
         },
         {
           "__type": "EnvmapProbe",
@@ -39,30 +39,6 @@
           "Projection": "Sphere",
           "Texture": "textures/cubemaps/default2.vtex",
           "TintColor": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "Id": "6ad70641-3c6c-4402-9c85-9a4969af4764",
-      "Name": "Plane",
-      "Scale": "15,15,3",
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": "materials/default.vmat",
-          "Model": "models/dev/plane.vmdl",
-          "RenderType": "On",
-          "Tint": "0.39546,0.51163,0.27128,1"
-        },
-        {
-          "__type": "BoxCollider",
-          "Center": "0,0,-5",
-          "IsTrigger": false,
-          "Scale": "100,100,10",
-          "Static": false,
-          "Surface": null
         }
       ]
     },
@@ -137,7 +113,6 @@
       "Components": [
         {
           "__type": "NetworkHelper",
-          "ActivePlayers": [],
           "PlayerPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/player.prefab"
@@ -159,52 +134,129 @@
       "Enabled": true
     },
     {
-      "Id": "f0acba90-726e-4846-848c-2ee77df35c83",
-      "Name": "Wall",
-      "Position": "194.3498,-7.606064,53.00799",
-      "Scale": "1.992922,5.117368,2.256136",
+      "Id": "94c48db5-5dd9-46b2-974b-5ab1cdb2ba9d",
+      "Name": "World",
+      "Position": "-309.6895,53.81025,53.0498",
+      "Scale": "1.296915,1.703792,1.504388",
       "Enabled": true,
       "Components": [
         {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "0.43333,1,0,1"
+          "__type": "WorldPanel",
+          "HorizontalAlign": "Center",
+          "LookAtCamera": false,
+          "PanelSize": "512,512",
+          "RenderScale": 1,
+          "VerticalAlign": "Center"
         },
         {
-          "__type": "BoxCollider",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "__type": "RazorTest",
+          "MyStringValue": "Hello World!"
         }
       ]
     },
     {
-
-
-      "Id": "7dd666c9-61aa-40dd-85ce-65fc246766f2",
+      "Id": "62755e2a-81ca-4ecf-918b-9c9d522479dc",
+      "Name": "GameManager",
+      "Position": "-94.99576,-28.18832,156.6965",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "GameManager",
+          "Players": [],
+          "PlayersScore": [
+            0,
+            0
+          ],
+          "SpawnPositions": [
+            {
+              "_type": "gameobject",
+              "go": "79cfdde1-08f1-4838-827d-090b0c15043c"
+            },
+            {
+              "_type": "gameobject",
+              "go": "5c73d03f-62c9-49d2-967e-cf5d7b001f73"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "79cfdde1-08f1-4838-827d-090b0c15043c",
+      "Name": "SpawnPos1",
+      "Position": "-94.99576,531.0259,156.6965",
+      "Enabled": true
+    },
+    {
+      "Id": "5c73d03f-62c9-49d2-967e-cf5d7b001f73",
+      "Name": "SpawnPos2",
+      "Position": "-94.99576,-452.5156,156.6965",
+      "Enabled": true
+    },
+    {
+      "Id": "f63d93a9-b3a1-4196-b642-9c5960f30ade",
       "Name": "MapLoader",
-      "Position": "158.4539,-1620.605,190.6252",
-
+      "Position": "-335.2686,45.33685,-82.76392",
       "Enabled": true,
       "Components": [
         {
           "__type": "MapInstance",
-
-          "MapName": "leeroystuff.gm_flatgrass_cl",
-
-          "OnMapLoaded": null,
-          "OnMapUnloaded": null,
+          "MapName": "starblue.oil_rig",
           "UseMapFromLaunch": false
         }
       ],
       "Children": []
-
+    },
+    {
+      "Id": "44c1a926-f707-45ae-9791-16e3842667f4",
+      "Name": "Testmap",
+      "Children": [
+        {
+          "Id": "6ad70641-3c6c-4402-9c85-9a4969af4764",
+          "Name": "Plane",
+          "Scale": "15,15,3",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/default.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "0.39546,0.51163,0.27128,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,-5",
+              "IsTrigger": false,
+              "Scale": "100,100,10",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "Id": "f0acba90-726e-4846-848c-2ee77df35c83",
+          "Name": "Wall",
+          "Position": "194.3498,-7.606064,53.00799",
+          "Scale": "1.992922,5.117368,2.256136",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "0.43333,1,0,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -216,7 +268,7 @@
     "TimeScale": 1,
     "UseFixedUpdate": true,
     "NavMesh": {
-      "Enabled": true,
+      "Enabled": false,
       "IncludeStaticBodies": true,
       "IncludeKeyframedBodies": true,
       "EditorAutoUpdate": true,
@@ -230,10 +282,6 @@
   },
   "Title": "minimal",
   "Description": "",
-
-
-  "LastSaved": "2024-03-10T01:49:01.1210339\u002B03:00",
-
-
+  "LastSaved": "2024-03-11T14:50:17.2880607\u002B03:00",
   "__references": []
 }
