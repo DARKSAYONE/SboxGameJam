@@ -1,17 +1,15 @@
 {
   "RootObject": {
-    "Id": "91c37b3f-d544-4f52-8f21-b01498a13928",
+    "Id": "9bafabcc-30ef-4041-a5e4-2458f790d468",
     "Name": "fireball",
     "Scale": "0.1833652,0.1833652,0.1833652",
-    "Tags": "spell",
     "Networked": true,
     "Enabled": true,
     "Components": [
       {
         "__type": "ModelRenderer",
         "BodyGroups": 18446744073709551615,
-        "MaterialGroup": null,
-        "MaterialOverride": "materials/effects/fire_cloud1.vmat",
+        "MaterialOverride": "people/materials/models/eft/scavs/mats/misha_d.vmat",
         "Model": "models/dev/sphere.vmdl",
         "RenderType": "On",
         "Tint": "1,1,1,1"
@@ -19,7 +17,7 @@
       {
         "__type": "Rigidbody",
         "AngularDamping": 0,
-        "Gravity": true,
+        "Gravity": false,
         "LinearDamping": 0,
         "Locking": {},
         "MassOverride": 0,
@@ -41,7 +39,7 @@
     ],
     "Children": [
       {
-        "Id": "0f14bb67-5fcc-41a2-886c-6f31d4a7f288",
+        "Id": "0de25019-ad5f-4ea9-97dd-f7b98d7ce2be",
         "Name": "Spray",
         "Rotation": "0,0,1,0.0000001947072",
         "Tags": "particles",
@@ -80,7 +78,6 @@
             },
             "Bumpiness": {},
             "Collision": false,
-            "CollisionIgnore": null,
             "CollisionRadius": 1,
             "Damping": {},
             "DieOnCollisionChance": {},
@@ -213,5 +210,7 @@
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
-  "__references": []
+  "__references": [
+    "mapperskai.scav"
+  ]
 }

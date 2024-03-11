@@ -167,7 +167,18 @@
             0,
             0
           ],
-          "SpawnPositions": [
+          "PVERoundSpawnPos": [
+            {
+              "_type": "gameobject",
+              "go": "af0f8d2e-f701-4e88-8642-ced233dd171d"
+            },
+            {
+              "_type": "gameobject",
+              "go": "171b7c76-2fac-4335-8b51-3a045dc9f088"
+            }
+          ],
+          "PVERoundTime": 11,
+          "PVPRoundSpawnPos": [
             {
               "_type": "gameobject",
               "go": "79cfdde1-08f1-4838-827d-090b0c15043c"
@@ -176,21 +187,10 @@
               "_type": "gameobject",
               "go": "5c73d03f-62c9-49d2-967e-cf5d7b001f73"
             }
-          ]
+          ],
+          "PVPRoundTime": 11
         }
       ]
-    },
-    {
-      "Id": "79cfdde1-08f1-4838-827d-090b0c15043c",
-      "Name": "SpawnPos1",
-      "Position": "-94.99576,531.0259,156.6965",
-      "Enabled": true
-    },
-    {
-      "Id": "5c73d03f-62c9-49d2-967e-cf5d7b001f73",
-      "Name": "SpawnPos2",
-      "Position": "-94.99576,-452.5156,156.6965",
-      "Enabled": true
     },
     {
       "Id": "f63d93a9-b3a1-4196-b642-9c5960f30ade",
@@ -200,7 +200,7 @@
       "Components": [
         {
           "__type": "MapInstance",
-          "MapName": "starblue.oil_rig",
+          "MapName": "smwstcstfurry.boxtest",
           "UseMapFromLaunch": false
         }
       ],
@@ -257,6 +257,74 @@
           ]
         }
       ]
+    },
+    {
+      "Id": "3fc74111-de18-4286-9160-2d557c3d425c",
+      "Name": "Object",
+      "Position": "901.9273,2654.035,1335.521",
+      "Enabled": true
+    },
+    {
+      "Id": "a3a4b7f1-4465-4c40-9074-09356aa883c4",
+      "Name": "SpawnPositions",
+      "Position": "901.9273,2654.035,1335.521",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "79cfdde1-08f1-4838-827d-090b0c15043c",
+          "Name": "PVPSpawnPos1",
+          "Position": "-1977.376,-3128.338,-1187.162",
+          "Enabled": true
+        },
+        {
+          "Id": "5c73d03f-62c9-49d2-967e-cf5d7b001f73",
+          "Name": "PVPSpawnPos2",
+          "Position": "-354.5336,-3353.976,-1170.3",
+          "Enabled": true
+        },
+        {
+          "Id": "af0f8d2e-f701-4e88-8642-ced233dd171d",
+          "Name": "PVESpawnPos1",
+          "Position": "615.826,-1041.63,-1187.162",
+          "Enabled": true
+        },
+        {
+          "Id": "171b7c76-2fac-4335-8b51-3a045dc9f088",
+          "Name": "PVESpawnPos2",
+          "Position": "-1977.376,-920.0416,-1187.162",
+          "Enabled": true
+        }
+      ]
+    },
+    {
+      "Id": "81249a40-2bfe-4aeb-b029-d6e0b7e0bbff",
+      "Name": "MobSpawner",
+      "Position": "901.9273,1459.826,256.1647",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "EnemyNetSpawner",
+          "EnemyPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/enemy.prefab"
+          }
+        }
+      ]
+    },
+    {
+      "Id": "4e7069f8-06ce-453d-9da4-227d2c6252b6",
+      "Name": "MobSpawner2",
+      "Position": "-1368.526,1126.135,74.50866",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "EnemyNetSpawner",
+          "EnemyPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/enemy.prefab"
+          }
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -282,6 +350,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-11T14:50:17.2880607\u002B03:00",
+  "LastSaved": "2024-03-11T15:40:27.778868\u002B03:00",
   "__references": []
 }

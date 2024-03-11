@@ -6,16 +6,23 @@ public sealed class GameManager : Component
 {
 
 	[Property] private List<GameObject> Players = new List<GameObject>();
-	[Property] private List<GameObject> SpawnPositions = new List<GameObject>();
+	[Property] private List<GameObject> PVPRoundSpawnPos = new List<GameObject>();
+	[Property] private List<GameObject> PVERoundSpawnPos = new List<GameObject>();
 	[Property] private List<int> PlayersScore = new List<int>() { 0, 0 };
 	[Property] private GameObject BaseSpawnPos;
-	
-	private bool AllPlayersReady = false;
+	[Property] private float PVPRoundTime = 30.0f;
+	[Property] private float PVERoundTime = 30.0f;
 
-	private bool RoundOn = false;
+	private bool AllPlayersReady = false;
+	private bool PVPTime = false;
+	private bool BeforeRoundTimer = false;
 	private float RoundStartTimer = 10f;
+	
 	private bool timerGo = false;
-	private bool DeployPlayers = false;
+	private bool DeployPlayersToPVP = false;
+	private bool DeployPlayersToPVE = false;
+	private bool PVPRoundIsComplete = false;
+	private bool PVERoundIsComplete = false;
 	protected override void OnStart()
 	{
 		base.OnStart();
@@ -27,16 +34,22 @@ public sealed class GameManager : Component
 		if(!AllPlayersReady)
 		PlayerInitialization();
 
-		if(AllPlayersReady && !RoundOn)
+		if(AllPlayersReady && !BeforeRoundTimer)
 		{
 			TimerBeforeRoundStart();
 		}
 
-		if(AllPlayersReady && RoundOn)
+		if(AllPlayersReady && BeforeRoundTimer && !PVPRoundIsComplete)
 		{
 			PVPRound();
-			
 		}
+		else if(AllPlayersReady && BeforeRoundTimer && PVPRoundIsComplete)
+		{
+			PVERound();
+		}
+
+		
+
 
 		//RoundStopped();
 	}
@@ -57,23 +70,38 @@ public sealed class GameManager : Component
 	
 	void PVPRound()
 	{
-		bool CheckWin = false;
-		if (!DeployPlayers)
+		if (!DeployPlayersToPVP)
 		{
 			for ( int i = 0; i < Players.Count; i++ )
 			{
-				Players[i].Transform.Position = SpawnPositions[i].Transform.Position;
+				Players[i].Transform.Position = PVPRoundSpawnPos[i].Transform.Position;
 			}
 			Log.Info( "Players tele to spawn positions" );
-			DeployPlayers = true;
-			CheckWin = true;
+			DeployPlayersToPVP = true;
+			
 		}
 
-		if( CheckWin )
+		if ( DeployPlayersToPVP && !PVPRoundIsComplete)
+			PVPRoundTimer();
+	}
+
+	void PVERound()
+	{
+		if(!DeployPlayersToPVE)
 		{
-			//Написать шнягу что будет ждать информацию о смерти одного из игроков.
+			for ( int i = 0; i < Players.Count;i++ )
+			{
+				Players[i].Transform.Position = PVERoundSpawnPos[i].Transform.Position;
+			}
+			Log.Info( "Players tele to spawn positions" );
+			DeployPlayersToPVE = true;
+
 		}
-		
+
+		if(DeployPlayersToPVE && !PVERoundIsComplete)
+		{
+			PVERoundTimer();
+		}
 	}
 
 	void TimerBeforeRoundStart()
@@ -85,15 +113,55 @@ public sealed class GameManager : Component
 		}
 		else if(RoundStartTimer < 0)
 		{
-
-			RoundOn = true;
+			BeforeRoundTimer = true;
 			RoundStartTimer = 10f;
 		}
 	}
 
+	void PVPRoundTimer()
+	{
+		if(PVPRoundTime > 0)
+		{
+			PVPRoundTime -= Time.Delta;
+			Log.Info( PVPRoundTime );
+		}
+		else if(PVPRoundTime < 0)
+		{
+			PVPRoundEnd();
+			//PVPTime = true;
+		}
+	}
 
+	void PVERoundTimer()
+	{
+		if(PVERoundTime > 0)
+		{
+			PVERoundTime -= Time.Delta;
+			Log.Info(PVERoundTime );
+		}
+		else if(PVERoundTime < 0)
+		{
+			PVERoundEnd();
+		}
+	}
 
+	void PVPRoundEnd()
+	{
+		DeployPlayersToPVP = false;
+		BeforeRoundTimer = false;
+		PVPRoundIsComplete = true;
+		PVPRoundTime = 20.0f;
+		PVERoundIsComplete = false;
+	}
 
+	void PVERoundEnd()
+	{
+		DeployPlayersToPVE = false;
+		BeforeRoundTimer = false;
+		PVERoundIsComplete = true;
+		PVPRoundIsComplete = false;
+		PVERoundTime = 30.0f;
+	}
 
 	/*[Broadcast]
 	void RoundStopped()
