@@ -1,5 +1,5 @@
 {
-  "Id": "9f832399-4887-46b0-8f21-2ee284f538e2",
+  "Id": "d7c2c0b9-ca80-4407-b4d1-3c461e226ae6",
   "GameObjects": [
     {
       "Id": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
@@ -27,7 +27,7 @@
         {
           "__type": "SkyBox2D",
           "SkyMaterial": "materials/skybox/light_test_sky_sunny03.vmat",
-          "Tint": "1,1,1,1"
+          "Tint": "0.95349,0.45679,0.45679,1"
         },
         {
           "__type": "EnvmapProbe",
@@ -46,7 +46,6 @@
       "Id": "6ad70641-3c6c-4402-9c85-9a4969af4764",
       "Name": "Plane",
       "Scale": "15,15,3",
-      "Enabled": true,
       "Components": [
         {
           "__type": "ModelRenderer",
@@ -138,6 +137,7 @@
       "Components": [
         {
           "__type": "NetworkHelper",
+          "ActivePlayers": [],
           "PlayerPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/player.prefab"
@@ -185,63 +185,26 @@
       ]
     },
     {
-      "Id": "5b3b4798-9875-4e37-b712-0bb127276ae2",
-      "Name": "GameManager",
-      "Position": "-291.5914,-130.7598,181.6639",
-      "Networked": true,
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "GameManager",
-          "BaseSpawnPos": {
-            "_type": "gameobject",
-            "go": "d4b8cfa2-49f2-4024-9213-b0d077563c14"
-          },
-          "Players": [],
-          "PlayersScore": [
-            0,
-            0
-          ],
-          "SpawnPositions": [
-            {
-              "_type": "gameobject",
-              "go": "3f13ece6-273a-4455-ba56-ae343f890888"
-            },
-            {
-              "_type": "gameobject",
-              "go": "b83bc32a-152b-430e-af89-3ab323b88096"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Id": "3f13ece6-273a-4455-ba56-ae343f890888",
-      "Name": "SpawnPointOne",
-      "Position": "-139.0432,595.7968,158.8192",
-      "Enabled": true
-    },
-    {
-      "Id": "b83bc32a-152b-430e-af89-3ab323b88096",
-      "Name": "SpawnPointTwo",
-      "Position": "-139.0432,-646.6956,158.8192",
-      "Enabled": true
-    },
-    {
-      "Id": "13a67c67-4c55-4a8a-aa1a-6cd21ef5a89a",
+
+
+      "Id": "7dd666c9-61aa-40dd-85ce-65fc246766f2",
       "Name": "MapLoader",
-      "Position": "-748.5256,-193.8126,562.8197",
+      "Position": "158.4539,-1620.605,190.6252",
+
       "Enabled": true,
       "Components": [
         {
           "__type": "MapInstance",
-          "MapName": "pui.pui_flatgrass",
+
+          "MapName": "leeroystuff.gm_flatgrass_cl",
+
           "OnMapLoaded": null,
           "OnMapUnloaded": null,
           "UseMapFromLaunch": false
         }
       ],
       "Children": []
+
     }
   ],
   "SceneProperties": {
@@ -253,7 +216,7 @@
     "TimeScale": 1,
     "UseFixedUpdate": true,
     "NavMesh": {
-      "Enabled": false,
+      "Enabled": true,
       "IncludeStaticBodies": true,
       "IncludeKeyframedBodies": true,
       "EditorAutoUpdate": true,
@@ -267,6 +230,10 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-08T20:17:21.697719\u002B03:00",
+
+
+  "LastSaved": "2024-03-10T01:49:01.1210339\u002B03:00",
+
+
   "__references": []
 }

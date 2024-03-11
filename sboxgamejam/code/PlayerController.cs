@@ -1,9 +1,23 @@
 using Sandbox.Citizen;
+using System.Diagnostics;
 
 [Group( "Walker" )]
 [Title( "Walker - Player Controller" )]
 public sealed class PlayerController : Component
 {
+	[Sync][Property] public int Level { get; set; }
+	[Sync][Property] public int Experience { get; set; }
+	[Sync][Property] public float HP { get; set; }
+	[Sync][Property] public int Mana { get; set; }
+	[Sync][Property] public float ManaRegen { get; set; }
+	[Sync][Property] public int PhysicalPower { get; set; }
+	[Sync][Property] public int MindPower { get; set; }
+	[Sync][Property] public int Protection { get; set; }
+	[Sync][Property] public int Fortitude { get; set; }
+	[Sync][Property] public float MovementSpeed { get; set; }
+	[Sync][Property] public float HitSpeed { get; set; }
+
+
 	[Property] public CharacterController CharacterController { get; set; }
 	[Property] public float CrouchMoveSpeed { get; set; } = 64.0f;
 	[Property] public float WalkMoveSpeed { get; set; } = 190.0f;
@@ -19,6 +33,8 @@ public sealed class PlayerController : Component
 
 	public bool WishCrouch;
 	public float EyeHeight = 64;
+
+	private float DamageDelay = 0f;
 
 	protected override void OnUpdate()
 	{
@@ -38,7 +54,10 @@ public sealed class PlayerController : Component
 
 		CrouchingInput();
 		MovementInput();
+		UpdateDamageDelay();
 	}
+
+
 
 	private void MouseInput()
 	{
@@ -203,15 +222,11 @@ public sealed class PlayerController : Component
 
 	}
 
-	private void UpdateCamera()
+	private void UpdateCamera()	
 	{
 		//var camera = Scene.GetAllComponents<CameraComponent>().Where( x => x.IsMainCamera ).FirstOrDefault();
 		//if ( camera is null ) return;
 
-		
-
-
-		
 		var targetEyeHeight = Crouching ? 28 : 64;
 		EyeHeight = EyeHeight.LerpTo( targetEyeHeight, RealTime.Delta * 10.0f );
 
@@ -275,4 +290,43 @@ public sealed class PlayerController : Component
 		}
 	}
 
+	private void UpdateDamageDelay()
+	{
+		if (DamageDelay > 0)
+		{
+			DamageDelay -= Time.Delta;
+			//Log.Info($"{DamageDelay}");
+		}
+	}
+
+	// This method is called twice for some reason. Don't ask why.
+	[Broadcast]
+	public void TakeDamage(Guid attackerGUID)
+	{
+		//Log.Info( "hi lol" );
+		if ( !IsProxy && DamageDelay <= 0)
+		{
+			Log.Info( "The fireball hit its target!" );
+			Log.Info( "Damage delay is set to 2." );
+			DamageDelay = 2f;
+			GameObject attacker = Scene.Directory.FindByGuid( attackerGUID );
+			Log.Info( $"Target HP before reduction: {HP}" );
+			var playerDamage = attacker.Components.Get<PlayerController>().MindPower * 5;
+			HP = MathF.Max( HP - playerDamage, 0f );
+			HP -= playerDamage;
+			Log.Info( $"Damage dealt: {playerDamage}" );
+			Log.Info( $"Target REAL HP: {HP}" );
+
+			if (HP <= 0f)
+			{
+				Log.Info( "Oh damn it! You died! :<" );
+				ActivatePreDeathState();	
+			}
+		}
+	}
+
+	public void ActivatePreDeathState()
+	{
+
+	}
 }
