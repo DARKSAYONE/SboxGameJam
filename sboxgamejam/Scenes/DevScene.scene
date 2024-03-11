@@ -1,5 +1,5 @@
 {
-  "Id": "9f832399-4887-46b0-8f21-2ee284f538e2",
+  "Id": "d7c2c0b9-ca80-4407-b4d1-3c461e226ae6",
   "GameObjects": [
     {
       "Id": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
@@ -27,7 +27,7 @@
         {
           "__type": "SkyBox2D",
           "SkyMaterial": "materials/skybox/light_test_sky_sunny03.vmat",
-          "Tint": "1,1,1,1"
+          "Tint": "0.95349,0.45679,0.45679,1"
         },
         {
           "__type": "EnvmapProbe",
@@ -185,6 +185,7 @@
       ]
     },
     {
+
       "Id": "7dd666c9-61aa-40dd-85ce-65fc246766f2",
       "Name": "MapLoader",
       "Position": "158.4539,-1620.605,190.6252",
@@ -199,6 +200,7 @@
         }
       ],
       "Children": []
+
     }
   ],
   "SceneProperties": {
@@ -210,7 +212,7 @@
     "TimeScale": 1,
     "UseFixedUpdate": true,
     "NavMesh": {
-      "Enabled": false,
+      "Enabled": true,
       "IncludeStaticBodies": true,
       "IncludeKeyframedBodies": true,
       "EditorAutoUpdate": true,
@@ -224,6 +226,8 @@
   },
   "Title": "minimal",
   "Description": "",
+
   "LastSaved": "2024-03-10T01:49:01.1210339\u002B03:00",
+
   "__references": []
 }
