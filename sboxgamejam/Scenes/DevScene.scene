@@ -45,8 +45,7 @@
     {
       "Id": "6ad70641-3c6c-4402-9c85-9a4969af4764",
       "Name": "Plane",
-      "Scale": "5,5,5",
-      "Enabled": true,
+      "Scale": "15,15,3",
       "Components": [
         {
           "__type": "ModelRenderer",
@@ -70,7 +69,7 @@
     {
       "Id": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
       "Name": "Camera",
-      "Position": "0,0,64",
+      "Position": "-125.1459,-196.9508,127.2752",
       "Enabled": true,
       "Components": [
         {
@@ -138,9 +137,10 @@
       "Components": [
         {
           "__type": "NetworkHelper",
+          "ActivePlayers": [],
           "PlayerPrefab": {
             "_type": "gameobject",
-            "prefab": "player.prefab"
+            "prefab": "prefabs/player.prefab"
           },
           "SpawnPoints": [
             {
@@ -157,6 +157,48 @@
       "Name": "PlayerSpawn",
       "Position": "-207.5675,-111.544,86.84273",
       "Enabled": true
+    },
+    {
+      "Id": "f0acba90-726e-4846-848c-2ee77df35c83",
+      "Name": "Wall",
+      "Position": "194.3498,-7.606064,53.00799",
+      "Scale": "1.992922,5.117368,2.256136",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "0.43333,1,0,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "7dd666c9-61aa-40dd-85ce-65fc246766f2",
+      "Name": "MapLoader",
+      "Position": "158.4539,-1620.605,190.6252",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "MapName": "leeroystuff.gm_flatgrass_cl",
+          "OnMapLoaded": null,
+          "OnMapUnloaded": null,
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
     }
   ],
   "SceneProperties": {
@@ -182,6 +224,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-02-25T00:29:36.2651242\u002B03:00",
+  "LastSaved": "2024-03-10T01:49:01.1210339\u002B03:00",
   "__references": []
 }
