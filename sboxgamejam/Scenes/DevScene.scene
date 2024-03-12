@@ -117,6 +117,7 @@
       "Components": [
         {
           "__type": "NetworkHelper",
+          "ActivePlayers": [],
           "PlayerPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/player.prefab"
@@ -169,6 +170,7 @@
       "Components": [
         {
           "__type": "GameManager",
+          "__enabled": false,
           "ENS": {
             "_type": "component",
             "go": "81249a40-2bfe-4aeb-b029-d6e0b7e0bbff",
@@ -392,6 +394,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-11T20:55:45.855388\u002B03:00",
+  "LastSaved": "2024-03-12T11:05:41.8986407\u002B03:00",
   "__references": []
 }

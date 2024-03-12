@@ -1,9 +1,10 @@
 {
   "RootObject": {
-    "Id": "37d606b1-6784-4c52-b4f3-bfa2519f8e80",
+    "Id": "93971060-b35c-49fc-ad32-bbacf42de7b3",
     "Name": "player",
     "Tags": "player",
     "Enabled": true,
+    "NetworkMode": 2,
     "Components": [
       {
         "__type": "CharacterController",
@@ -19,30 +20,30 @@
         "__type": "PlayerController",
         "Cam": {
           "_type": "component",
-          "go": "ddd41188-5af1-47a9-959c-1ce1ed831ffd",
+          "go": "b6776c7a-5fc1-425d-9a14-db8f383556af",
           "component_type": "CameraComponent"
         },
         "AnimationHelper": {
           "_type": "component",
-          "go": "8498b525-eb15-4dda-9f95-3d99462aa7da",
+          "go": "d2d5a68d-d606-479a-8419-953ddb8d3835",
           "component_type": "CitizenAnimationHelper"
         },
         "CharacterController": {
           "_type": "component",
-          "go": "37d606b1-6784-4c52-b4f3-bfa2519f8e80",
+          "go": "93971060-b35c-49fc-ad32-bbacf42de7b3",
           "component_type": "CharacterController"
         },
         "CrouchMoveSpeed": 64,
         "Experience": 0,
         "Fortitude": 0,
-        "HitSpeed": 0,
-        "HP": 0,
+        "HitSpeed": 1,
+        "HP": 100,
         "Level": 0,
-        "Mana": 0,
-        "ManaRegen": 0,
-        "MindPower": 0,
-        "MovementSpeed": 0,
-        "PhysicalPower": 0,
+        "Mana": 100,
+        "ManaRegen": 5,
+        "MindPower": 1,
+        "MovementSpeed": 1,
+        "PhysicalPower": 1,
         "Protection": 0,
         "RunMoveSpeed": 190,
         "SprintMoveSpeed": 320,
@@ -57,34 +58,21 @@
         },
         "FireballSpawnPos": {
           "_type": "gameobject",
-          "go": "8f3ad2ee-8eaa-4d55-907f-a4b693db9571"
+          "go": "4c458351-637c-4db2-80b8-aa0355cfad98"
         },
         "SoundPoint": {
           "_type": "component",
-          "go": "0b348e9a-1ce8-4dc1-9ff6-9575482c2a1b",
+          "go": "31e544f4-4f36-411e-8dad-6cd33018ef7b",
           "component_type": "SoundPointComponent"
         }
-      },
-      {
-        "__type": "PlayerStats",
-        "Experience": 0,
-        "Fortitude": 1,
-        "HitSpeed": 1,
-        "HP": 100,
-        "Level": 0,
-        "Mana": 100,
-        "ManaRegen": 5,
-        "MindPower": 1,
-        "MovementSpeed": 1,
-        "PhysicalPower": 1,
-        "Protection": 1
       }
     ],
     "Children": [
       {
-        "Id": "8498b525-eb15-4dda-9f95-3d99462aa7da",
+        "Id": "d2d5a68d-d606-479a-8419-953ddb8d3835",
         "Name": "Player Body",
         "Enabled": true,
+        "NetworkMode": 2,
         "Components": [
           {
             "__type": "SkinnedModelRenderer",
@@ -103,7 +91,7 @@
             "LookAtEnabled": false,
             "Target": {
               "_type": "component",
-              "go": "8498b525-eb15-4dda-9f95-3d99462aa7da",
+              "go": "d2d5a68d-d606-479a-8419-953ddb8d3835",
               "component_type": "SkinnedModelRenderer"
             }
           },
@@ -111,7 +99,7 @@
             "__type": "PlayerDresser",
             "BodyRenderer": {
               "_type": "component",
-              "go": "8498b525-eb15-4dda-9f95-3d99462aa7da",
+              "go": "d2d5a68d-d606-479a-8419-953ddb8d3835",
               "component_type": "SkinnedModelRenderer"
             }
           },
@@ -119,16 +107,23 @@
             "__type": "PlayerFootsteps",
             "Source": {
               "_type": "component",
-              "go": "8498b525-eb15-4dda-9f95-3d99462aa7da",
+              "go": "d2d5a68d-d606-479a-8419-953ddb8d3835",
               "component_type": "SkinnedModelRenderer"
             }
+          },
+          {
+            "__type": "ModelCollider",
+            "IsTrigger": false,
+            "Model": "models/citizen/citizen.vmdl",
+            "Static": false
           }
         ]
       },
       {
-        "Id": "d801a93b-c73b-44d7-bc17-fd4a139b2308",
+        "Id": "ebe92e7b-8d90-4229-bf7c-261c27476942",
         "Name": "Physics Pusher",
         "Position": "0,0,22.68671",
+        "NetworkMode": 2,
         "Components": [
           {
             "__type": "BoxCollider",
@@ -140,10 +135,11 @@
         ]
       },
       {
-        "Id": "1592a067-a216-44f8-868f-71163f27be13",
+        "Id": "99c9ddcc-9b8a-4837-b588-40fa70219b02",
         "Name": "Voice",
         "Position": "42.0599,39.05991,-23.23907",
         "Enabled": true,
+        "NetworkMode": 2,
         "Components": [
           {
             "__type": "Voice",
@@ -154,7 +150,7 @@
             "PushToTalkInput": "voice",
             "Renderer": {
               "_type": "component",
-              "go": "8498b525-eb15-4dda-9f95-3d99462aa7da",
+              "go": "d2d5a68d-d606-479a-8419-953ddb8d3835",
               "component_type": "SkinnedModelRenderer"
             },
             "Volume": 1,
@@ -163,10 +159,11 @@
         ]
       },
       {
-        "Id": "b1b83cee-0abc-421e-a255-5695bed3bd2e",
+        "Id": "1690b25f-87ba-47a5-b3ea-93076398aa42",
         "Name": "World",
         "Position": "0,0,77.72417",
         "Enabled": true,
+        "NetworkMode": 2,
         "Components": [
           {
             "__type": "WorldPanel",
@@ -186,10 +183,11 @@
         ]
       },
       {
-        "Id": "3eab6753-7b35-46e2-8d73-a4a724f3293b",
+        "Id": "848f3d46-4b56-4ec6-8d66-1029c059bbe5",
         "Name": "Player Pusher",
         "Position": "0,0,32",
         "Enabled": true,
+        "NetworkMode": 2,
         "Components": [
           {
             "__type": "PlayerPusher",
@@ -198,10 +196,11 @@
         ]
       },
       {
-        "Id": "ddd41188-5af1-47a9-959c-1ce1ed831ffd",
+        "Id": "b6776c7a-5fc1-425d-9a14-db8f383556af",
         "Name": "Camera",
         "Position": "0,0,64",
         "Enabled": true,
+        "NetworkMode": 2,
         "Components": [
           {
             "__type": "CameraComponent",
@@ -225,11 +224,12 @@
         ],
         "Children": [
           {
-            "Id": "8f3ad2ee-8eaa-4d55-907f-a4b693db9571",
+            "Id": "4c458351-637c-4db2-80b8-aa0355cfad98",
             "Name": "FireballSpawner",
             "Position": "43.54512,-4.965918,-3.071289",
             "Scale": "0.2780159,0.2780159,0.2780159",
             "Enabled": true,
+            "NetworkMode": 2,
             "Components": [
               {
                 "__type": "ModelRenderer",
@@ -244,10 +244,11 @@
         ]
       },
       {
-        "Id": "0b348e9a-1ce8-4dc1-9ff6-9575482c2a1b",
+        "Id": "31e544f4-4f36-411e-8dad-6cd33018ef7b",
         "Name": "Sound",
         "Position": "-29.0657,79.24033,67.7169",
         "Enabled": true,
+        "NetworkMode": 2,
         "Components": [
           {
             "__type": "SoundPointComponent",
