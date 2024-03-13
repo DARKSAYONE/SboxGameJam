@@ -2,7 +2,7 @@
   "Id": "9f832399-4887-46b0-8f21-2ee284f538e2",
   "GameObjects": [
     {
-      "Id": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
+      "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
       "Name": "Sun",
       "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
       "Tags": "light_directional,light",
@@ -11,6 +11,7 @@
       "Components": [
         {
           "__type": "DirectionalLight",
+          "__guid": "4a70521b-7405-453d-8ed3-cadb8188de18",
           "FogMode": "Enabled",
           "FogStrength": 1,
           "LightColor": "0.94419,0.97767,1,1",
@@ -20,7 +21,7 @@
       ]
     },
     {
-      "Id": "00344a8c-fa5e-45ae-b12a-10bb781a1dc3",
+      "__guid": "00344a8c-fa5e-45ae-b12a-10bb781a1dc3",
       "Name": "2D Skybox",
       "Tags": "skybox",
       "Enabled": true,
@@ -28,11 +29,13 @@
       "Components": [
         {
           "__type": "SkyBox2D",
+          "__guid": "32f1693e-36b1-4c67-b082-1a42baccef69",
           "SkyMaterial": "materials/skybox/light_test_sky_sunny03.vmat",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "EnvmapProbe",
+          "__guid": "c204c4b6-1f63-4bef-aa97-f30bcbc2b3f4",
           "Bounds": {
             "Mins": "-512,-512,-512",
             "Maxs": "512,512,512"
@@ -45,7 +48,7 @@
       ]
     },
     {
-      "Id": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
+      "__guid": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
       "Name": "Camera",
       "Position": "-125.1459,-196.9508,127.2752",
       "Enabled": true,
@@ -53,6 +56,7 @@
       "Components": [
         {
           "__type": "CameraComponent",
+          "__guid": "846e61f6-70ec-4d5a-89ba-4718fe68a6f1",
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
           "ClearFlags": "All",
           "FieldOfView": 78,
@@ -69,6 +73,7 @@
         },
         {
           "__type": "Bloom",
+          "__guid": "52219a43-de11-4ef9-a415-0085f6aded5c",
           "BloomColor": {
             "color": [
               {
@@ -97,6 +102,7 @@
         },
         {
           "__type": "Tonemapping",
+          "__guid": "0666d399-eb7d-43d2-868e-20dbb622564a",
           "ExposureCompensation": 0,
           "MaximumExposure": 2,
           "MinimumExposure": 1,
@@ -104,12 +110,13 @@
         },
         {
           "__type": "Sharpen",
+          "__guid": "234b97f6-be5e-4ce4-a11b-2828c169e062",
           "Scale": 0.2
         }
       ]
     },
     {
-      "Id": "30f2a47b-da0e-421c-99bd-5078dc1da212",
+      "__guid": "30f2a47b-da0e-421c-99bd-5078dc1da212",
       "Name": "Network(Maybe)",
       "Position": "-43.87151,12.12111,80.64072",
       "Enabled": true,
@@ -117,6 +124,7 @@
       "Components": [
         {
           "__type": "NetworkHelper",
+          "__guid": "03fb3229-fe4d-4dac-ba5a-b4dc0e22e290",
           "PlayerPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/player.prefab"
@@ -132,14 +140,14 @@
       ]
     },
     {
-      "Id": "d4b8cfa2-49f2-4024-9213-b0d077563c14",
+      "__guid": "d4b8cfa2-49f2-4024-9213-b0d077563c14",
       "Name": "PlayerSpawn",
-      "Position": "-207.5675,-111.544,86.84273",
+      "Position": "-746.3279,719.5294,395.2894",
       "Enabled": true,
       "NetworkMode": 2
     },
     {
-      "Id": "94c48db5-5dd9-46b2-974b-5ab1cdb2ba9d",
+      "__guid": "94c48db5-5dd9-46b2-974b-5ab1cdb2ba9d",
       "Name": "World",
       "Position": "-309.6895,53.81025,53.0498",
       "Scale": "1.296915,1.703792,1.504388",
@@ -148,6 +156,7 @@
       "Components": [
         {
           "__type": "WorldPanel",
+          "__guid": "82f7dd64-405f-479d-a4c3-d8022792a302",
           "HorizontalAlign": "Center",
           "LookAtCamera": false,
           "PanelSize": "512,512",
@@ -161,7 +170,7 @@
       ]
     },
     {
-      "Id": "62755e2a-81ca-4ecf-918b-9c9d522479dc",
+      "__guid": "62755e2a-81ca-4ecf-918b-9c9d522479dc",
       "Name": "GameManager",
       "Position": "-94.99576,-28.18832,156.6965",
       "Enabled": true,
@@ -169,8 +178,10 @@
       "Components": [
         {
           "__type": "GameManager",
+          "__guid": "404dd781-7231-4119-a7cc-3e8847573558",
           "ENS": {
             "_type": "component",
+            "component_id": "66ea9cb2-de9a-4406-94d3-e46effbbe327",
             "go": "81249a40-2bfe-4aeb-b029-d6e0b7e0bbff",
             "component_type": "EnemyNetSpawner"
           },
@@ -203,17 +214,26 @@
           "PVPRoundTime": 11,
           "Sound": {
             "_type": "component",
+            "component_id": "ed63d9ca-a044-4838-9972-8d453d42c260",
             "go": "62755e2a-81ca-4ecf-918b-9c9d522479dc",
             "component_type": "SoundPointComponent"
           }
         },
         {
           "__type": "SoundPointComponent",
+          "__guid": "ed63d9ca-a044-4838-9972-8d453d42c260",
+          "DistanceAttenuation": false,
+          "DistanceAttenuationOverride": false,
           "Force2d": false,
           "MaxRepeatTime": 1,
           "MinRepeatTime": 1,
+          "Occlusion": false,
+          "OcclusionOverride": false,
+          "OcclusionRadius": 32,
           "Pitch": 1,
           "PlayOnStart": false,
+          "ReflectionOverride": false,
+          "Reflections": false,
           "Repeat": false,
           "SoundEvent": "sound/save_load1.sound",
           "SoundOverride": false,
@@ -223,7 +243,7 @@
       ]
     },
     {
-      "Id": "f63d93a9-b3a1-4196-b642-9c5960f30ade",
+      "__guid": "f63d93a9-b3a1-4196-b642-9c5960f30ade",
       "Name": "MapLoader",
       "Position": "-335.2686,45.33685,-82.76392",
       "Enabled": true,
@@ -231,19 +251,20 @@
       "Components": [
         {
           "__type": "MapInstance",
-          "MapName": "smwstcstfurry.boxtest",
+          "__guid": "56944624-8b3f-48bb-a189-01145b360204",
+          "MapName": "facepunch.bm_dockyard",
           "UseMapFromLaunch": false
         }
       ],
       "Children": []
     },
     {
-      "Id": "44c1a926-f707-45ae-9791-16e3842667f4",
+      "__guid": "44c1a926-f707-45ae-9791-16e3842667f4",
       "Name": "Testmap",
       "NetworkMode": 2,
       "Children": [
         {
-          "Id": "6ad70641-3c6c-4402-9c85-9a4969af4764",
+          "__guid": "6ad70641-3c6c-4402-9c85-9a4969af4764",
           "Name": "Plane",
           "Scale": "15,15,3",
           "Enabled": true,
@@ -251,6 +272,7 @@
           "Components": [
             {
               "__type": "ModelRenderer",
+              "__guid": "0a127a8f-22ed-4037-b787-5755f4f13876",
               "BodyGroups": 18446744073709551615,
               "MaterialOverride": "materials/default.vmat",
               "Model": "models/dev/plane.vmdl",
@@ -259,6 +281,7 @@
             },
             {
               "__type": "BoxCollider",
+              "__guid": "8acba713-a326-4127-8f15-ef98306c427f",
               "Center": "0,0,-5",
               "IsTrigger": false,
               "Scale": "100,100,10",
@@ -267,7 +290,7 @@
           ]
         },
         {
-          "Id": "f0acba90-726e-4846-848c-2ee77df35c83",
+          "__guid": "f0acba90-726e-4846-848c-2ee77df35c83",
           "Name": "Wall",
           "Position": "194.3498,-7.606064,53.00799",
           "Scale": "1.992922,5.117368,2.256136",
@@ -276,6 +299,7 @@
           "Components": [
             {
               "__type": "ModelRenderer",
+              "__guid": "03cc1a33-3e93-4865-ba23-c3a0f2e4775e",
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
@@ -283,6 +307,7 @@
             },
             {
               "__type": "BoxCollider",
+              "__guid": "9c03e084-836d-40c6-9cbc-cd21ebe52d0f",
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
@@ -293,42 +318,42 @@
       ]
     },
     {
-      "Id": "3fc74111-de18-4286-9160-2d557c3d425c",
+      "__guid": "3fc74111-de18-4286-9160-2d557c3d425c",
       "Name": "Object",
       "Position": "901.9273,2654.035,1335.521",
       "Enabled": true,
       "NetworkMode": 2
     },
     {
-      "Id": "a3a4b7f1-4465-4c40-9074-09356aa883c4",
+      "__guid": "a3a4b7f1-4465-4c40-9074-09356aa883c4",
       "Name": "SpawnPositions",
       "Position": "901.9273,2654.035,1335.521",
       "Enabled": true,
       "NetworkMode": 2,
       "Children": [
         {
-          "Id": "79cfdde1-08f1-4838-827d-090b0c15043c",
+          "__guid": "79cfdde1-08f1-4838-827d-090b0c15043c",
           "Name": "PVPSpawnPos1",
-          "Position": "-1977.376,-3128.338,-1187.162",
+          "Position": "-2928.752,-4086.877,-1016.05",
           "Enabled": true,
           "NetworkMode": 2
         },
         {
-          "Id": "5c73d03f-62c9-49d2-967e-cf5d7b001f73",
+          "__guid": "5c73d03f-62c9-49d2-967e-cf5d7b001f73",
           "Name": "PVPSpawnPos2",
-          "Position": "-354.5336,-3353.976,-1170.3",
+          "Position": "-121.3409,-3353.976,-1170.3",
           "Enabled": true,
           "NetworkMode": 2
         },
         {
-          "Id": "af0f8d2e-f701-4e88-8642-ced233dd171d",
+          "__guid": "af0f8d2e-f701-4e88-8642-ced233dd171d",
           "Name": "PVESpawnPos1",
-          "Position": "615.826,-1041.63,-1187.162",
+          "Position": "-3404.577,-3263.261,-848.0922",
           "Enabled": true,
           "NetworkMode": 2
         },
         {
-          "Id": "171b7c76-2fac-4335-8b51-3a045dc9f088",
+          "__guid": "171b7c76-2fac-4335-8b51-3a045dc9f088",
           "Name": "PVESpawnPos2",
           "Position": "-1977.376,-920.0416,-1187.162",
           "Enabled": true,
@@ -337,7 +362,7 @@
       ]
     },
     {
-      "Id": "81249a40-2bfe-4aeb-b029-d6e0b7e0bbff",
+      "__guid": "81249a40-2bfe-4aeb-b029-d6e0b7e0bbff",
       "Name": "MobSpawner",
       "Position": "901.9273,1459.826,91.69547",
       "Enabled": true,
@@ -345,6 +370,7 @@
       "Components": [
         {
           "__type": "EnemyNetSpawner",
+          "__guid": "66ea9cb2-de9a-4406-94d3-e46effbbe327",
           "Enemies": [],
           "EnemyPrefab": {
             "_type": "gameobject",
@@ -352,6 +378,7 @@
           },
           "GM": {
             "_type": "component",
+            "component_id": "404dd781-7231-4119-a7cc-3e8847573558",
             "go": "62755e2a-81ca-4ecf-918b-9c9d522479dc",
             "component_type": "GameManager"
           },
@@ -371,16 +398,16 @@
       ],
       "Children": [
         {
-          "Id": "0dd46a58-115a-4d14-9d78-b544cc84d742",
+          "__guid": "0dd46a58-115a-4d14-9d78-b544cc84d742",
           "Name": "NPCSpawn1",
-          "Position": "0,0,0",
+          "Position": "-3460.521,-1849.456,199.4552",
           "Enabled": true,
           "NetworkMode": 2
         },
         {
-          "Id": "ef7e257a-dd7e-4bab-82ca-a5bf7cbc752f",
+          "__guid": "ef7e257a-dd7e-4bab-82ca-a5bf7cbc752f",
           "Name": "NPCSpawn2",
-          "Position": "-1771.62,0,0",
+          "Position": "-1771.62,-148.894,139.8838",
           "Enabled": true,
           "NetworkMode": 2
         }
@@ -410,6 +437,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-13T15:26:35.1227594\u002B03:00",
+  "LastSaved": "2024-03-13T23:19:55.357653\u002B03:00",
   "__references": []
 }
