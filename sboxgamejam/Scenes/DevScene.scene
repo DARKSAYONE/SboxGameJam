@@ -475,6 +475,109 @@
           "Static": false
         }
       ]
+    },
+    {
+      "__guid": "344ccc41-3c32-4443-a5b1-219158c646df",
+      "Name": "Walls",
+      "Position": "-1803.102,1039.868,380.403",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Children": [
+        {
+          "__guid": "05e930a2-0c41-43ec-ae17-75efa3af8c66",
+          "Name": "Cube",
+          "Position": "0,-130.1733,48.76816",
+          "Scale": "4.950787,0.6224236,7.291348",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "15613865-0303-4c39-8951-a0882fdaadad",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "813858c3-0f2e-420e-8628-a34f17c3ee4c",
+          "Name": "Cube (1)",
+          "Position": "1533.559,503.8658,-249.3383",
+          "Rotation": "0,0,0.7071067,0.7071068",
+          "Scale": "4.950787,0.6224236,7.291348",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "287f2a2b-4909-43a1-b9a7-93b3aa9d4240",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "6212a949-40c1-459e-af7e-498a1256598e",
+          "Name": "Cube (2)",
+          "Position": "-497.2898,-937.5275,9.48175",
+          "Rotation": "0,0,0.0000003129244,-1",
+          "Scale": "4.950787,0.6224236,7.291348",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "cf2eab94-4b46-43ef-8e67-8fd73947b2e3",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "cdf8d8c1-ed09-47e1-bf1b-b88b8bfa4389",
+          "Name": "Cube (3)",
+          "Position": "-504.8125,-2298.398,11.24713",
+          "Rotation": "0,0,0.0000003129244,-1",
+          "Scale": "4.950787,0.6224236,7.291348",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "4f18cfc5-712d-466c-ae0d-53e1ad5d8d4e",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "0d02eff5-2b61-45f0-926c-295584e83fe0",
+          "Name": "Cube (4)",
+          "Position": "-133.0989,-2030.328,-55.47931",
+          "Rotation": "0,0,0.7071069,-0.7071066",
+          "Scale": "7.632452,0.6224236,1.821286",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "25768c5b-9980-46e9-baa8-4d35ede729e1",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -500,7 +603,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-13T23:38:37.1145548\u002B03:00",
+  "LastSaved": "2024-03-14T02:07:29.7972203\u002B03:00",
   "__references": [
     "japancitymodels.door_01",
     "orus.8hu_kultiras_smallhouse_2"
