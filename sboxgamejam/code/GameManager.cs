@@ -13,6 +13,7 @@ public sealed class GameManager : Component
 	[Property] private float PVPRoundTime = 30.0f;
 	[Property] private float PVERoundTime = 30.0f;
 	[Property] public EnemyNetSpawner ENS;
+	[Property] public SoundPointComponent Sound;
 
 	private bool AllPlayersReady = false;
 	private bool PVPTime = false;
@@ -47,6 +48,7 @@ public sealed class GameManager : Component
 		else if(AllPlayersReady && BeforeRoundTimer && PVPRoundIsComplete)
 		{
 			PVERound();
+			
 		}
 
 		
@@ -153,6 +155,7 @@ public sealed class GameManager : Component
 		PVPRoundIsComplete = true;
 		PVPRoundTime = 20.0f;
 		PVERoundIsComplete = false;
+		Sound.StartSound();
 	}
 
 	void PVERoundEnd()
@@ -162,8 +165,8 @@ public sealed class GameManager : Component
 		PVERoundIsComplete = true;
 		PVPRoundIsComplete = false;
 		PVERoundTime = 30.0f;
-
-		foreach(var Enemy in ENS.Enemies)
+		Sound.StartSound();
+		foreach (var Enemy in ENS.Enemies)
 		{
 			Enemy.Destroy();
 		}
