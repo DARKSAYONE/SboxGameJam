@@ -142,7 +142,7 @@
     {
       "__guid": "d4b8cfa2-49f2-4024-9213-b0d077563c14",
       "Name": "PlayerSpawn",
-      "Position": "-746.3279,719.5294,395.2894",
+      "Position": "-5038.816,-3398.54,695.7969",
       "Enabled": true,
       "NetworkMode": 2
     },
@@ -412,6 +412,69 @@
           "NetworkMode": 2
         }
       ]
+    },
+    {
+      "__guid": "9a86960a-e370-4eac-b6ad-ccc7e5aec747",
+      "Name": "8hu_kultiras_smallhouse_2",
+      "Position": "-5002.654,-3471.757,368.7115",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "99f96f21-6ba1-4c25-ab80-92f92304842f",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/8hu_kultiras_smallhouse_2.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "0c875345-cb66-49ac-96d0-c149cf14d6b2",
+          "IsTrigger": false,
+          "Model": "models/8hu_kultiras_smallhouse_2.vmdl",
+          "Static": false
+        },
+        {
+          "__type": "Rigidbody",
+          "__guid": "981cc599-6ff7-4f5d-bef7-81fdeccb6ab1",
+          "__enabled": false,
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "__guid": "a9045c32-ebef-49f6-9017-1ad12d371f2d",
+      "Name": "door_01",
+      "Position": "-4618.561,-3469.876,544.9642",
+      "Scale": "1,1.190527,1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "f33d8207-f1bb-401e-9ace-e3ec21f76a8d",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/japan_props_001/door_01.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "1bf7f637-d827-468d-b73b-f53e7c1c8154",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,100,100",
+          "Static": false
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -437,6 +500,9 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-13T23:19:55.357653\u002B03:00",
-  "__references": []
+  "LastSaved": "2024-03-13T23:38:37.1145548\u002B03:00",
+  "__references": [
+    "japancitymodels.door_01",
+    "orus.8hu_kultiras_smallhouse_2"
+  ]
 }
