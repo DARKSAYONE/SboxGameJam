@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 [Group( "Walker" )]
 [Title( "Walker - Player Controller" )]
-public sealed class PlayerController : Component
+public sealed class PlayerController : Component, IStats
 {
 	[Sync][Property] public int Level { get; set; }
 	[Sync][Property] public int Experience { get; set; }
@@ -319,14 +319,20 @@ public sealed class PlayerController : Component
 
 			if (HP <= 0f)
 			{
-				Log.Info( "Oh damn it! You died! :<" );
-				ActivatePreDeathState();	
+				Log.Info( $"Oh damn it! {GameObject} died! :<" );
+				ActivateDeathState();	
 			}
 		}
 	}
 
-	public void ActivatePreDeathState()
+	public void ActivateDeathState()
 	{
-
+		Rigidbody rigidbody = GameObject.Components.Create<Rigidbody>();
+		PlayerController playerController = GameObject.Components.Get<PlayerController>();
+		if ( playerController != null )
+		{
+			playerController.Destroy();
+			GameObject.Children.FirstOrDefault<GameObject>().Components.Get<CitizenAnimationHelper>().Destroy();
+		}
 	}
 }
