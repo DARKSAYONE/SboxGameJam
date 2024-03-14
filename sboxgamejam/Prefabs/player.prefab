@@ -41,14 +41,16 @@
         "CrouchMoveSpeed": 64,
         "Experience": 0,
         "Fortitude": 0,
-        "HitSpeed": 0,
+
+        "HitSpeed": 1,
+
         "HP": 100,
         "Level": 0,
-        "Mana": 0,
-        "ManaRegen": 0,
-        "MindPower": 0,
-        "MovementSpeed": 0,
-        "PhysicalPower": 0,
+        "Mana": 100,
+        "ManaRegen": 5,
+        "MindPower": 1,
+        "MovementSpeed": 1,
+        "PhysicalPower": 1,
         "Protection": 0,
         "RunMoveSpeed": 190,
         "SprintMoveSpeed": 320,
@@ -72,6 +74,7 @@
           "go": "67c877a2-f3a2-417a-83a2-56299d2bc09d",
           "component_type": "SoundPointComponent"
         }
+
       },
       {
         "__type": "PlayerStats",
@@ -87,6 +90,7 @@
         "MovementSpeed": 1,
         "PhysicalPower": 1,
         "Protection": 1
+
       }
     ],
     "Children": [
