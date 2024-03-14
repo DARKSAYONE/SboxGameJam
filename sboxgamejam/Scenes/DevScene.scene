@@ -147,15 +147,15 @@
       "NetworkMode": 2,
       "Children": [
         {
-          "__guid": "c228ed20-88be-45e4-ae7d-eff05c5321c6",
+          "__guid": "a1b621a9-7225-48b7-ba74-613c9f257a8b",
           "Name": "Cube",
-          "Position": "0,0,-59.47656",
+          "Position": "0,0,-56.86267",
           "Enabled": true,
           "NetworkMode": 2,
           "Components": [
             {
               "__type": "ModelRenderer",
-              "__guid": "3f97e09f-8f6f-4de5-93bb-ccdbd8101a97",
+              "__guid": "a9022c61-5a02-41c2-bcba-a67d4b5e2706",
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
@@ -163,7 +163,7 @@
             },
             {
               "__type": "BoxCollider",
-              "__guid": "7a15acfa-3b5e-464d-9e47-04fa96137d9f",
+              "__guid": "01a25fde-a39f-43f4-8491-441a221f1c2e",
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
@@ -445,7 +445,7 @@
       "Name": "8hu_kultiras_smallhouse_2",
       "Position": "-5002.654,-3471.757,368.7115",
       "Enabled": true,
-      "NetworkMode": 1,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "ModelRenderer",
@@ -605,47 +605,6 @@
           ]
         }
       ]
-    },
-    {
-      "__guid": "0b9975f0-c0e3-4bc8-a3e6-29e760c6d307",
-      "Name": "Cube",
-      "Position": "-5057.888,-3469.175,764.1525",
-      "Scale": "23.08939,23.08939,23.08939",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "f21d3d77-6b9f-471d-9360-091f8791ed42",
-          "__enabled": false,
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "SoundBoxComponent",
-          "__guid": "55cc5c60-40e9-43c1-9915-4140d51a7d16",
-          "DistanceAttenuation": false,
-          "DistanceAttenuationOverride": false,
-          "Force2d": false,
-          "MaxRepeatTime": 1,
-          "MinRepeatTime": 1,
-          "Occlusion": false,
-          "OcclusionOverride": false,
-          "OcclusionRadius": 32,
-          "Pitch": 2,
-          "PlayOnStart": true,
-          "ReflectionOverride": false,
-          "Reflections": false,
-          "Repeat": true,
-          "Scale": "50,50,50",
-          "SoundEvent": "sound/midnight-forest-184304.sound",
-          "SoundOverride": true,
-          "StopOnNew": false,
-          "Volume": 0.04
-        }
-      ]
     }
   ],
   "SceneProperties": {
@@ -671,7 +630,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-14T02:38:46.9309672\u002B03:00",
+  "LastSaved": "2024-03-14T03:12:14.7379839\u002B03:00",
   "__references": [
     "japancitymodels.door_01",
     "orus.8hu_kultiras_smallhouse_2"
