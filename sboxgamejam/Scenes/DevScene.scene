@@ -149,13 +149,15 @@
         {
           "__guid": "a1b621a9-7225-48b7-ba74-613c9f257a8b",
           "Name": "Cube",
-          "Position": "0,0,-56.86267",
+          "Position": "91.28076,0,-56.86267",
+          "Scale": "7.327874,7.42381,1",
           "Enabled": true,
           "NetworkMode": 2,
           "Components": [
             {
               "__type": "ModelRenderer",
               "__guid": "a9022c61-5a02-41c2-bcba-a67d4b5e2706",
+              "__enabled": false,
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
@@ -238,7 +240,7 @@
               "go": "5c73d03f-62c9-49d2-967e-cf5d7b001f73"
             }
           ],
-          "PVPRoundTime": 11,
+          "PVPRoundTime": 60,
           "Sound": {
             "_type": "component",
             "component_id": "ed63d9ca-a044-4838-9972-8d453d42c260",
@@ -705,7 +707,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-14T19:24:54.3924366\u002B03:00",
+  "LastSaved": "2024-03-14T22:37:47.2015117\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

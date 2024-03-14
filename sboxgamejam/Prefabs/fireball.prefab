@@ -1,31 +1,34 @@
 {
   "RootObject": {
-    "Id": "9bafabcc-30ef-4041-a5e4-2458f790d468",
+    "__guid": "c584f99b-c0bb-40cd-bc36-0a8ed5896fe1",
     "Name": "fireball",
     "Scale": "0.1833652,0.1833652,0.1833652",
-    "Networked": true,
     "Enabled": true,
+    "NetworkMode": 1,
     "Components": [
       {
         "__type": "ModelRenderer",
+        "__guid": "384aade4-226d-454b-b235-3a38929adecc",
         "BodyGroups": 18446744073709551615,
-        "MaterialOverride": "people/materials/models/eft/scavs/mats/misha_d.vmat",
         "Model": "models/dev/sphere.vmdl",
         "RenderType": "On",
-        "Tint": "1,1,1,1"
+        "Tint": "1,0.56667,0,1"
       },
       {
         "__type": "Rigidbody",
+        "__guid": "e579e739-6718-4b45-b5bf-f01722143215",
         "AngularDamping": 0,
         "Gravity": false,
         "LinearDamping": 0,
         "Locking": {},
         "MassOverride": 0,
+        "MotionEnabled": true,
         "RigidbodyFlags": 0,
         "StartAsleep": false
       },
       {
         "__type": "SphereCollider",
+        "__guid": "ed1ba2db-8aaf-4954-8d3e-d965b7f40314",
         "Center": "0,0,0",
         "IsTrigger": false,
         "Radius": 10,
@@ -34,19 +37,22 @@
       },
       {
         "__type": "Fireball",
+        "__guid": "943e6ab9-1579-4785-8d22-b05d35dab3b1",
         "speed": 500
       }
     ],
     "Children": [
       {
-        "Id": "0de25019-ad5f-4ea9-97dd-f7b98d7ce2be",
+        "__guid": "803f5642-7161-4f0d-a664-013c05e4fc31",
         "Name": "Spray",
         "Rotation": "0,0,1,0.0000001947072",
         "Tags": "particles",
         "Enabled": true,
+        "NetworkMode": 2,
         "Components": [
           {
             "__type": "ParticleEffect",
+            "__guid": "379f1a8e-201d-45f4-a36c-7013575d7df4",
             "Alpha": {
               "Type": "Curve",
               "CurveA": [
@@ -173,6 +179,7 @@
           },
           {
             "__type": "ParticleSpriteRenderer",
+            "__guid": "2be9473c-5c7e-4b93-b383-1f1d0c417592",
             "Additive": false,
             "BlurAmount": 0.5,
             "BlurOpacity": 0.91,
@@ -191,6 +198,7 @@
           },
           {
             "__type": "ParticleConeEmitter",
+            "__guid": "6415d2db-0957-4c32-b146-78b47d443738",
             "Burst": 0,
             "ConeAngle": 31.4,
             "ConeFar": 50,
@@ -210,7 +218,7 @@
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
-  "__references": [
-    "mapperskai.scav"
-  ]
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
 }

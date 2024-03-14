@@ -42,6 +42,7 @@ public sealed class IceArrow : Component, Component.ICollisionListener
 
 			var attackerGUID = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == ownerName ).Id;
 			other.Other.GameObject.Parent.Components.Get<PlayerController>().TakeDamage( attackerGUID );
+			other.Other.GameObject.Parent.Components.Get<PlayerController>().Debuff( attackerGUID );
 		}
 		else
 		{

@@ -14,8 +14,13 @@ public sealed class FireballCast : Component
 	private bool OnCooldown = false;
 	private float TimerCooldown;
 
+	[Property] GameObject QSkill;
+
 	[Property]
 	public SoundPointComponent SoundPoint;
+
+	[Property]
+	public bool CanShoot = true;
 
 
 	protected override void OnStart()
@@ -30,6 +35,7 @@ public sealed class FireballCast : Component
 			CooldownTimer();
 
         CastFireball();
+		CastQSkill();
     }
 
 	void CastFireball()
@@ -46,6 +52,22 @@ public sealed class FireballCast : Component
 			}
 		}
 	}
+
+	void CastQSkill()
+	{
+		if ( !IsProxy )
+		{
+			if ( Input.Pressed( "QUse" ) && !OnCooldown )
+			{
+				var netFireball = QSkill.Clone( FireballSpawnPos.Transform.Position + Vector3.Forward, FireballSpawnPos.Parent.Transform.Rotation );
+				netFireball.Name = $"{GameObject.Name} - QSkill";
+				netFireball.NetworkSpawn( GameObject.Network.OwnerConnection );
+				OnCooldown = true;
+
+			}
+		}
+	}
+
 
 	void CooldownTimer()
 	{

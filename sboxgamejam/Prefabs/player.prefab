@@ -60,11 +60,15 @@
         "CooldownTime": 2,
         "FireballPrefab": {
           "_type": "gameobject",
-          "prefab": "prefabs/icearrow.prefab"
+          "prefab": "prefabs/fireball.prefab"
         },
         "FireballSpawnPos": {
           "_type": "gameobject",
           "go": "c7f725ee-4774-4577-8c51-e12280a77858"
+        },
+        "QSkill": {
+          "_type": "gameobject",
+          "prefab": "prefabs/icearrow.prefab"
         },
         "SoundPoint": {
           "_type": "component",

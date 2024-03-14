@@ -325,6 +325,13 @@ public sealed class PlayerController : Component, IStats
 		}
 	}
 
+	[Broadcast]
+	public void Debuff(Guid attackerGUID)
+	{
+		//Player debuff
+		Log.Info( "Player debuff" );
+	}
+
 	public void ActivateDeathState()
 	{
 		Rigidbody rigidbody = GameObject.Components.Create<Rigidbody>();
