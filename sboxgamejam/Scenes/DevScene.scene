@@ -142,9 +142,36 @@
     {
       "__guid": "d4b8cfa2-49f2-4024-9213-b0d077563c14",
       "Name": "PlayerSpawn",
-      "Position": "-746.3279,719.5294,395.2894",
+      "Position": "-5038.816,-3398.54,695.7969",
       "Enabled": true,
-      "NetworkMode": 2
+      "NetworkMode": 2,
+      "Children": [
+        {
+          "__guid": "a1b621a9-7225-48b7-ba74-613c9f257a8b",
+          "Name": "Cube",
+          "Position": "0,0,-56.86267",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "a9022c61-5a02-41c2-bcba-a67d4b5e2706",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__guid": "01a25fde-a39f-43f4-8491-441a221f1c2e",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            }
+          ]
+        }
+      ]
     },
     {
       "__guid": "94c48db5-5dd9-46b2-974b-5ab1cdb2ba9d",
@@ -366,7 +393,7 @@
       "Name": "MobSpawner",
       "Position": "901.9273,1459.826,91.69547",
       "Enabled": true,
-      "NetworkMode": 2,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "EnemyNetSpawner",
@@ -412,6 +439,172 @@
           "NetworkMode": 2
         }
       ]
+    },
+    {
+      "__guid": "9a86960a-e370-4eac-b6ad-ccc7e5aec747",
+      "Name": "8hu_kultiras_smallhouse_2",
+      "Position": "-5002.654,-3471.757,368.7115",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "99f96f21-6ba1-4c25-ab80-92f92304842f",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/8hu_kultiras_smallhouse_2.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "0c875345-cb66-49ac-96d0-c149cf14d6b2",
+          "IsTrigger": false,
+          "Model": "models/8hu_kultiras_smallhouse_2.vmdl",
+          "Static": false
+        },
+        {
+          "__type": "Rigidbody",
+          "__guid": "981cc599-6ff7-4f5d-bef7-81fdeccb6ab1",
+          "__enabled": false,
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "__guid": "a9045c32-ebef-49f6-9017-1ad12d371f2d",
+      "Name": "door_01",
+      "Position": "-4618.561,-3469.876,544.9642",
+      "Scale": "1,1.190527,1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "f33d8207-f1bb-401e-9ace-e3ec21f76a8d",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/japan_props_001/door_01.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "1bf7f637-d827-468d-b73b-f53e7c1c8154",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,100,100",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "344ccc41-3c32-4443-a5b1-219158c646df",
+      "Name": "Walls",
+      "Position": "-1803.102,1039.868,380.403",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Children": [
+        {
+          "__guid": "05e930a2-0c41-43ec-ae17-75efa3af8c66",
+          "Name": "Cube",
+          "Position": "0,-130.1733,48.76816",
+          "Scale": "4.950787,0.6224236,7.291348",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "15613865-0303-4c39-8951-a0882fdaadad",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "813858c3-0f2e-420e-8628-a34f17c3ee4c",
+          "Name": "Cube (1)",
+          "Position": "1533.559,503.8658,-249.3383",
+          "Rotation": "0,0,0.7071067,0.7071068",
+          "Scale": "4.950787,0.6224236,7.291348",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "287f2a2b-4909-43a1-b9a7-93b3aa9d4240",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "6212a949-40c1-459e-af7e-498a1256598e",
+          "Name": "Cube (2)",
+          "Position": "-497.2898,-937.5275,9.48175",
+          "Rotation": "0,0,0.0000003129244,-1",
+          "Scale": "4.950787,0.6224236,7.291348",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "cf2eab94-4b46-43ef-8e67-8fd73947b2e3",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "cdf8d8c1-ed09-47e1-bf1b-b88b8bfa4389",
+          "Name": "Cube (3)",
+          "Position": "-504.8125,-2298.398,11.24713",
+          "Rotation": "0,0,0.0000003129244,-1",
+          "Scale": "4.950787,0.6224236,7.291348",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "4f18cfc5-712d-466c-ae0d-53e1ad5d8d4e",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "0d02eff5-2b61-45f0-926c-295584e83fe0",
+          "Name": "Cube (4)",
+          "Position": "-133.0989,-2030.328,-55.47931",
+          "Rotation": "0,0,0.7071069,-0.7071066",
+          "Scale": "7.632452,0.6224236,1.821286",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "25768c5b-9980-46e9-baa8-4d35ede729e1",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -437,6 +630,9 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-13T23:19:55.357653\u002B03:00",
-  "__references": []
+  "LastSaved": "2024-03-14T03:42:02.1715414\u002B03:00",
+  "__references": [
+    "japancitymodels.door_01",
+    "orus.8hu_kultiras_smallhouse_2"
+  ]
 }

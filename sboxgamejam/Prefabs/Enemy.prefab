@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "bcfa533a-d76f-4751-b0a9-646d3cd91c0e",
+    "__guid": "bcfa533a-d76f-4751-b0a9-646d3cd91c0e",
     "Name": "enemy",
     "Tags": "npc",
     "Enabled": true,
@@ -8,6 +8,7 @@
     "Components": [
       {
         "__type": "NavMeshAgent",
+        "__guid": "6ce528de-d25b-4695-8b80-068f6de4ccec",
         "Acceleration": 1000,
         "Height": 40,
         "MaxSpeed": 120,
@@ -18,16 +19,25 @@
       },
       {
         "__type": "EnemyAI",
+        "__guid": "213126aa-704f-431a-91b0-6cfb6e5c6086",
         "AttackRange": 60,
         "Players": []
       },
       {
         "__type": "SoundBoxComponent",
+        "__guid": "18954b8b-cf48-4258-bdba-f07bacf4164d",
+        "DistanceAttenuation": false,
+        "DistanceAttenuationOverride": false,
         "Force2d": false,
         "MaxRepeatTime": 1,
         "MinRepeatTime": 1,
+        "Occlusion": false,
+        "OcclusionOverride": false,
+        "OcclusionRadius": 32,
         "Pitch": 1,
         "PlayOnStart": false,
+        "ReflectionOverride": false,
+        "Reflections": false,
         "Repeat": false,
         "Scale": "100,100,50",
         "SoundEvent": "sounds/soundboard/yougotmail.sound",
@@ -38,27 +48,37 @@
     ],
     "Children": [
       {
-        "Id": "cb01e348-581f-47ca-a714-224c78fb64a0",
+        "__guid": "cb01e348-581f-47ca-a714-224c78fb64a0",
         "Name": "Sphere",
-        "Position": "0,0,35.90504",
-        "Scale": "0.4949173,0.4949173,1.217531",
+        "Position": "0,0,-1.951181",
         "Enabled": true,
         "NetworkMode": 2,
         "Components": [
           {
             "__type": "ModelRenderer",
-            "BodyGroups": 18446744073709551615,
+            "__guid": "af5c6e7f-d7e2-49e1-8739-5394f95a55b4",
+            "BodyGroups": 341,
+            "MaterialGroup": "default",
             "MaterialOverride": "models/citizen/skin/citizen_skin.vmat",
-            "Model": "models/dev/sphere.vmdl",
+            "Model": "models/citizen/citizen.vmdl",
             "RenderType": "On",
             "Tint": "1,1,1,1"
           },
           {
-            "__type": "BoxCollider",
-            "Center": "0,0,0",
+            "__type": "ModelCollider",
+            "__guid": "319c6951-3ce7-42fc-b5fb-2d807513c675",
             "IsTrigger": false,
-            "Scale": "50,50,50",
+            "Model": "models/citizen/citizen.vmdl",
             "Static": false
+          },
+          {
+            "__type": "CitizenAnimationHelper",
+            "__guid": "41dad4c5-8fb4-46f0-bd65-78ce041cb255",
+            "BodyWeight": 1,
+            "EyesWeight": 1,
+            "HeadWeight": 1,
+            "Height": 1,
+            "LookAtEnabled": false
           }
         ]
       }
@@ -67,5 +87,7 @@
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
-  "__references": []
+  "__references": [
+    "ipvfour.yougotmail"
+  ]
 }
