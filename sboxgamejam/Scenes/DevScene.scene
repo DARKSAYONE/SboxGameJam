@@ -1,5 +1,5 @@
 {
-  "__guid": "9f832399-4887-46b0-8f21-2ee284f538e2",
+  "__guid": "8eb15086-52db-4efb-b1ec-d6810c5594a9",
   "GameObjects": [
     {
       "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
@@ -518,7 +518,6 @@
             }
           ]
         }
-
       ]
     },
     {
@@ -569,7 +568,6 @@
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
-
             },
             {
               "__type": "BoxCollider",
@@ -578,7 +576,6 @@
               "IsTrigger": false,
               "Scale": "50,50,50",
               "Static": true
-
             }
           ]
         },
@@ -598,7 +595,6 @@
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
-
             },
             {
               "__type": "BoxCollider",
@@ -607,7 +603,6 @@
               "IsTrigger": false,
               "Scale": "50,50,50",
               "Static": true
-
             }
           ]
         },
@@ -627,7 +622,6 @@
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
-
             }
           ]
         },
@@ -647,7 +641,6 @@
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
-
             },
             {
               "__type": "BoxCollider",
@@ -656,7 +649,6 @@
               "IsTrigger": false,
               "Scale": "50,50,50",
               "Static": true
-
             }
           ]
         },
@@ -676,7 +668,6 @@
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
-
             },
             {
               "__type": "BoxCollider",
@@ -685,7 +676,6 @@
               "IsTrigger": false,
               "Scale": "50,50,50",
               "Static": true
-
             }
           ]
         }
@@ -715,11 +705,9 @@
   },
   "Title": "minimal",
   "Description": "",
-
-  "LastSaved": "2024-03-14T16:30:15.1232174\u002B03:00",
+  "LastSaved": "2024-03-14T19:24:54.3924366\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
-
   "__references": [
     "japancitymodels.door_01",
     "orus.8hu_kultiras_smallhouse_2"

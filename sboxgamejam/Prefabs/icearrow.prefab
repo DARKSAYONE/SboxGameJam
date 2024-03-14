@@ -1,0 +1,51 @@
+{
+  "RootObject": {
+    "__guid": "02633eb4-4489-41c7-b9c0-aa087838ddb3",
+    "Name": "icearrow",
+    "Rotation": "0,0,1,-0.00000004371139",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "ModelRenderer",
+        "__guid": "a4278f86-d233-4164-905a-3fbcc97d8195",
+        "BodyGroups": 18446744073709551615,
+        "MaterialOverride": "materials/particle/base_projected.vmat",
+        "Model": "models/ice arrow.vmdl",
+        "RenderType": "On",
+        "Tint": "0,0.96667,1,1"
+      },
+      {
+        "__type": "ModelCollider",
+        "__guid": "9c5408db-72ca-4077-a078-32651905a50e",
+        "IsTrigger": false,
+        "Model": "models/ice arrow.vmdl",
+        "Static": false
+      },
+      {
+        "__type": "Rigidbody",
+        "__guid": "a479a426-0d4e-4d48-b740-ec44332fb644",
+        "AngularDamping": 0,
+        "Gravity": false,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "IceArrow",
+        "__guid": "11b52a62-9a86-4397-ad29-74a3cf75f433",
+        "speed": 300
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}
