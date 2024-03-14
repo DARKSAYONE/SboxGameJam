@@ -1,5 +1,5 @@
 {
-  "Id": "9f832399-4887-46b0-8f21-2ee284f538e2",
+  "__guid": "9f832399-4887-46b0-8f21-2ee284f538e2",
   "GameObjects": [
     {
       "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
@@ -475,6 +475,50 @@
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
+      ],
+      "Children": [
+        {
+          "__guid": "7cf78e37-1b08-4458-a797-dbb6139731ed",
+          "Name": "SoundBox",
+          "Position": "0,0,0",
+          "Scale": "25.03833,25.03833,25.03833",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "f2f02073-1b12-462c-bf93-2bb8976f5ec9",
+              "__enabled": false,
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "SoundBoxComponent",
+              "__guid": "855076d3-3bd6-477b-a996-81884cc6e068",
+              "DistanceAttenuation": false,
+              "DistanceAttenuationOverride": false,
+              "Force2d": false,
+              "MaxRepeatTime": 1,
+              "MinRepeatTime": 1,
+              "Occlusion": false,
+              "OcclusionOverride": false,
+              "OcclusionRadius": 32,
+              "Pitch": 1,
+              "PlayOnStart": true,
+              "ReflectionOverride": false,
+              "Reflections": false,
+              "Repeat": true,
+              "Scale": "50,50,50",
+              "SoundEvent": "sound/midnight-forest-184304.sound",
+              "SoundOverride": true,
+              "StopOnNew": false,
+              "Volume": 0.08
+            }
+          ]
+        }
+
       ]
     },
     {
@@ -525,6 +569,16 @@
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
+
+            },
+            {
+              "__type": "BoxCollider",
+              "__guid": "ee4767ee-8db4-4b8c-a112-8512c82c145e",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true
+
             }
           ]
         },
@@ -544,6 +598,16 @@
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
+
+            },
+            {
+              "__type": "BoxCollider",
+              "__guid": "ee9ad294-d9bb-4406-8ce8-19da4c740037",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true
+
             }
           ]
         },
@@ -563,6 +627,7 @@
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
+
             }
           ]
         },
@@ -582,6 +647,16 @@
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
+
+            },
+            {
+              "__type": "BoxCollider",
+              "__guid": "25004101-316a-4f79-8dfc-1654f013e024",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true
+
             }
           ]
         },
@@ -601,6 +676,16 @@
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
+
+            },
+            {
+              "__type": "BoxCollider",
+              "__guid": "b605f4bb-d69c-475c-bd7c-a5b4ab2863eb",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true
+
             }
           ]
         }
@@ -630,7 +715,11 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-14T03:42:02.1715414\u002B03:00",
+
+  "LastSaved": "2024-03-14T16:30:15.1232174\u002B03:00",
+  "ResourceVersion": 1,
+  "__version": 1,
+
   "__references": [
     "japancitymodels.door_01",
     "orus.8hu_kultiras_smallhouse_2"
