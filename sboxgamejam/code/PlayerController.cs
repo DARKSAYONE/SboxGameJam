@@ -8,7 +8,9 @@ public sealed class PlayerController : Component, IStats
 	[Sync][Property] public int Level { get; set; }
 	[Sync][Property] public int Experience { get; set; }
 	[Sync][Property] public float HP { get; set; }
+	[Sync][Property] public float MaxHP { get; set; }
 	[Sync][Property] public int Mana { get; set; }
+	[Sync][Property] public int MaxMana { get; set; }
 	[Sync][Property] public float ManaRegen { get; set; }
 	[Sync][Property] public int PhysicalPower { get; set; }
 	[Sync][Property] public int MindPower { get; set; }
@@ -34,8 +36,14 @@ public sealed class PlayerController : Component, IStats
 	public bool WishCrouch;
 	public float EyeHeight = 64;
 
-	private float DamageDelay = 0f;
+	public float DamageDelay = 0f;
 
+	protected override void OnStart()
+	{
+		base.OnStart();
+		HP = MaxHP;
+		Mana = MaxMana;
+	}
 	protected override void OnUpdate()
 	{
 		if ( !IsProxy )
@@ -303,24 +311,24 @@ public sealed class PlayerController : Component, IStats
 	[Broadcast]
 	public void TakeDamage(Guid attackerGUID)
 	{
+		PlayerController attackerController = Scene.Directory.FindByGuid( attackerGUID ).Components.Get<PlayerController>();
 		//Log.Info( "hi lol" );
-		if ( !IsProxy && DamageDelay <= 0)
+		if ( !IsProxy && attackerController.DamageDelay <= 0 )
 		{
 			Log.Info( "The fireball hit its target!" );
 			Log.Info( "Damage delay is set to 2." );
-			DamageDelay = 2f;
-			GameObject attacker = Scene.Directory.FindByGuid( attackerGUID );
+			attackerController.DamageDelay = 2f;
 			Log.Info( $"Target HP before reduction: {HP}" );
-			var playerDamage = attacker.Components.Get<PlayerController>().MindPower * 5;
+			var playerDamage = attackerController.MindPower * 5;
 			HP = MathF.Max( HP - playerDamage, 0f );
 			HP -= playerDamage;
 			Log.Info( $"Damage dealt: {playerDamage}" );
 			Log.Info( $"Target REAL HP: {HP}" );
 
-			if (HP <= 0f)
+			if ( HP <= 0f )
 			{
 				Log.Info( $"Oh damn it! {GameObject} died! :<" );
-				ActivateDeathState();	
+				ActivateDeathState(attackerGUID);
 			}
 		}
 	}
@@ -332,14 +340,16 @@ public sealed class PlayerController : Component, IStats
 		Log.Info( "Player debuff" );
 	}
 
-	public void ActivateDeathState()
+	public void ActivateDeathState(Guid attackerGUID)
 	{
-		Rigidbody rigidbody = GameObject.Components.Create<Rigidbody>();
+		Rigidbody rigidbody = GameObject.Children[0].Components.GetAll<Rigidbody>().FirstOrDefault();
+		Log.Info( rigidbody );
 		PlayerController playerController = GameObject.Components.Get<PlayerController>();
+		Log.Info( $"{GameObject.Name}" );
 		if ( playerController != null )
 		{
-			playerController.Destroy();
 			GameObject.Children.FirstOrDefault<GameObject>().Components.Get<CitizenAnimationHelper>().Destroy();
+			playerController.Destroy();
 		}
 	}
 }
