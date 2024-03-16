@@ -313,11 +313,11 @@ public sealed class PlayerController : Component, IStats
 	{
 		PlayerController attackerController = Scene.Directory.FindByGuid( attackerGUID ).Components.Get<PlayerController>();
 		//Log.Info( "hi lol" );
-		if ( !IsProxy && attackerController.DamageDelay <= 0 )
+		if ( !IsProxy /*attackerController.DamageDelay <= 0 */)
 		{
 			Log.Info( "The fireball hit its target!" );
 			Log.Info( "Damage delay is set to 2." );
-			attackerController.DamageDelay = 2f;
+			attackerController.DamageDelay = 0.5f;
 			Log.Info( $"Target HP before reduction: {HP}" );
 			var playerDamage = attackerController.MindPower * 5;
 			HP = MathF.Max( HP - playerDamage, 0f );
@@ -342,8 +342,10 @@ public sealed class PlayerController : Component, IStats
 
 	public void ActivateDeathState(Guid attackerGUID)
 	{
-		Rigidbody rigidbody = GameObject.Children[0].Components.GetAll<Rigidbody>().FirstOrDefault();
+		/*Rigidbody rigidbody = GameObject.Children[0].Components.GetAll<Rigidbody>().FirstOrDefault();
 		Log.Info( rigidbody );
+		*/
+		Rigidbody rigidbody = GameObject.Components.Create<Rigidbody>();
 		PlayerController playerController = GameObject.Components.Get<PlayerController>();
 		Log.Info( $"{GameObject.Name}" );
 		if ( playerController != null )

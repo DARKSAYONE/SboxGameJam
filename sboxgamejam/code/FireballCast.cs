@@ -53,7 +53,7 @@ public sealed class FireballCast : Component
 
 	void CastFireball()
 	{
-		if ( !IsProxy )
+		if ( !IsProxy && CanShoot )
 		{
 			if ( Input.Pressed( "Attack1" ) && !AttackOneOnCooldown )
 			{
@@ -68,7 +68,7 @@ public sealed class FireballCast : Component
 
 	void CastQSkill()
 	{
-		if ( !IsProxy )
+		if ( !IsProxy && CanShoot)
 		{
 			if ( Input.Pressed( "QUse" ) && !QSkillOnCooldown)
 			{
@@ -83,7 +83,7 @@ public sealed class FireballCast : Component
 
 	void CastESkill()
 	{
-		if ( !IsProxy )
+		if ( !IsProxy && CanShoot)
 		{
 			if ( Input.Pressed( "use" ) && !ESkillOnCooldown )
 			{

@@ -67,6 +67,10 @@ public sealed class GameManager : Component
 		{
 			AllPlayersReady = true;
 			Log.Info ( "All players connect" );
+			for(int i = 0; i < Players.Count; i++)
+			{
+				
+			}
 		}
 		Log.Info( Players.Count );		
 	}

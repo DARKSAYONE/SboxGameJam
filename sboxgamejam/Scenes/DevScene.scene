@@ -203,7 +203,7 @@
       "Name": "GameManager",
       "Position": "-94.99576,-28.18832,156.6965",
       "Enabled": true,
-      "NetworkMode": 2,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "GameManager",
@@ -229,7 +229,7 @@
               "go": "171b7c76-2fac-4335-8b51-3a045dc9f088"
             }
           ],
-          "PVERoundTime": 11,
+          "PVERoundTime": 30,
           "PVPRoundSpawnPos": [
             {
               "_type": "gameobject",
@@ -707,7 +707,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-16T02:57:18.4023917\u002B03:00",
+  "LastSaved": "2024-03-17T00:02:19.0179967\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
