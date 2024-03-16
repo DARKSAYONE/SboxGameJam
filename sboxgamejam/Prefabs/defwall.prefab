@@ -2,7 +2,7 @@
   "RootObject": {
     "__guid": "d72fc3aa-6139-48f8-be59-f77fd09bf7cd",
     "Name": "defwall",
-    "Scale": "2.565896,0.009941693,1.306032",
+    "Scale": "0.06445166,4.459998,1.306032",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
