@@ -14,6 +14,7 @@ public sealed class GameManager : Component
 	[Property] private float PVERoundTime = 30.0f;
 	[Property] public EnemyNetSpawner ENS;
 	[Property] public SoundPointComponent Sound;
+	
 
 	private bool AllPlayersReady = false;
 	private bool PVPTime = false;
@@ -62,15 +63,14 @@ public sealed class GameManager : Component
 		if (Players.Count != 2 )
 		{
 			Players = Scene.GetAllObjects( true ).Where( x => x.Tags.Has( "player" ) && x.Parent.Name == "Scene").ToList();
+			CanShootOff();
 		}
 		else
 		{
 			AllPlayersReady = true;
 			Log.Info ( "All players connect" );
-			for(int i = 0; i < Players.Count; i++)
-			{
-				
-			}
+			CanShootOff();
+			
 		}
 		Log.Info( Players.Count );		
 	}
@@ -84,12 +84,19 @@ public sealed class GameManager : Component
 				Players[i].Transform.Position = PVPRoundSpawnPos[i].Transform.Position;
 			}
 			Log.Info( "Players tele to spawn positions" );
+			CanShootOn();
 			DeployPlayersToPVP = true;
 			
 		}
 
-		if ( DeployPlayersToPVP && !PVPRoundIsComplete)
+		if ( DeployPlayersToPVP && !PVPRoundIsComplete )
+		{
 			PVPRoundTimer();
+			
+		}
+			
+
+
 	}
 
 	void PVERound()
@@ -99,14 +106,18 @@ public sealed class GameManager : Component
 			for ( int i = 0; i < Players.Count;i++ )
 			{
 				Players[i].Transform.Position = PVERoundSpawnPos[i].Transform.Position;
+				
 			}
 			Log.Info( "Players tele to spawn positions" );
 			DeployPlayersToPVE = true;
+			CanShootOn();
+
 
 		}
 
 		if(DeployPlayersToPVE && !PVERoundIsComplete)
 		{
+			
 			PVERoundTimer();
 		}
 	}
@@ -120,6 +131,7 @@ public sealed class GameManager : Component
 		}
 		else if(RoundStartTimer < 0)
 		{
+			CanShootOff();
 			BeforeRoundTimer = true;
 			RoundStartTimer = 10f;
 		}
@@ -134,6 +146,7 @@ public sealed class GameManager : Component
 		}
 		else if(PVPRoundTime < 0)
 		{
+			CanShootOff();
 			PVPRoundEnd();
 			//PVPTime = true;
 		}
@@ -148,6 +161,7 @@ public sealed class GameManager : Component
 		}
 		else if(PVERoundTime < 0)
 		{
+			CanShootOff();
 			PVERoundEnd();
 		}
 	}
@@ -175,6 +189,24 @@ public sealed class GameManager : Component
 			Enemy.Destroy();
 		}
 		ENS.Enemies.Clear();
+	}
+
+	void CanShootOff()
+	{
+		for (int i = 0; i < Players.Count; i++)
+		{
+			var PC = Players[i].Components.Get<FireballCast>();
+			PC.CanShoot = false;
+		}
+	}
+
+	void CanShootOn()
+	{
+		for ( int i = 0; i < Players.Count; i++ )
+		{
+			var PC = Players[i].Components.Get<FireballCast>();
+			PC.CanShoot = true;
+		}
 	}
 
 	/*[Broadcast]
