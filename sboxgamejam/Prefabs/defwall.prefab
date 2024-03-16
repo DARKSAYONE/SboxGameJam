@@ -1,0 +1,53 @@
+{
+  "RootObject": {
+    "__guid": "d72fc3aa-6139-48f8-be59-f77fd09bf7cd",
+    "Name": "defwall",
+    "Scale": "2.565896,0.009941693,1.306032",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "ModelRenderer",
+        "__guid": "4fa54db1-6132-4097-a418-9133c0d6032d",
+        "BodyGroups": 18446744073709551615,
+        "MaterialOverride": "models/japan_props_001/mi_windowglass_01.vmat",
+        "Model": "models/dev/box.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,0.63"
+      },
+      {
+        "__type": "BoxCollider",
+        "__guid": "bec5f027-e69c-448d-9842-083140ae7630",
+        "Center": "0,0,0",
+        "IsTrigger": false,
+        "Scale": "50,50,50",
+        "Static": false
+      },
+      {
+        "__type": "Rigidbody",
+        "__guid": "4be6344e-7e9e-4ada-a899-f9bbb68e386b",
+        "AngularDamping": 0,
+        "Gravity": false,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "MotionEnabled": false,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "DefWallSkill",
+        "__guid": "30e297e4-ac96-48ff-bb8a-b392828f06c9"
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "japancitymodels.door_01"
+  ]
+}

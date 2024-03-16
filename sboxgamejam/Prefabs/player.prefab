@@ -57,7 +57,13 @@
       {
         "__type": "FireballCast",
         "__guid": "8905d925-2079-46b3-bbde-055b30fdcaa4",
-        "CooldownTime": 2,
+        "AttackOnecooldownTime": 2,
+        "CanShoot": true,
+        "ESkill": {
+          "_type": "gameobject",
+          "prefab": "prefabs/defwall.prefab"
+        },
+        "ESkillCooldownTime": 5,
         "FireballPrefab": {
           "_type": "gameobject",
           "prefab": "prefabs/fireball.prefab"
@@ -70,6 +76,7 @@
           "_type": "gameobject",
           "prefab": "prefabs/icearrow.prefab"
         },
+        "QSkillCooldownTime": 5,
         "SoundPoint": {
           "_type": "component",
           "component_id": "347db642-ea10-4e9d-aed4-de30f4135019",

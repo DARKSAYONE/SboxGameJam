@@ -3,18 +3,16 @@ using System.Diagnostics;
 
 public sealed class FireballCast : Component
 {
-    [Property]
-    public GameObject FireballPrefab;
-    [Property]
-    public GameObject FireballSpawnPos;
-    [Property]	
-    public GameObject CameraFind;
 	[Property]
-	public float CooldownTime = 2.0f;
-	private bool OnCooldown = false;
-	private float TimerCooldown;
+	public GameObject FireballPrefab;
+	[Property]
+	public GameObject FireballSpawnPos;
+	[Property]
+	public GameObject CameraFind;
+
 
 	[Property] GameObject QSkill;
+	[Property] GameObject ESkill;
 
 	[Property]
 	public SoundPointComponent SoundPoint;
@@ -22,33 +20,48 @@ public sealed class FireballCast : Component
 	[Property]
 	public bool CanShoot = true;
 
+	[Property]
+	public float AttackOnecooldownTime = 2.0f;
+	private bool AttackOneOnCooldown = false;
+	private float AttackOneTimerCooldown;
+
+	[Property]
+	public float QSkillCooldownTime = 5.0f;
+	private bool QSkillOnCooldown = false;
+	private float QSkillTimerCooldown;
+
+	[Property]
+	public float ESkillCooldownTime = 5.0f;
+	private bool ESkillOnCooldown = false;
+	private float ESkillTimerCooldown;
 
 	protected override void OnStart()
 	{
 		base.OnStart();
-		TimerCooldown = CooldownTime;
+		AttackOneTimerCooldown = AttackOnecooldownTime;
+		ESkillTimerCooldown = ESkillCooldownTime;
+		QSkillTimerCooldown = QSkillCooldownTime;
 	}
 
 	protected override void OnUpdate()
-    {
-		if ( OnCooldown )
-			CooldownTimer();
-
-        CastFireball();
+	{
+		CooldownChecker();
+		CastFireball();
 		CastQSkill();
-    }
+		CastESkill();
+	}
 
 	void CastFireball()
 	{
 		if ( !IsProxy )
 		{
-			if ( Input.Pressed( "Attack1" ) && !OnCooldown )
+			if ( Input.Pressed( "Attack1" ) && !AttackOneOnCooldown )
 			{
 				var netFireball = FireballPrefab.Clone( FireballSpawnPos.Transform.Position + Vector3.Forward, FireballSpawnPos.Parent.Transform.Rotation );
 				netFireball.Name = $"{GameObject.Name} - Fireball";
 				netFireball.NetworkSpawn( GameObject.Network.OwnerConnection );
-				OnCooldown = true;
-				
+				AttackOneOnCooldown = true;
+
 			}
 		}
 	}
@@ -57,29 +70,85 @@ public sealed class FireballCast : Component
 	{
 		if ( !IsProxy )
 		{
-			if ( Input.Pressed( "QUse" ) && !OnCooldown )
+			if ( Input.Pressed( "QUse" ) && !QSkillOnCooldown)
 			{
 				var netFireball = QSkill.Clone( FireballSpawnPos.Transform.Position + Vector3.Forward, FireballSpawnPos.Parent.Transform.Rotation );
 				netFireball.Name = $"{GameObject.Name} - QSkill";
 				netFireball.NetworkSpawn( GameObject.Network.OwnerConnection );
-				OnCooldown = true;
+				QSkillOnCooldown = true;
 
 			}
 		}
 	}
 
-
-	void CooldownTimer()
+	void CastESkill()
 	{
-		if ( TimerCooldown > 0 )
+		if ( !IsProxy )
 		{
-			TimerCooldown -= Time.Delta;
+			if ( Input.Pressed( "use" ) && !ESkillOnCooldown )
+			{
+				var ESkillCast = ESkill.Clone( FireballSpawnPos.Transform.Position + Vector3.Forward, FireballSpawnPos.Parent.Transform.Rotation );
+				ESkillCast.Name = $"{GameObject.Name} - ESkill";
+				ESkillCast.NetworkSpawn( GameObject.Network.OwnerConnection );
+				ESkillOnCooldown = true;
+			}
 		}
-		else if ( TimerCooldown < 0 ) 
+	}
+
+	void CooldownChecker()
+	{
+		if ( AttackOneOnCooldown )
+			AttackOneCooldownTimer();
+
+		if(QSkillOnCooldown)
+			QSkillCooldownTimer();
+
+		if ( ESkillOnCooldown )
+			ESkillCooldownTimer();
+	}
+	
+
+	void AttackOneCooldownTimer()
+	{
+		if ( AttackOneTimerCooldown > 0 )
+		{
+			AttackOneTimerCooldown -= Time.Delta;
+		}
+		else if ( AttackOneTimerCooldown < 0 ) 
 		{
 			SoundPoint.StartSound();
-			OnCooldown = false;
-			TimerCooldown = CooldownTime;
+			AttackOneOnCooldown = false;
+			AttackOneTimerCooldown = AttackOnecooldownTime;
+		}
+
+	}
+
+	void QSkillCooldownTimer()
+	{
+		if ( QSkillTimerCooldown > 0 )
+		{
+			QSkillTimerCooldown -= Time.Delta;
+		}
+		else if ( QSkillTimerCooldown < 0 )
+		{
+			SoundPoint.StartSound();
+			QSkillOnCooldown = false;
+			QSkillTimerCooldown = QSkillCooldownTime;
+		}
+
+	}
+
+	void ESkillCooldownTimer()
+	{
+		if ( ESkillTimerCooldown > 0 )
+		{
+			ESkillTimerCooldown -= Time.Delta;
+		}
+		else if ( ESkillTimerCooldown < 0 )
+		{
+			SoundPoint.StartSound();
+			ESkillOnCooldown = false;
+			ESkillTimerCooldown = ESkillCooldownTime;
 		}
 
 	}
