@@ -1,0 +1,323 @@
+{
+  "RootObject": {
+    "__guid": "e9d5624a-0ce7-4c8b-8313-c8bcc18a8520",
+    "Name": "player",
+    "Tags": "player",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "CharacterController",
+        "__guid": "885fa118-5d08-4dba-8090-cd3f3c0a3c33",
+        "Acceleration": 32,
+        "Bounciness": 0.3,
+        "GroundAngle": 45,
+        "Height": 64,
+        "IgnoreLayers": "trigger",
+        "Radius": 16,
+        "StepHeight": 18
+      },
+      {
+        "__type": "PlayerController",
+        "__guid": "6928164b-8816-4399-b336-007a186cff71",
+        "Cam": {
+          "_type": "component",
+          "component_id": "eadfe948-f874-4057-8e7f-117b32f126ab",
+          "go": "c4f95852-8165-442b-8f12-cf4cc5486861",
+          "component_type": "CameraComponent"
+        },
+        "JumpForce": 600,
+        "AnimationHelper": {
+          "_type": "component",
+          "component_id": "54e889b0-c560-49a4-b9ae-6c5a8a529322",
+          "go": "3a0350a0-bf52-4c5b-96ac-07d28aaf5c80",
+          "component_type": "CitizenAnimationHelper"
+        },
+        "CharacterController": {
+          "_type": "component",
+          "component_id": "885fa118-5d08-4dba-8090-cd3f3c0a3c33",
+          "go": "e9d5624a-0ce7-4c8b-8313-c8bcc18a8520",
+          "component_type": "CharacterController"
+        },
+        "CrouchMoveSpeed": 64,
+        "Experience": 0,
+        "Fortitude": 0,
+        "HitSpeed": 1,
+        "HP": 10,
+        "isDeath": false,
+        "Level": 1,
+        "Mana": 100,
+        "ManaRegen": 5,
+        "MaxHP": 300,
+        "MaxMana": 10,
+        "MindPower": 1,
+        "MovementSpeed": 1,
+        "PhysicalPower": 1,
+        "Protection": 0,
+        "RunMoveSpeed": 380,
+        "SprintMoveSpeed": 620,
+        "WalkMoveSpeed": 110
+      },
+      {
+        "__type": "FireballCast",
+        "__guid": "719939ea-da7e-4214-b78f-3ed8f1f32d03",
+        "AttackOnecooldownTime": 2,
+        "CanShoot": true,
+        "ESkill": {
+          "_type": "gameobject",
+          "prefab": "prefabs/defwall.prefab"
+        },
+        "ESkillCooldownTime": 10,
+        "FireballPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/fireball.prefab"
+        },
+        "FireballSpawnPos": {
+          "_type": "gameobject",
+          "go": "dd4bc177-784f-4927-bba1-b75dcc707695"
+        },
+        "QSkill": {
+          "_type": "gameobject",
+          "prefab": "prefabs/icearrow.prefab"
+        },
+        "QSkillCooldownTime": 5,
+        "SoundPoint": {
+          "_type": "component",
+          "component_id": "0390b375-726e-4abc-bc43-ee3531f52d07",
+          "go": "73a6808d-3b30-4d66-b085-039e965a9646",
+          "component_type": "SoundPointComponent"
+        }
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "3a0350a0-bf52-4c5b-96ac-07d28aaf5c80",
+        "Name": "Player Body",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "SkinnedModelRenderer",
+            "__guid": "d975f2cd-7d8b-4eb3-95b6-0f87e789ba8e",
+            "BodyGroups": 341,
+            "CreateBoneObjects": false,
+            "Model": "models/citizen/citizen.vmdl",
+            "RenderType": "ShadowsOnly",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "CitizenAnimationHelper",
+            "__guid": "54e889b0-c560-49a4-b9ae-6c5a8a529322",
+            "BodyWeight": 1,
+            "EyesWeight": 1,
+            "HeadWeight": 1,
+            "Height": 1,
+            "LookAtEnabled": false,
+            "Target": {
+              "_type": "component",
+              "component_id": "d975f2cd-7d8b-4eb3-95b6-0f87e789ba8e",
+              "go": "3a0350a0-bf52-4c5b-96ac-07d28aaf5c80",
+              "component_type": "SkinnedModelRenderer"
+            }
+          },
+          {
+            "__type": "PlayerDresser",
+            "__guid": "239a68b4-40b4-4040-b980-9e3215da0a4e",
+            "BodyRenderer": {
+              "_type": "component",
+              "component_id": "d975f2cd-7d8b-4eb3-95b6-0f87e789ba8e",
+              "go": "3a0350a0-bf52-4c5b-96ac-07d28aaf5c80",
+              "component_type": "SkinnedModelRenderer"
+            }
+          },
+          {
+            "__type": "PlayerFootsteps",
+            "__guid": "a49dfa5a-f9e4-43ad-8c2e-6282f5912ad2",
+            "Source": {
+              "_type": "component",
+              "component_id": "d975f2cd-7d8b-4eb3-95b6-0f87e789ba8e",
+              "go": "3a0350a0-bf52-4c5b-96ac-07d28aaf5c80",
+              "component_type": "SkinnedModelRenderer"
+            }
+          },
+          {
+            "__type": "ModelCollider",
+            "__guid": "dd382188-0892-4bcc-85ae-4a8313255751",
+            "IsTrigger": false,
+            "Model": "models/citizen/citizen.vmdl",
+            "Static": false
+          }
+        ]
+      },
+      {
+        "__guid": "47aa31bd-561d-4087-b86d-3df3bb12cfc7",
+        "Name": "Physics Pusher",
+        "Position": "0,0,22.68671",
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "BoxCollider",
+            "__guid": "1ca4cdc7-a3d8-4f72-a65e-ad7106758cf1",
+            "Center": "0,0,0",
+            "IsTrigger": false,
+            "Scale": "36,36,40",
+            "Static": false
+          }
+        ]
+      },
+      {
+        "__guid": "6ad38c6f-6599-41ae-b871-bcff75ca662d",
+        "Name": "Voice",
+        "Position": "42.0599,39.05991,-23.23907",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "Voice",
+            "__guid": "37916231-1cff-4dc9-999d-0a290eb582f0",
+            "Loopback": false,
+            "Mode": "PushToTalk",
+            "MorphScale": 2,
+            "MorphSmoothTime": 0.1,
+            "PushToTalkInput": "voice",
+            "Renderer": {
+              "_type": "component",
+              "component_id": "d975f2cd-7d8b-4eb3-95b6-0f87e789ba8e",
+              "go": "3a0350a0-bf52-4c5b-96ac-07d28aaf5c80",
+              "component_type": "SkinnedModelRenderer"
+            },
+            "Volume": 1,
+            "WorldspacePlayback": true
+          }
+        ]
+      },
+      {
+        "__guid": "1657f97d-c75c-4019-b446-1bd2fb2849ed",
+        "Name": "World",
+        "Position": "0,0,77.72417",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "WorldPanel",
+            "__guid": "a06c970f-5292-4f85-abbb-31f8857cd12a",
+            "HorizontalAlign": "Center",
+            "LookAtCamera": true,
+            "PanelSize": "512,512",
+            "RenderScale": 1,
+            "VerticalAlign": "Center"
+          },
+          {
+            "__type": "NameTagPanel",
+            "__guid": "ee59489a-dbcb-4279-b720-b7b932fa663f"
+          },
+          {
+            "__type": "RazorTest",
+            "MyStringValue": "Hello World!"
+          }
+        ]
+      },
+      {
+        "__guid": "f21eb1d3-9784-4472-b7c9-fc4a9f4e1604",
+        "Name": "Player Pusher",
+        "Position": "0,0,32",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "PlayerPusher",
+            "__guid": "0602857e-babd-4465-b0bb-9888239e8e08",
+            "Radius": 32
+          }
+        ]
+      },
+      {
+        "__guid": "c4f95852-8165-442b-8f12-cf4cc5486861",
+        "Name": "Camera",
+        "Position": "0,0,64",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "CameraComponent",
+            "__guid": "eadfe948-f874-4057-8e7f-117b32f126ab",
+            "BackgroundColor": "0.33333,0.46275,0.52157,1",
+            "ClearFlags": "All",
+            "FieldOfView": 78,
+            "IsMainCamera": true,
+            "Orthographic": false,
+            "OrthographicHeight": 1204,
+            "Priority": 1,
+            "RenderExcludeTags": "",
+            "RenderTags": "",
+            "TargetEye": "None",
+            "Viewport": "0,0,1,1",
+            "ZFar": 10000,
+            "ZNear": 10
+          },
+          {
+            "__type": "CameraController",
+            "__guid": "ef692aaf-76d7-4c0e-a35e-f8373de84991"
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "dd4bc177-784f-4927-bba1-b75dcc707695",
+            "Name": "FireballSpawner",
+            "Position": "43.54512,-4.965918,-3.071289",
+            "Scale": "0.2780159,0.2780159,0.2780159",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "Components": [
+              {
+                "__type": "ModelRenderer",
+                "__guid": "d0d3d6f2-a7b5-4e24-939b-436a712094d0",
+                "__enabled": false,
+                "BodyGroups": 18446744073709551615,
+                "Model": "models/dev/box.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "__guid": "73a6808d-3b30-4d66-b085-039e965a9646",
+        "Name": "Sound",
+        "Position": "-29.0657,79.24033,67.7169",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "SoundPointComponent",
+            "__guid": "0390b375-726e-4abc-bc43-ee3531f52d07",
+            "DistanceAttenuation": false,
+            "DistanceAttenuationOverride": false,
+            "Force2d": false,
+            "MaxRepeatTime": 1,
+            "MinRepeatTime": 1,
+            "Occlusion": false,
+            "OcclusionOverride": false,
+            "OcclusionRadius": 32,
+            "Pitch": 1,
+            "PlayOnStart": false,
+            "ReflectionOverride": false,
+            "Reflections": false,
+            "Repeat": false,
+            "SoundEvent": "sound/reloadtestsound.sound",
+            "SoundOverride": false,
+            "StopOnNew": false,
+            "Volume": 1
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

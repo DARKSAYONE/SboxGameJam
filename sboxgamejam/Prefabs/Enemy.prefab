@@ -1,0 +1,108 @@
+{
+  "RootObject": {
+    "__guid": "50450c77-0252-4bba-9fa9-1d3c62b255e8",
+    "Name": "enemy",
+    "Tags": "npc",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "NavMeshAgent",
+        "__guid": "59a72ea5-13bc-41e7-8a01-c676ead35ec1",
+        "Acceleration": 1000,
+        "Height": 40,
+        "MaxSpeed": 120,
+        "Radius": 16,
+        "Separation": 0.25,
+        "UpdatePosition": true,
+        "UpdateRotation": true
+      },
+      {
+        "__type": "EnemyAI",
+        "__guid": "7c85c799-0891-4032-b0b3-df83616c4444",
+        "AttackRange": 60,
+        "Players": [],
+        "Experience": 0,
+        "Fortitude": 0,
+        "HitSpeed": 1,
+        "HP": 5,
+        "Level": 0,
+        "Mana": 0,
+        "ManaRegen": 5,
+        "MaxHP": 10,
+        "MaxMana": 0,
+        "MindPower": 1,
+        "MovementSpeed": 1,
+        "PhysicalPower": 1,
+        "Protection": 0
+      },
+      {
+        "__type": "SoundBoxComponent",
+        "__guid": "59745a54-0241-4ef2-8f2d-1a5baadafa92",
+        "DistanceAttenuation": false,
+        "DistanceAttenuationOverride": false,
+        "Force2d": false,
+        "MaxRepeatTime": 1,
+        "MinRepeatTime": 1,
+        "Occlusion": false,
+        "OcclusionOverride": false,
+        "OcclusionRadius": 32,
+        "Pitch": 1,
+        "PlayOnStart": false,
+        "ReflectionOverride": false,
+        "Reflections": false,
+        "Repeat": false,
+        "Scale": "100,100,50",
+        "SoundEvent": "sounds/soundboard/yougotmail.sound",
+        "SoundOverride": false,
+        "StopOnNew": false,
+        "Volume": 1
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "870549dc-d0f8-4edd-b1f7-d6d884c16dcd",
+        "Name": "Sphere",
+        "Position": "0,0,-1.951181",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "__guid": "2d8b27f2-9cba-4684-bade-312e6f9de3cb",
+            "BodyGroups": 341,
+            "MaterialGroup": "default",
+            "MaterialOverride": "models/citizen/skin/citizen_skin.vmat",
+            "Model": "models/citizen/citizen.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__guid": "a3fc031d-d144-4d9f-b56d-1ada5f0a8d99",
+            "IsTrigger": false,
+            "Model": "models/citizen/citizen.vmdl",
+            "Static": false
+          },
+          {
+            "__type": "CitizenAnimationHelper",
+            "__guid": "e008e1ec-f883-4269-b479-cb04163bf172",
+            "BodyWeight": 1,
+            "EyesWeight": 1,
+            "HeadWeight": 1,
+            "Height": 1,
+            "LookAtEnabled": false
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "ipvfour.yougotmail"
+  ]
+}

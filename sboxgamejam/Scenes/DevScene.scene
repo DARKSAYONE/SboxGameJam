@@ -1,0 +1,1112 @@
+{
+  "__guid": "8eb15086-52db-4efb-b1ec-d6810c5594a9",
+  "GameObjects": [
+    {
+      "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
+      "Name": "Sun",
+      "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "__guid": "4a70521b-7405-453d-8ed3-cadb8188de18",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.94419,0.97767,1,1",
+          "Shadows": true,
+          "SkyColor": "0.2532,0.32006,0.35349,1"
+        }
+      ]
+    },
+    {
+      "__guid": "00344a8c-fa5e-45ae-b12a-10bb781a1dc3",
+      "Name": "2D Skybox",
+      "Tags": "skybox",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "__guid": "32f1693e-36b1-4c67-b082-1a42baccef69",
+          "SkyMaterial": "materials/skybox/light_test_sky_sunny03.vmat",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "EnvmapProbe",
+          "__guid": "c204c4b6-1f63-4bef-aa97-f30bcbc2b3f4",
+          "Bounds": {
+            "Mins": "-512,-512,-512",
+            "Maxs": "512,512,512"
+          },
+          "Feathering": 0.02,
+          "Projection": "Sphere",
+          "Texture": "textures/cubemaps/default2.vtex",
+          "TintColor": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
+      "Name": "Camera",
+      "Position": "-125.1459,-196.9508,127.2752",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "CameraComponent",
+          "__guid": "846e61f6-70ec-4d5a-89ba-4718fe68a6f1",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 78,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        },
+        {
+          "__type": "Bloom",
+          "__guid": "52219a43-de11-4ef9-a415-0085f6aded5c",
+          "BloomColor": {
+            "color": [
+              {
+                "c": "1,1,1,1"
+              },
+              {
+                "t": 1,
+                "c": "1,1,1,1"
+              }
+            ],
+            "alpha": []
+          },
+          "BloomCurve": [
+            {
+              "y": 0.5
+            },
+            {
+              "x": 1,
+              "y": 1
+            }
+          ],
+          "Mode": "Additive",
+          "Strength": 0.5,
+          "Threshold": 0.5,
+          "ThresholdWidth": 0.5
+        },
+        {
+          "__type": "Tonemapping",
+          "__guid": "0666d399-eb7d-43d2-868e-20dbb622564a",
+          "ExposureCompensation": 0,
+          "MaximumExposure": 2,
+          "MinimumExposure": 1,
+          "Rate": 1
+        },
+        {
+          "__type": "Sharpen",
+          "__guid": "234b97f6-be5e-4ce4-a11b-2828c169e062",
+          "Scale": 0.2
+        }
+      ]
+    },
+    {
+      "__guid": "30f2a47b-da0e-421c-99bd-5078dc1da212",
+      "Name": "Network(Maybe)",
+      "Position": "-43.87151,12.12111,80.64072",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "NetworkHelper",
+          "__guid": "03fb3229-fe4d-4dac-ba5a-b4dc0e22e290",
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/player.prefab"
+          },
+          "SpawnPoints": [
+            {
+              "_type": "gameobject",
+              "go": "d4b8cfa2-49f2-4024-9213-b0d077563c14"
+            }
+          ],
+          "StartServer": true
+        }
+      ]
+    },
+    {
+      "__guid": "d4b8cfa2-49f2-4024-9213-b0d077563c14",
+      "Name": "PlayerSpawn",
+      "Position": "-5038.816,-3398.54,695.7969",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Children": [
+        {
+          "__guid": "a1b621a9-7225-48b7-ba74-613c9f257a8b",
+          "Name": "Cube",
+          "Position": "91.28076,0,-56.86267",
+          "Scale": "7.327874,7.42381,1",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "a9022c61-5a02-41c2-bcba-a67d4b5e2706",
+              "__enabled": false,
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__guid": "01a25fde-a39f-43f4-8491-441a221f1c2e",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "94c48db5-5dd9-46b2-974b-5ab1cdb2ba9d",
+      "Name": "World",
+      "Position": "-309.6895,53.81025,53.0498",
+      "Scale": "1.296915,1.703792,1.504388",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "WorldPanel",
+          "__guid": "82f7dd64-405f-479d-a4c3-d8022792a302",
+          "HorizontalAlign": "Center",
+          "LookAtCamera": false,
+          "PanelSize": "512,512",
+          "RenderScale": 1,
+          "VerticalAlign": "Center"
+        },
+        {
+          "__type": "RazorTest",
+          "MyStringValue": "Hello World!"
+        }
+      ]
+    },
+    {
+      "__guid": "62755e2a-81ca-4ecf-918b-9c9d522479dc",
+      "Name": "GameManager",
+      "Position": "-94.99576,-28.18832,156.6965",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "GameManager",
+          "__guid": "404dd781-7231-4119-a7cc-3e8847573558",
+          "Enemies": [],
+          "ENS": [
+            {
+              "_type": "component",
+              "component_id": "35482a45-bcc0-42fb-97d6-fc1ba3182e9e",
+              "go": "3b73ad68-a7b5-4ee4-85d1-86e349a79a72",
+              "component_type": "EnemyNetSpawner"
+            },
+            {
+              "_type": "component",
+              "component_id": "ddc5d693-b5b5-4a74-b65c-23ad722741f8",
+              "go": "8fe1d0b5-c635-45b0-a161-52cc4d8f973a",
+              "component_type": "EnemyNetSpawner"
+            }
+          ],
+          "MobSpawners": [
+            {
+              "_type": "gameobject",
+              "go": "3b73ad68-a7b5-4ee4-85d1-86e349a79a72"
+            },
+            {
+              "_type": "gameobject",
+              "go": "8fe1d0b5-c635-45b0-a161-52cc4d8f973a"
+            }
+          ],
+          "Players": [],
+          "PlayersScore": [
+            0,
+            0
+          ],
+          "PVERoundSpawnPos": [
+            {
+              "_type": "gameobject",
+              "go": "af0f8d2e-f701-4e88-8642-ced233dd171d"
+            },
+            {
+              "_type": "gameobject",
+              "go": "171b7c76-2fac-4335-8b51-3a045dc9f088"
+            }
+          ],
+          "PVERoundTime": 30,
+          "PVPRoundSpawnPos": [
+            {
+              "_type": "gameobject",
+              "go": "79cfdde1-08f1-4838-827d-090b0c15043c"
+            },
+            {
+              "_type": "gameobject",
+              "go": "5c73d03f-62c9-49d2-967e-cf5d7b001f73"
+            }
+          ],
+          "PVPRoundTime": 100,
+          "Sound": {
+            "_type": "component",
+            "component_id": "ed63d9ca-a044-4838-9972-8d453d42c260",
+            "go": "62755e2a-81ca-4ecf-918b-9c9d522479dc",
+            "component_type": "SoundPointComponent"
+          }
+        },
+        {
+          "__type": "SoundPointComponent",
+          "__guid": "ed63d9ca-a044-4838-9972-8d453d42c260",
+          "DistanceAttenuation": false,
+          "DistanceAttenuationOverride": false,
+          "Force2d": false,
+          "MaxRepeatTime": 1,
+          "MinRepeatTime": 1,
+          "Occlusion": false,
+          "OcclusionOverride": false,
+          "OcclusionRadius": 32,
+          "Pitch": 1,
+          "PlayOnStart": false,
+          "ReflectionOverride": false,
+          "Reflections": false,
+          "Repeat": false,
+          "SoundEvent": "sound/save_load1.sound",
+          "SoundOverride": false,
+          "StopOnNew": false,
+          "Volume": 1
+        }
+      ]
+    },
+    {
+      "__guid": "f63d93a9-b3a1-4196-b642-9c5960f30ade",
+      "Name": "MapLoader",
+      "Position": "-335.2686,45.33685,-82.76392",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "__guid": "56944624-8b3f-48bb-a189-01145b360204",
+          "MapName": "facepunch.bm_dockyard",
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "44c1a926-f707-45ae-9791-16e3842667f4",
+      "Name": "Testmap",
+      "NetworkMode": 2,
+      "Children": [
+        {
+          "__guid": "6ad70641-3c6c-4402-9c85-9a4969af4764",
+          "Name": "Plane",
+          "Scale": "15,15,3",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "0a127a8f-22ed-4037-b787-5755f4f13876",
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/default.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "0.39546,0.51163,0.27128,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__guid": "8acba713-a326-4127-8f15-ef98306c427f",
+              "Center": "0,0,-5",
+              "IsTrigger": false,
+              "Scale": "100,100,10",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "f0acba90-726e-4846-848c-2ee77df35c83",
+          "Name": "Wall",
+          "Position": "194.3498,-7.606064,53.00799",
+          "Scale": "1.992922,5.117368,2.256136",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "03cc1a33-3e93-4865-ba23-c3a0f2e4775e",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "0.43333,1,0,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__guid": "9c03e084-836d-40c6-9cbc-cd21ebe52d0f",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "3fc74111-de18-4286-9160-2d557c3d425c",
+      "Name": "Object",
+      "Position": "901.9273,2654.035,1335.521",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "a3a4b7f1-4465-4c40-9074-09356aa883c4",
+      "Name": "SpawnPositions",
+      "Position": "901.9273,2654.035,1335.521",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Children": [
+        {
+          "__guid": "79cfdde1-08f1-4838-827d-090b0c15043c",
+          "Name": "PVPSpawnPos1",
+          "Position": "-2928.752,-4086.877,-1016.05",
+          "Enabled": true,
+          "NetworkMode": 2
+        },
+        {
+          "__guid": "5c73d03f-62c9-49d2-967e-cf5d7b001f73",
+          "Name": "PVPSpawnPos2",
+          "Position": "-121.3409,-3353.976,-1170.3",
+          "Enabled": true,
+          "NetworkMode": 2
+        },
+        {
+          "__guid": "af0f8d2e-f701-4e88-8642-ced233dd171d",
+          "Name": "PVESpawnPos1",
+          "Position": "-3404.577,-3263.261,-848.0922",
+          "Enabled": true,
+          "NetworkMode": 2
+        },
+        {
+          "__guid": "171b7c76-2fac-4335-8b51-3a045dc9f088",
+          "Name": "PVESpawnPos2",
+          "Position": "-1977.376,-920.0416,-1187.162",
+          "Enabled": true,
+          "NetworkMode": 2
+        }
+      ]
+    },
+    {
+      "__guid": "9a86960a-e370-4eac-b6ad-ccc7e5aec747",
+      "Name": "8hu_kultiras_smallhouse_2",
+      "Position": "-5002.654,-3471.757,368.7115",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "99f96f21-6ba1-4c25-ab80-92f92304842f",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/8hu_kultiras_smallhouse_2.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "0c875345-cb66-49ac-96d0-c149cf14d6b2",
+          "IsTrigger": false,
+          "Model": "models/8hu_kultiras_smallhouse_2.vmdl",
+          "Static": false
+        },
+        {
+          "__type": "Rigidbody",
+          "__guid": "981cc599-6ff7-4f5d-bef7-81fdeccb6ab1",
+          "__enabled": false,
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "7cf78e37-1b08-4458-a797-dbb6139731ed",
+          "Name": "SoundBox",
+          "Position": "0,0,0",
+          "Scale": "25.03833,25.03833,25.03833",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "f2f02073-1b12-462c-bf93-2bb8976f5ec9",
+              "__enabled": false,
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "SoundBoxComponent",
+              "__guid": "855076d3-3bd6-477b-a996-81884cc6e068",
+              "DistanceAttenuation": false,
+              "DistanceAttenuationOverride": false,
+              "Force2d": false,
+              "MaxRepeatTime": 1,
+              "MinRepeatTime": 1,
+              "Occlusion": false,
+              "OcclusionOverride": false,
+              "OcclusionRadius": 32,
+              "Pitch": 1,
+              "PlayOnStart": true,
+              "ReflectionOverride": false,
+              "Reflections": false,
+              "Repeat": true,
+              "Scale": "50,50,50",
+              "SoundEvent": "sound/midnight-forest-184304.sound",
+              "SoundOverride": true,
+              "StopOnNew": false,
+              "Volume": 0.08
+            }
+          ]
+        },
+        {
+          "__guid": "9cae62f5-33a5-409c-960c-d54225db5468",
+          "Name": "Spot Light",
+          "Position": "56.52002,31.27856,483.1014",
+          "Rotation": "0,0.7119839,0,0.7021958",
+          "Tags": "light_spot,light",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "SpotLight",
+              "__guid": "27027e3e-8acd-4339-ab03-d3b78508f4c9",
+              "Attenuation": 0.78,
+              "ConeInner": 15,
+              "ConeOuter": 52.6,
+              "FogMode": "Enabled",
+              "FogStrength": 1,
+              "LightColor": "1,0.75,0,1",
+              "Radius": 900,
+              "Shadows": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "a9045c32-ebef-49f6-9017-1ad12d371f2d",
+      "Name": "door_01",
+      "Position": "-4618.561,-3469.876,544.9642",
+      "Scale": "1,1.190527,1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "f33d8207-f1bb-401e-9ace-e3ec21f76a8d",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/japan_props_001/door_01.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "1bf7f637-d827-468d-b73b-f53e7c1c8154",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,100,100",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "344ccc41-3c32-4443-a5b1-219158c646df",
+      "Name": "Walls",
+      "Position": "-1803.102,1039.868,380.403",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Children": [
+        {
+          "__guid": "05e930a2-0c41-43ec-ae17-75efa3af8c66",
+          "Name": "Cube",
+          "Position": "0,-130.1733,48.76816",
+          "Scale": "4.950787,0.6224236,7.291348",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "15613865-0303-4c39-8951-a0882fdaadad",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__guid": "ee4767ee-8db4-4b8c-a112-8512c82c145e",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true
+            }
+          ]
+        },
+        {
+          "__guid": "813858c3-0f2e-420e-8628-a34f17c3ee4c",
+          "Name": "Cube (1)",
+          "Position": "1533.559,503.8658,-249.3383",
+          "Rotation": "0,0,0.7071067,0.7071068",
+          "Scale": "4.950787,0.6224236,7.291348",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "287f2a2b-4909-43a1-b9a7-93b3aa9d4240",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__guid": "ee9ad294-d9bb-4406-8ce8-19da4c740037",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true
+            }
+          ]
+        },
+        {
+          "__guid": "6212a949-40c1-459e-af7e-498a1256598e",
+          "Name": "Cube (2)",
+          "Position": "-497.2898,-937.5275,9.48175",
+          "Rotation": "0,0,0.0000003129244,-1",
+          "Scale": "4.950787,0.6224236,7.291348",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "cf2eab94-4b46-43ef-8e67-8fd73947b2e3",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "cdf8d8c1-ed09-47e1-bf1b-b88b8bfa4389",
+          "Name": "Cube (3)",
+          "Position": "-504.8125,-2298.398,11.24713",
+          "Rotation": "0,0,0.0000003129244,-1",
+          "Scale": "4.950787,0.6224236,7.291348",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "4f18cfc5-712d-466c-ae0d-53e1ad5d8d4e",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__guid": "25004101-316a-4f79-8dfc-1654f013e024",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true
+            }
+          ]
+        },
+        {
+          "__guid": "b4cb53e8-7b2c-4b63-89a5-90ba2534ff40",
+          "Name": "Cube (5)",
+          "Position": "-135.5979,-1430.181,326.1754",
+          "Rotation": "0,0,0.7071068,0.7071068",
+          "Scale": "3.203294,0.07314642,7.291348",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "a9e8e7be-0363-4f64-92c0-0931541cc384",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__guid": "12af922f-d8ca-4c1c-9528-37e7870bf4a2",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true
+            }
+          ]
+        },
+        {
+          "__guid": "0d02eff5-2b61-45f0-926c-295584e83fe0",
+          "Name": "Cube (4)",
+          "Position": "-133.0989,-2030.328,-55.47931",
+          "Rotation": "0,0,0.7071069,-0.7071066",
+          "Scale": "7.632452,0.6224236,1.821286",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "25768c5b-9980-46e9-baa8-4d35ede729e1",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__guid": "b605f4bb-d69c-475c-bd7c-a5b4ab2863eb",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "3b73ad68-a7b5-4ee4-85d1-86e349a79a72",
+      "Name": "MobSpawnerP1",
+      "Position": "-2447.636,-25.74527,312.5963",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "a7fa78a2-5ad1-4dcd-ba80-462427e7d332",
+          "__enabled": false,
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "EnemyNetSpawner",
+          "__guid": "35482a45-bcc0-42fb-97d6-fc1ba3182e9e",
+          "Enemies": [],
+          "EnemyPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/enemy.prefab"
+          },
+          "GM": {
+            "_type": "component",
+            "component_id": "404dd781-7231-4119-a7cc-3e8847573558",
+            "go": "62755e2a-81ca-4ecf-918b-9c9d522479dc",
+            "component_type": "GameManager"
+          },
+          "MobSpawnPos": [],
+          "Players": [],
+          "SpawnDelay": 5
+        }
+      ]
+    },
+    {
+      "__guid": "8fe1d0b5-c635-45b0-a161-52cc4d8f973a",
+      "Name": "MobSpawnerP2",
+      "Position": "-1767.315,1050.906,283.2413",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "a9eaddce-6250-432b-8129-2ce3fdcae7f1",
+          "__enabled": false,
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "EnemyNetSpawner",
+          "__guid": "ddc5d693-b5b5-4a74-b65c-23ad722741f8",
+          "Enemies": [],
+          "EnemyPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/enemy.prefab"
+          },
+          "GM": {
+            "_type": "component",
+            "component_id": "404dd781-7231-4119-a7cc-3e8847573558",
+            "go": "62755e2a-81ca-4ecf-918b-9c9d522479dc",
+            "component_type": "GameManager"
+          },
+          "MobSpawnPos": [],
+          "Players": [],
+          "SpawnDelay": 5
+        }
+      ]
+    },
+    {
+      "__guid": "87864b31-0f39-41fb-8b3b-0bf6a486ba05",
+      "Name": "WinnerPos",
+      "Position": "2077.139,6749.871,-7.82967",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "8c9768c5-dc16-4d70-9f5c-dbf48f69202c",
+          "__enabled": false,
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "ffe0a943-eae9-493c-b687-17a3f5a1297e",
+      "Name": "WinnerHouse",
+      "Position": "2368.376,6739.927,1.69017",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Children": [
+        {
+          "__guid": "51c89585-900a-4330-bddf-5ae5ef636de9",
+          "Name": "Cube",
+          "Position": "-285.0344,30.24463,-24.47399",
+          "Scale": "5.167095,6.461613,1",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "af4ec3f5-5128-45ff-90aa-ba91f152d1cb",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__guid": "c087852d-674f-4ab7-bed5-a49ebeca4319",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": "surfaces/ceramic.surface"
+            }
+          ]
+        },
+        {
+          "__guid": "01efddf9-436b-476c-8148-6bfe254104a6",
+          "Name": "rtx_cake",
+          "Position": "-182.8076,-42.05176,32.1747",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "3a62adb1-8e29-4ad4-b7d1-d2d246938e1c",
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/ports/portalrtx/props/cake/rtx_cake.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "e3c05ef2-7354-435a-b13a-d319ed9437df",
+          "Name": "blue_table",
+          "Position": "-174.4766,-44.41504,0.6469226",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "SkinnedModelRenderer",
+              "__guid": "529e18ca-c943-4f21-bd50-39f0d2796585",
+              "BodyGroups": 18446744073709551615,
+              "CreateBoneObjects": false,
+              "Model": "models/blue_table.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__guid": "f00c7589-17a4-46bf-906d-2801ea644857",
+              "IsTrigger": false,
+              "Model": "models/blue_table.vmdl",
+              "Static": false
+            },
+            {
+              "__type": "Rigidbody",
+              "__guid": "8016ea81-da6c-4d79-9bbc-1e42ca89da95",
+              "__enabled": false,
+              "AngularDamping": 0,
+              "Gravity": true,
+              "LinearDamping": 0,
+              "Locking": {},
+              "MassOverride": 0,
+              "MotionEnabled": true,
+              "RigidbodyFlags": 0,
+              "StartAsleep": false
+            }
+          ]
+        },
+        {
+          "__guid": "42c6530a-9917-431e-a6fe-4449d3d973c5",
+          "Name": "Text",
+          "Position": "-163.5896,-52.24902,73.76613",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "TextRenderer",
+              "__guid": "5e0d05fe-ff1f-433a-a683-d1fd8aa84118",
+              "Color": "1,1,1,1",
+              "FontFamily": "Poppins",
+              "FontSize": 22.73,
+              "Scale": 0.3,
+              "Text": "Congratulations! \nYou are a winner! \nYour opponent is a loser, you are a winner. \nThe cake is for you.\u2764"
+            }
+          ]
+        },
+        {
+          "__guid": "0b933326-4c3b-47cd-8a75-483fd4c0a3f5",
+          "Name": "silo_door01_reference",
+          "Position": "-418.5571,60.45508,-1.69016",
+          "Rotation": "0,0,0.7209528,0.6929842",
+          "Scale": "0.73578,2.866437,0.7674187",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "02f7caa9-11fa-4952-8879-40c8645e80fc",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/silo_door01_reference.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__guid": "a61067a5-5f59-4d47-a7fd-39bd325001f8",
+              "IsTrigger": false,
+              "Model": "models/silo_door01_reference.vmdl",
+              "Static": true
+            }
+          ]
+        },
+        {
+          "__guid": "3cde19d0-1b3a-4fc9-bfcd-aa038ac7d56b",
+          "Name": "house_b",
+          "Position": "-288.802,-2.271484,-1.690165",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "277380b6-9c7f-4ff4-be42-c0d27b99c8c5",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/houses/house_b.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__guid": "8e48ce08-2095-4a79-82ba-6de860789d41",
+              "IsTrigger": false,
+              "Model": "models/houses/house_b.vmdl",
+              "Static": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "d9914998-3347-4d04-9335-16c925748ccf",
+      "Name": "radio",
+      "Position": "2191.272,6667.307,33.46584",
+      "Rotation": "0,0,0.9840655,0.1778065",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Prop",
+          "__guid": "99e987ff-77d0-4ed7-9d0b-55555833820b",
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/ports/portalrtx/props/radio/radio.vmdl"
+        },
+        {
+          "__type": "SoundBoxComponent",
+          "__guid": "250c24eb-87f2-4f9d-a8bb-7a36cc6bb5b9",
+          "DistanceAttenuation": false,
+          "DistanceAttenuationOverride": false,
+          "Force2d": false,
+          "MaxRepeatTime": 1,
+          "MinRepeatTime": 1,
+          "Occlusion": false,
+          "OcclusionOverride": false,
+          "OcclusionRadius": 32,
+          "Pitch": 1,
+          "PlayOnStart": false,
+          "ReflectionOverride": false,
+          "Reflections": false,
+          "Repeat": false,
+          "Scale": "300,300,300",
+          "SoundEvent": "sound/portalradio.sound",
+          "SoundOverride": false,
+          "StopOnNew": false,
+          "Volume": 1
+        }
+      ]
+    },
+    {
+      "__guid": "87950f39-e657-4517-aa2b-c9f788883877",
+      "Name": "Text",
+      "Position": "-5045.983,-3255.366,776.6524",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "TextRenderer",
+          "__guid": "1917d955-8119-4a7f-8d94-6fc2ee8928f5",
+          "Color": "1,1,1,1",
+          "FontFamily": "Poppins",
+          "FontSize": 127.15,
+          "Scale": 0.07,
+          "Text": "Hello! \u2764\nWelcome to Epiphany in ashes(ver.0.0.1).\nThis is a duel game. \nWhen you are teleported, use Q, LMB and E to defeat your\n opponent. \nIf your opponent has fallen, then you are the WINNER.\n(When the winner is determined, please exit the\n game yourself.) \nGOOD LUCK"
+        },
+        {
+          "__type": "TextEditor",
+          "__guid": "49098c0f-364e-4cdf-a58b-e28411a85824"
+        }
+      ]
+    },
+    {
+      "__guid": "1a098bbf-4c42-4b28-a916-1dd441851779",
+      "Name": "Text (1)",
+      "Position": "-4810.865,-3448.066,755.2332",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "TextRenderer",
+          "__guid": "fee90cdd-20f8-4ddb-82f2-791c2f2e0664",
+          "Color": "1,1,1,1",
+          "FontFamily": "Poppins",
+          "FontSize": 127.15,
+          "Scale": 0.07,
+          "Text": "The game consists of two rounds. \nPVP and PVE rounds, in PVP rounds that last\n 100 seconds you need to kill the opponent,\n in PVE rounds that last 30 seconds \nyou kill mobs, for which you \nget EXP."
+        },
+        {
+          "__type": "TextEditor",
+          "__guid": "dd8851c8-b13e-4237-a98c-c7e6a47e8962"
+        }
+      ]
+    },
+    {
+      "__guid": "c2ede03a-b0fe-4742-a392-92bfbc56255d",
+      "Name": "SoundBox",
+      "Position": "-287.2854,-67.11612,1182.613",
+      "Scale": "63.28828,101.4577,45.60641",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "4ba1a7f4-cd3e-409e-a5f3-95f8031738d5",
+          "__enabled": false,
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "SoundBoxComponent",
+          "__guid": "abf913ed-5aa8-43fb-827e-c39b36a05cea",
+          "DistanceAttenuation": false,
+          "DistanceAttenuationOverride": true,
+          "Force2d": false,
+          "MaxRepeatTime": 1,
+          "MinRepeatTime": 1,
+          "Occlusion": false,
+          "OcclusionOverride": true,
+          "OcclusionRadius": 32,
+          "Pitch": 1,
+          "PlayOnStart": true,
+          "ReflectionOverride": false,
+          "Reflections": false,
+          "Repeat": true,
+          "Scale": "50,50,50",
+          "SoundEvent": "sound/soundtrack.sound",
+          "SoundOverride": true,
+          "StopOnNew": false,
+          "Volume": 0.15
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 60,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": true,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "minimal",
+  "Description": "",
+  "LastSaved": "2024-03-17T14:55:41.5524093\u002B03:00",
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "fish.gt_house_b",
+    "japancitymodels.door_01",
+    "jodiscontent.red_table",
+    "mdlresrc.rtx_cake",
+    "mdlresrc.rtx_radio",
+    "orus.8hu_kultiras_smallhouse_2",
+    "sputnik.ep2_silo_door"
+  ]
+}
