@@ -208,6 +208,7 @@
         {
           "__type": "GameManager",
           "__guid": "404dd781-7231-4119-a7cc-3e8847573558",
+          "Enemies": [],
           "ENS": [
             {
               "_type": "component",
@@ -247,7 +248,7 @@
               "go": "171b7c76-2fac-4335-8b51-3a045dc9f088"
             }
           ],
-          "PVERoundTime": 50,
+          "PVERoundTime": 10,
           "PVPRoundSpawnPos": [
             {
               "_type": "gameobject",
@@ -485,6 +486,29 @@
               "Volume": 0.08
             }
           ]
+        },
+        {
+          "__guid": "9cae62f5-33a5-409c-960c-d54225db5468",
+          "Name": "Spot Light",
+          "Position": "56.52002,31.27856,483.1014",
+          "Rotation": "0,0.7119839,0,0.7021958",
+          "Tags": "light_spot,light",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "SpotLight",
+              "__guid": "27027e3e-8acd-4339-ab03-d3b78508f4c9",
+              "Attenuation": 0.78,
+              "ConeInner": 15,
+              "ConeOuter": 52.6,
+              "FogMode": "Enabled",
+              "FogStrength": 1,
+              "LightColor": "1,0.75,0,1",
+              "Radius": 900,
+              "Shadows": true
+            }
+          ]
         }
       ]
     },
@@ -720,6 +744,221 @@
           "SpawnDelay": 5
         }
       ]
+    },
+    {
+      "__guid": "87864b31-0f39-41fb-8b3b-0bf6a486ba05",
+      "Name": "WinnerPos",
+      "Position": "2077.139,6749.871,-7.82967",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "8c9768c5-dc16-4d70-9f5c-dbf48f69202c",
+          "__enabled": false,
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "ffe0a943-eae9-493c-b687-17a3f5a1297e",
+      "Name": "WinnerHouse",
+      "Position": "2368.376,6739.927,1.69017",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Children": [
+        {
+          "__guid": "51c89585-900a-4330-bddf-5ae5ef636de9",
+          "Name": "Cube",
+          "Position": "-285.0344,30.24463,-24.47399",
+          "Scale": "5.167095,6.461613,1",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "af4ec3f5-5128-45ff-90aa-ba91f152d1cb",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__guid": "c087852d-674f-4ab7-bed5-a49ebeca4319",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": "surfaces/ceramic.surface"
+            }
+          ]
+        },
+        {
+          "__guid": "01efddf9-436b-476c-8148-6bfe254104a6",
+          "Name": "rtx_cake",
+          "Position": "-182.8076,-42.05176,32.1747",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "3a62adb1-8e29-4ad4-b7d1-d2d246938e1c",
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/ports/portalrtx/props/cake/rtx_cake.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "e3c05ef2-7354-435a-b13a-d319ed9437df",
+          "Name": "blue_table",
+          "Position": "-174.4766,-44.41504,0.6469226",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "SkinnedModelRenderer",
+              "__guid": "529e18ca-c943-4f21-bd50-39f0d2796585",
+              "BodyGroups": 18446744073709551615,
+              "CreateBoneObjects": false,
+              "Model": "models/blue_table.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__guid": "f00c7589-17a4-46bf-906d-2801ea644857",
+              "IsTrigger": false,
+              "Model": "models/blue_table.vmdl",
+              "Static": false
+            },
+            {
+              "__type": "Rigidbody",
+              "__guid": "8016ea81-da6c-4d79-9bbc-1e42ca89da95",
+              "__enabled": false,
+              "AngularDamping": 0,
+              "Gravity": true,
+              "LinearDamping": 0,
+              "Locking": {},
+              "MassOverride": 0,
+              "MotionEnabled": true,
+              "RigidbodyFlags": 0,
+              "StartAsleep": false
+            }
+          ]
+        },
+        {
+          "__guid": "42c6530a-9917-431e-a6fe-4449d3d973c5",
+          "Name": "Text",
+          "Position": "-163.5896,-52.24902,73.76613",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "TextRenderer",
+              "__guid": "5e0d05fe-ff1f-433a-a683-d1fd8aa84118",
+              "Color": "1,1,1,1",
+              "FontFamily": "Poppins",
+              "FontSize": 22.73,
+              "Scale": 0.3,
+              "Text": "Congratulations! \nYou are a winner! \nYour opponent is a loser, you are a winner. \nThe cake is for you.\u2764"
+            }
+          ]
+        },
+        {
+          "__guid": "0b933326-4c3b-47cd-8a75-483fd4c0a3f5",
+          "Name": "silo_door01_reference",
+          "Position": "-418.5571,60.45508,-1.69016",
+          "Rotation": "0,0,0.7209528,0.6929842",
+          "Scale": "0.73578,2.866437,0.7674187",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "02f7caa9-11fa-4952-8879-40c8645e80fc",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/silo_door01_reference.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__guid": "a61067a5-5f59-4d47-a7fd-39bd325001f8",
+              "IsTrigger": false,
+              "Model": "models/silo_door01_reference.vmdl",
+              "Static": true
+            }
+          ]
+        },
+        {
+          "__guid": "3cde19d0-1b3a-4fc9-bfcd-aa038ac7d56b",
+          "Name": "house_b",
+          "Position": "-288.802,-2.271484,-1.690165",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "277380b6-9c7f-4ff4-be42-c0d27b99c8c5",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/houses/house_b.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__guid": "8e48ce08-2095-4a79-82ba-6de860789d41",
+              "IsTrigger": false,
+              "Model": "models/houses/house_b.vmdl",
+              "Static": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "d9914998-3347-4d04-9335-16c925748ccf",
+      "Name": "radio",
+      "Position": "2191.272,6667.307,33.46584",
+      "Rotation": "0,0,0.9840655,0.1778065",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Prop",
+          "__guid": "99e987ff-77d0-4ed7-9d0b-55555833820b",
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/ports/portalrtx/props/radio/radio.vmdl"
+        },
+        {
+          "__type": "SoundBoxComponent",
+          "__guid": "250c24eb-87f2-4f9d-a8bb-7a36cc6bb5b9",
+          "DistanceAttenuation": false,
+          "DistanceAttenuationOverride": false,
+          "Force2d": false,
+          "MaxRepeatTime": 1,
+          "MinRepeatTime": 1,
+          "Occlusion": false,
+          "OcclusionOverride": false,
+          "OcclusionRadius": 32,
+          "Pitch": 1,
+          "PlayOnStart": false,
+          "ReflectionOverride": false,
+          "Reflections": false,
+          "Repeat": false,
+          "Scale": "300,300,300",
+          "SoundEvent": "sound/portalradio.sound",
+          "SoundOverride": false,
+          "StopOnNew": false,
+          "Volume": 1
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -745,11 +984,16 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-17T05:01:18.9228728\u002B03:00",
+  "LastSaved": "2024-03-17T13:36:39.9349877\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
+    "fish.gt_house_b",
     "japancitymodels.door_01",
-    "orus.8hu_kultiras_smallhouse_2"
+    "jodiscontent.red_table",
+    "mdlresrc.rtx_cake",
+    "mdlresrc.rtx_radio",
+    "orus.8hu_kultiras_smallhouse_2",
+    "sputnik.ep2_silo_door"
   ]
 }
