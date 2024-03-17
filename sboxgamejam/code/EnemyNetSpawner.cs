@@ -8,6 +8,7 @@ public sealed class EnemyNetSpawner : Component, GeneralGame.IUse
 	[Property] private List<GameObject> Players = new List<GameObject>();
 	[Property] private float SpawnDelay = 5.0f;
 	[Property] public List<GameObject> Enemies = new List<GameObject>();
+	[Property] public GameObject Owner;
 
 	public void OnUse( Guid pickerId )
 	{
@@ -26,7 +27,7 @@ public sealed class EnemyNetSpawner : Component, GeneralGame.IUse
 			DelaySpawn();
 	}
 
-	void DelaySpawn()
+	public void DelaySpawn()
 	{
 		if ( SpawnDelay > 0 )
 		{
@@ -34,21 +35,27 @@ public sealed class EnemyNetSpawner : Component, GeneralGame.IUse
 		}
 		else if ( SpawnDelay < 0 )
 		{
-			SpawnDelay = 100.0f ;
+			SpawnDelay = 5.0f;
 			netSpawn();
 		}
 	}
 
-	void netSpawn()
+	public void netSpawn()
 	{
-		if(!IsProxy) return;
+		
+			var nowSpawn = EnemyPrefab.Clone( GameObject.Transform.Position );
+			nowSpawn.NetworkSpawn(Owner.Network.OwnerConnection);
+			
 
-		for ( int i = 0; i < MobSpawnPos.Count; i++ )
+		Enemies.Add( nowSpawn );
+	}
+
+	public void DeleteAllMobs()
+	{
+		foreach (var m in Enemies )
 		{
-			var nowSpawn = EnemyPrefab.Clone( MobSpawnPos[i].Transform.Position );
-			nowSpawn.NetworkSpawn();
-
-			Enemies.Add( nowSpawn );
+			m.Destroy();
 		}
+		Enemies.Clear();
 	}
 }

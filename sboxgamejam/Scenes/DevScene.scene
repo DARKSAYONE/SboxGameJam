@@ -208,12 +208,30 @@
         {
           "__type": "GameManager",
           "__guid": "404dd781-7231-4119-a7cc-3e8847573558",
-          "ENS": {
-            "_type": "component",
-            "component_id": "66ea9cb2-de9a-4406-94d3-e46effbbe327",
-            "go": "81249a40-2bfe-4aeb-b029-d6e0b7e0bbff",
-            "component_type": "EnemyNetSpawner"
-          },
+          "ENS": [
+            {
+              "_type": "component",
+              "component_id": "35482a45-bcc0-42fb-97d6-fc1ba3182e9e",
+              "go": "3b73ad68-a7b5-4ee4-85d1-86e349a79a72",
+              "component_type": "EnemyNetSpawner"
+            },
+            {
+              "_type": "component",
+              "component_id": "ddc5d693-b5b5-4a74-b65c-23ad722741f8",
+              "go": "8fe1d0b5-c635-45b0-a161-52cc4d8f973a",
+              "component_type": "EnemyNetSpawner"
+            }
+          ],
+          "MobSpawners": [
+            {
+              "_type": "gameobject",
+              "go": "3b73ad68-a7b5-4ee4-85d1-86e349a79a72"
+            },
+            {
+              "_type": "gameobject",
+              "go": "8fe1d0b5-c635-45b0-a161-52cc4d8f973a"
+            }
+          ],
           "Players": [],
           "PlayersScore": [
             0,
@@ -385,58 +403,6 @@
           "__guid": "171b7c76-2fac-4335-8b51-3a045dc9f088",
           "Name": "PVESpawnPos2",
           "Position": "-1977.376,-920.0416,-1187.162",
-          "Enabled": true,
-          "NetworkMode": 2
-        }
-      ]
-    },
-    {
-      "__guid": "81249a40-2bfe-4aeb-b029-d6e0b7e0bbff",
-      "Name": "MobSpawner",
-      "Position": "901.9273,1459.826,91.69547",
-      "Enabled": true,
-      "NetworkMode": 1,
-      "Components": [
-        {
-          "__type": "EnemyNetSpawner",
-          "__guid": "66ea9cb2-de9a-4406-94d3-e46effbbe327",
-          "Enemies": [],
-          "EnemyPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/enemy.prefab"
-          },
-          "GM": {
-            "_type": "component",
-            "component_id": "404dd781-7231-4119-a7cc-3e8847573558",
-            "go": "62755e2a-81ca-4ecf-918b-9c9d522479dc",
-            "component_type": "GameManager"
-          },
-          "MobSpawnPos": [
-            {
-              "_type": "gameobject",
-              "go": "0dd46a58-115a-4d14-9d78-b544cc84d742"
-            },
-            {
-              "_type": "gameobject",
-              "go": "ef7e257a-dd7e-4bab-82ca-a5bf7cbc752f"
-            }
-          ],
-          "Players": [],
-          "SpawnDelay": 5
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "0dd46a58-115a-4d14-9d78-b544cc84d742",
-          "Name": "NPCSpawn1",
-          "Position": "-3460.521,-1849.456,199.4552",
-          "Enabled": true,
-          "NetworkMode": 2
-        },
-        {
-          "__guid": "ef7e257a-dd7e-4bab-82ca-a5bf7cbc752f",
-          "Name": "NPCSpawn2",
-          "Position": "-1771.62,-148.894,139.8838",
           "Enabled": true,
           "NetworkMode": 2
         }
@@ -682,6 +648,78 @@
           ]
         }
       ]
+    },
+    {
+      "__guid": "3b73ad68-a7b5-4ee4-85d1-86e349a79a72",
+      "Name": "MobSpawnerP1",
+      "Position": "-2447.636,-25.74527,312.5963",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "a7fa78a2-5ad1-4dcd-ba80-462427e7d332",
+          "__enabled": false,
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "EnemyNetSpawner",
+          "__guid": "35482a45-bcc0-42fb-97d6-fc1ba3182e9e",
+          "Enemies": [],
+          "EnemyPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/enemy.prefab"
+          },
+          "GM": {
+            "_type": "component",
+            "component_id": "404dd781-7231-4119-a7cc-3e8847573558",
+            "go": "62755e2a-81ca-4ecf-918b-9c9d522479dc",
+            "component_type": "GameManager"
+          },
+          "MobSpawnPos": [],
+          "Players": [],
+          "SpawnDelay": 5
+        }
+      ]
+    },
+    {
+      "__guid": "8fe1d0b5-c635-45b0-a161-52cc4d8f973a",
+      "Name": "MobSpawnerP2",
+      "Position": "-1767.315,1050.906,283.2413",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "a9eaddce-6250-432b-8129-2ce3fdcae7f1",
+          "__enabled": false,
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "EnemyNetSpawner",
+          "__guid": "ddc5d693-b5b5-4a74-b65c-23ad722741f8",
+          "Enemies": [],
+          "EnemyPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/enemy.prefab"
+          },
+          "GM": {
+            "_type": "component",
+            "component_id": "404dd781-7231-4119-a7cc-3e8847573558",
+            "go": "62755e2a-81ca-4ecf-918b-9c9d522479dc",
+            "component_type": "GameManager"
+          },
+          "MobSpawnPos": [],
+          "Players": [],
+          "SpawnDelay": 5
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -707,7 +745,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-17T03:33:36.7668395\u002B03:00",
+  "LastSaved": "2024-03-17T05:01:18.9228728\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

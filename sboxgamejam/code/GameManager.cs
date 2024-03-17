@@ -12,9 +12,13 @@ public sealed class GameManager : Component
 	[Property] private GameObject BaseSpawnPos;
 	[Property] private float PVPRoundTime = 30.0f;
 	[Property] private float PVERoundTime = 30.0f;
-	[Property] public EnemyNetSpawner ENS;
+	[Property] public List<EnemyNetSpawner> ENS = new List<EnemyNetSpawner> { };
 	[Property] public SoundPointComponent Sound;
 	[Property] public GameObject Winner;
+	[Property] public List<GameObject> MobSpawners;
+	[Property] public List<GameObject> Enemies = new List<GameObject> { };
+	private bool MobSpawnersInit = false;
+	
 	
 
 	private bool AllPlayersReady = false;
@@ -72,6 +76,7 @@ public sealed class GameManager : Component
 		else
 		{
 			AllPlayersReady = true;
+			DeclareENSOwner();
 			Log.Info ( "All players connect" );
 			CanShootOff();
 			
@@ -188,11 +193,10 @@ public sealed class GameManager : Component
 		PVPRoundIsComplete = false;
 		PVERoundTime = 30.0f;
 		Sound.StartSound();
-		foreach (var Enemy in ENS.Enemies)
-		{
-			Enemy.Destroy();
-		}
-		ENS.Enemies.Clear();
+		ENS[0].DeleteAllMobs();
+		ENS[1].DeleteAllMobs();
+		
+		
 	}
 
 	void CanShootOff()
@@ -227,6 +231,12 @@ public sealed class GameManager : Component
 			Winner = Players[0];
 		}
 
+	}
+
+	public void DeclareENSOwner()
+	{
+		ENS[0].Owner = Players[0];
+		ENS[1].Owner = Players[1];
 	}
 
 	/*[Broadcast]
