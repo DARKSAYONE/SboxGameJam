@@ -229,7 +229,7 @@
               "go": "171b7c76-2fac-4335-8b51-3a045dc9f088"
             }
           ],
-          "PVERoundTime": 30,
+          "PVERoundTime": 50,
           "PVPRoundSpawnPos": [
             {
               "_type": "gameobject",
@@ -240,7 +240,7 @@
               "go": "5c73d03f-62c9-49d2-967e-cf5d7b001f73"
             }
           ],
-          "PVPRoundTime": 60,
+          "PVPRoundTime": 30,
           "Sound": {
             "_type": "component",
             "component_id": "ed63d9ca-a044-4838-9972-8d453d42c260",
@@ -707,7 +707,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-17T00:02:19.0179967\u002B03:00",
+  "LastSaved": "2024-03-17T03:33:36.7668395\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

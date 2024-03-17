@@ -124,7 +124,7 @@ public sealed class EnemyAI : Component, IStats
 	{
 		PlayerController attackerController = Scene.Directory.FindByGuid( attackerGUID ).Components.Get<PlayerController>();
 		//Log.Info( "hi lol" );
-		if ( !IsProxy && attackerController.DamageDelay <= 0 )
+		if ( !IsProxy /*&& attackerController.DamageDelay <= 0*/ )
 		{
 			Log.Info( "The fireball hit its target!" );
 			Log.Info( "Damage delay is set to 2." );

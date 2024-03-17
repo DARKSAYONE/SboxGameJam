@@ -34,17 +34,20 @@ public sealed class EnemyNetSpawner : Component, GeneralGame.IUse
 		}
 		else if ( SpawnDelay < 0 )
 		{
-			SpawnDelay = 5.0f;
+			SpawnDelay = 100.0f ;
 			netSpawn();
 		}
 	}
 
 	void netSpawn()
 	{
+		if(!IsProxy) return;
+
 		for ( int i = 0; i < MobSpawnPos.Count; i++ )
 		{
 			var nowSpawn = EnemyPrefab.Clone( MobSpawnPos[i].Transform.Position );
 			nowSpawn.NetworkSpawn();
+
 			Enemies.Add( nowSpawn );
 		}
 	}

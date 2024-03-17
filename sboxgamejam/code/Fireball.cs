@@ -1,4 +1,5 @@
 using Sandbox;
+using System.ComponentModel.Design;
 
 public sealed class Fireball : Component, Component.ICollisionListener
 {
@@ -31,7 +32,7 @@ public sealed class Fireball : Component, Component.ICollisionListener
 		if ( IsProxy )
 			return;
 
-		if ( other.Other.GameObject.Tags.Has( "player" ) )
+		if ( other.Other.GameObject.Tags.Has( "player" ))
 		{
 			var ownerName = GameObject.Name.Substring( 0, GameObject.Name.LastIndexOf( " - " ) );
 			Log.Info( ownerName );
@@ -39,10 +40,22 @@ public sealed class Fireball : Component, Component.ICollisionListener
 			var attackerGUID = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == ownerName ).Id;
 			other.Other.GameObject.Parent.Components.Get<PlayerController>().TakeDamage( attackerGUID );
 		}
+		else if ( other.Other.GameObject.Tags.Has( "npc" ) )
+		{
+			var ownerName = GameObject.Name.Substring( 0, GameObject.Name.LastIndexOf( " - " ) );
+			Log.Info( ownerName );
+
+			var attackerGUID = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == ownerName ).Id;
+			other.Other.GameObject.Parent.Components.Get<EnemyAI>().TakeDamage( attackerGUID );
+		}
 		else
 		{
 			Log.Info( "fireball hit the obj" );
 		}
+		
+
+		
+
 
 		GameObject.Destroy();
 	}

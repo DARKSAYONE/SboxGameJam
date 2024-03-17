@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "__guid": "bcfa533a-d76f-4751-b0a9-646d3cd91c0e",
+    "__guid": "50450c77-0252-4bba-9fa9-1d3c62b255e8",
     "Name": "enemy",
     "Tags": "npc",
     "Enabled": true,
@@ -8,7 +8,7 @@
     "Components": [
       {
         "__type": "NavMeshAgent",
-        "__guid": "6ce528de-d25b-4695-8b80-068f6de4ccec",
+        "__guid": "59a72ea5-13bc-41e7-8a01-c676ead35ec1",
         "Acceleration": 1000,
         "Height": 40,
         "MaxSpeed": 120,
@@ -19,26 +19,26 @@
       },
       {
         "__type": "EnemyAI",
-        "__guid": "213126aa-704f-431a-91b0-6cfb6e5c6086",
+        "__guid": "7c85c799-0891-4032-b0b3-df83616c4444",
         "AttackRange": 60,
         "Players": [],
         "Experience": 0,
         "Fortitude": 0,
-        "HitSpeed": 0,
+        "HitSpeed": 1,
         "HP": 5,
         "Level": 0,
         "Mana": 0,
-        "ManaRegen": 0,
+        "ManaRegen": 5,
         "MaxHP": 10,
         "MaxMana": 0,
-        "MindPower": 0,
-        "MovementSpeed": 0,
-        "PhysicalPower": 0,
+        "MindPower": 1,
+        "MovementSpeed": 1,
+        "PhysicalPower": 1,
         "Protection": 0
       },
       {
         "__type": "SoundBoxComponent",
-        "__guid": "18954b8b-cf48-4258-bdba-f07bacf4164d",
+        "__guid": "59745a54-0241-4ef2-8f2d-1a5baadafa92",
         "DistanceAttenuation": false,
         "DistanceAttenuationOverride": false,
         "Force2d": false,
@@ -61,7 +61,7 @@
     ],
     "Children": [
       {
-        "__guid": "cb01e348-581f-47ca-a714-224c78fb64a0",
+        "__guid": "870549dc-d0f8-4edd-b1f7-d6d884c16dcd",
         "Name": "Sphere",
         "Position": "0,0,-1.951181",
         "Enabled": true,
@@ -69,7 +69,7 @@
         "Components": [
           {
             "__type": "ModelRenderer",
-            "__guid": "af5c6e7f-d7e2-49e1-8739-5394f95a55b4",
+            "__guid": "2d8b27f2-9cba-4684-bade-312e6f9de3cb",
             "BodyGroups": 341,
             "MaterialGroup": "default",
             "MaterialOverride": "models/citizen/skin/citizen_skin.vmat",
@@ -79,14 +79,14 @@
           },
           {
             "__type": "ModelCollider",
-            "__guid": "319c6951-3ce7-42fc-b5fb-2d807513c675",
+            "__guid": "a3fc031d-d144-4d9f-b56d-1ada5f0a8d99",
             "IsTrigger": false,
             "Model": "models/citizen/citizen.vmdl",
             "Static": false
           },
           {
             "__type": "CitizenAnimationHelper",
-            "__guid": "41dad4c5-8fb4-46f0-bd65-78ce041cb255",
+            "__guid": "e008e1ec-f883-4269-b479-cb04163bf172",
             "BodyWeight": 1,
             "EyesWeight": 1,
             "HeadWeight": 1,

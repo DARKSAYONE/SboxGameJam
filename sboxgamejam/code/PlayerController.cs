@@ -32,17 +32,23 @@ public sealed class PlayerController : Component, IStats
 	[Sync] public bool Crouching { get; set; }
 	[Sync] public Angles EyeAngles { get; set; }
 	[Sync] public Vector3 WishVelocity { get; set; }
+	[Sync][Property] public bool isDeath { get; set; }
+
+	[Property] public GameManager GM { get; set; }
 
 	public bool WishCrouch;
 	public float EyeHeight = 64;
 
 	public float DamageDelay = 0f;
+	
 
 	protected override void OnStart()
 	{
 		base.OnStart();
+		isDeath = false;
 		HP = MaxHP;
 		Mana = MaxMana;
+		GM = Scene.Components.GetAll<GameManager>().FirstOrDefault();
 	}
 	protected override void OnUpdate()
 	{
@@ -345,6 +351,8 @@ public sealed class PlayerController : Component, IStats
 		/*Rigidbody rigidbody = GameObject.Children[0].Components.GetAll<Rigidbody>().FirstOrDefault();
 		Log.Info( rigidbody );
 		*/
+		isDeath = true;
+		GM.CheckDeath();
 		Rigidbody rigidbody = GameObject.Components.Create<Rigidbody>();
 		PlayerController playerController = GameObject.Components.Get<PlayerController>();
 		Log.Info( $"{GameObject.Name}" );

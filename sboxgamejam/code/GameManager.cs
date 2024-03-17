@@ -14,6 +14,7 @@ public sealed class GameManager : Component
 	[Property] private float PVERoundTime = 30.0f;
 	[Property] public EnemyNetSpawner ENS;
 	[Property] public SoundPointComponent Sound;
+	[Property] public GameObject Winner;
 	
 
 	private bool AllPlayersReady = false;
@@ -36,6 +37,9 @@ public sealed class GameManager : Component
 	{
 		if(!AllPlayersReady)
 		PlayerInitialization();
+
+		
+		
 
 		if(AllPlayersReady && !BeforeRoundTimer)
 		{
@@ -127,7 +131,7 @@ public sealed class GameManager : Component
 		if ( RoundStartTimer > 0 )
 		{
 			RoundStartTimer -= Time.Delta;
-			Log.Info( RoundStartTimer );
+			//Log.Info( RoundStartTimer );
 		}
 		else if(RoundStartTimer < 0)
 		{
@@ -142,7 +146,7 @@ public sealed class GameManager : Component
 		if(PVPRoundTime > 0)
 		{
 			PVPRoundTime -= Time.Delta;
-			Log.Info( PVPRoundTime );
+			//Log.Info( PVPRoundTime );
 		}
 		else if(PVPRoundTime < 0)
 		{
@@ -157,7 +161,7 @@ public sealed class GameManager : Component
 		if(PVERoundTime > 0)
 		{
 			PVERoundTime -= Time.Delta;
-			Log.Info(PVERoundTime );
+			//Log.Info(PVERoundTime );
 		}
 		else if(PVERoundTime < 0)
 		{
@@ -207,6 +211,22 @@ public sealed class GameManager : Component
 			var PC = Players[i].Components.Get<FireballCast>();
 			PC.CanShoot = true;
 		}
+	}
+
+	public void CheckDeath()
+	{
+		var POneDeath = Players[0].Components.Get<PlayerController>();
+		var PTwoDeath = Players[1].Components.Get<PlayerController>();
+
+		if(POneDeath.isDeath)
+		{
+			Winner = Players[1];
+		}
+		else if(PTwoDeath.isDeath)
+		{
+			Winner = Players[0];
+		}
+
 	}
 
 	/*[Broadcast]
