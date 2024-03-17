@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "__guid": "c584f99b-c0bb-40cd-bc36-0a8ed5896fe1",
+    "__guid": "c4a0422f-140c-499e-b1af-686bc0da8d7c",
     "Name": "fireball",
     "Scale": "0.1833652,0.1833652,0.1833652",
     "Enabled": true,
@@ -8,7 +8,7 @@
     "Components": [
       {
         "__type": "ModelRenderer",
-        "__guid": "384aade4-226d-454b-b235-3a38929adecc",
+        "__guid": "227a673a-ec9d-41f0-a174-316d9a63cbbd",
         "BodyGroups": 18446744073709551615,
         "Model": "models/dev/sphere.vmdl",
         "RenderType": "On",
@@ -16,7 +16,7 @@
       },
       {
         "__type": "Rigidbody",
-        "__guid": "e579e739-6718-4b45-b5bf-f01722143215",
+        "__guid": "67d0ef86-c7b7-4f3d-a98e-c122fefaec2d",
         "AngularDamping": 0,
         "Gravity": false,
         "LinearDamping": 0,
@@ -28,7 +28,7 @@
       },
       {
         "__type": "SphereCollider",
-        "__guid": "ed1ba2db-8aaf-4954-8d3e-d965b7f40314",
+        "__guid": "da329b74-bb8c-41cb-80ba-0037ddd88384",
         "Center": "0,0,0",
         "IsTrigger": false,
         "Radius": 10,
@@ -37,13 +37,13 @@
       },
       {
         "__type": "Fireball",
-        "__guid": "943e6ab9-1579-4785-8d22-b05d35dab3b1",
-        "speed": 500
+        "__guid": "61204f53-0199-44f8-ae4c-2bbb47bdd486",
+        "speed": 800
       }
     ],
     "Children": [
       {
-        "__guid": "803f5642-7161-4f0d-a664-013c05e4fc31",
+        "__guid": "5e71f884-8bfc-4755-80b3-abf8bef8074f",
         "Name": "Spray",
         "Rotation": "0,0,1,0.0000001947072",
         "Tags": "particles",
@@ -52,7 +52,7 @@
         "Components": [
           {
             "__type": "ParticleEffect",
-            "__guid": "379f1a8e-201d-45f4-a36c-7013575d7df4",
+            "__guid": "d2e2345e-37f7-4921-bd3e-697586379c00",
             "Alpha": {
               "Type": "Curve",
               "CurveA": [
@@ -179,7 +179,7 @@
           },
           {
             "__type": "ParticleSpriteRenderer",
-            "__guid": "2be9473c-5c7e-4b93-b383-1f1d0c417592",
+            "__guid": "6ceded5f-0980-4065-bb89-c63d510e5c49",
             "Additive": false,
             "BlurAmount": 0.5,
             "BlurOpacity": 0.91,
@@ -198,7 +198,7 @@
           },
           {
             "__type": "ParticleConeEmitter",
-            "__guid": "6415d2db-0957-4c32-b146-78b47d443738",
+            "__guid": "9e6cd528-9ea6-4989-83db-4e491f2ae332",
             "Burst": 0,
             "ConeAngle": 31.4,
             "ConeFar": 50,

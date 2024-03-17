@@ -24,7 +24,7 @@ public sealed class GameManager : Component
 	private bool AllPlayersReady = false;
 	private bool PVPTime = false;
 	private bool BeforeRoundTimer = false;
-	private float RoundStartTimer = 10f;
+	private float RoundStartTimer = 15f;
 	
 	private bool timerGo = false;
 	private bool DeployPlayersToPVP = false;
@@ -180,7 +180,7 @@ public sealed class GameManager : Component
 		DeployPlayersToPVP = false;
 		BeforeRoundTimer = false;
 		PVPRoundIsComplete = true;
-		PVPRoundTime = 20.0f;
+		PVPRoundTime = 100.0f;
 		PVERoundIsComplete = false;
 		Sound.StartSound();
 	}
@@ -230,6 +230,9 @@ public sealed class GameManager : Component
 		{
 			Winner = Players[0];
 		}
+
+		Log.Info(Winner.ToString());
+		Log.Info( "WINNER" );
 
 	}
 

@@ -248,7 +248,7 @@
               "go": "171b7c76-2fac-4335-8b51-3a045dc9f088"
             }
           ],
-          "PVERoundTime": 10,
+          "PVERoundTime": 30,
           "PVPRoundSpawnPos": [
             {
               "_type": "gameobject",
@@ -259,7 +259,7 @@
               "go": "5c73d03f-62c9-49d2-967e-cf5d7b001f73"
             }
           ],
-          "PVPRoundTime": 30,
+          "PVPRoundTime": 100,
           "Sound": {
             "_type": "component",
             "component_id": "ed63d9ca-a044-4838-9972-8d453d42c260",
@@ -645,6 +645,33 @@
           ]
         },
         {
+          "__guid": "b4cb53e8-7b2c-4b63-89a5-90ba2534ff40",
+          "Name": "Cube (5)",
+          "Position": "-135.5979,-1430.181,326.1754",
+          "Rotation": "0,0,0.7071068,0.7071068",
+          "Scale": "3.203294,0.07314642,7.291348",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "a9e8e7be-0363-4f64-92c0-0931541cc384",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__guid": "12af922f-d8ca-4c1c-9528-37e7870bf4a2",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true
+            }
+          ]
+        },
+        {
           "__guid": "0d02eff5-2b61-45f0-926c-295584e83fe0",
           "Name": "Cube (4)",
           "Position": "-133.0989,-2030.328,-55.47931",
@@ -959,6 +986,92 @@
           "Volume": 1
         }
       ]
+    },
+    {
+      "__guid": "87950f39-e657-4517-aa2b-c9f788883877",
+      "Name": "Text",
+      "Position": "-5045.983,-3255.366,776.6524",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "TextRenderer",
+          "__guid": "1917d955-8119-4a7f-8d94-6fc2ee8928f5",
+          "Color": "1,1,1,1",
+          "FontFamily": "Poppins",
+          "FontSize": 127.15,
+          "Scale": 0.07,
+          "Text": "Hello! \u2764\nWelcome to Epiphany in ashes(ver.0.0.1).\nThis is a duel game. \nWhen you are teleported, use Q, LMB and E to defeat your\n opponent. \nIf your opponent has fallen, then you are the WINNER.\n(When the winner is determined, please exit the\n game yourself.) \nGOOD LUCK"
+        },
+        {
+          "__type": "TextEditor",
+          "__guid": "49098c0f-364e-4cdf-a58b-e28411a85824"
+        }
+      ]
+    },
+    {
+      "__guid": "1a098bbf-4c42-4b28-a916-1dd441851779",
+      "Name": "Text (1)",
+      "Position": "-4810.865,-3448.066,755.2332",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "TextRenderer",
+          "__guid": "fee90cdd-20f8-4ddb-82f2-791c2f2e0664",
+          "Color": "1,1,1,1",
+          "FontFamily": "Poppins",
+          "FontSize": 127.15,
+          "Scale": 0.07,
+          "Text": "The game consists of two rounds. \nPVP and PVE rounds, in PVP rounds that last\n 100 seconds you need to kill the opponent,\n in PVE rounds that last 30 seconds \nyou kill mobs, for which you \nget EXP."
+        },
+        {
+          "__type": "TextEditor",
+          "__guid": "dd8851c8-b13e-4237-a98c-c7e6a47e8962"
+        }
+      ]
+    },
+    {
+      "__guid": "c2ede03a-b0fe-4742-a392-92bfbc56255d",
+      "Name": "SoundBox",
+      "Position": "-287.2854,-67.11612,1182.613",
+      "Scale": "63.28828,101.4577,45.60641",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "4ba1a7f4-cd3e-409e-a5f3-95f8031738d5",
+          "__enabled": false,
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "SoundBoxComponent",
+          "__guid": "abf913ed-5aa8-43fb-827e-c39b36a05cea",
+          "DistanceAttenuation": false,
+          "DistanceAttenuationOverride": true,
+          "Force2d": false,
+          "MaxRepeatTime": 1,
+          "MinRepeatTime": 1,
+          "Occlusion": false,
+          "OcclusionOverride": true,
+          "OcclusionRadius": 32,
+          "Pitch": 1,
+          "PlayOnStart": true,
+          "ReflectionOverride": false,
+          "Reflections": false,
+          "Repeat": true,
+          "Scale": "50,50,50",
+          "SoundEvent": "sound/soundtrack.sound",
+          "SoundOverride": true,
+          "StopOnNew": false,
+          "Volume": 0.15
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -984,7 +1097,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-17T13:36:39.9349877\u002B03:00",
+  "LastSaved": "2024-03-17T14:55:41.5524093\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

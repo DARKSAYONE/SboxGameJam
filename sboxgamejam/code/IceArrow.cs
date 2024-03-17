@@ -21,7 +21,7 @@ public sealed class IceArrow : Component, Component.ICollisionListener
 	{
 		float timeSinceCreation = Time.Now - creationTime;
 
-		if ( timeSinceCreation > 5f )
+		if ( timeSinceCreation > 10f )
 		{
 			GameObject.Destroy();
 		}
@@ -44,9 +44,17 @@ public sealed class IceArrow : Component, Component.ICollisionListener
 			other.Other.GameObject.Parent.Components.Get<PlayerController>().TakeDamage( attackerGUID );
 			other.Other.GameObject.Parent.Components.Get<PlayerController>().Debuff( attackerGUID );
 		}
+		else if ( other.Other.GameObject.Tags.Has( "npc" ) )
+		{
+			var ownerName = GameObject.Name.Substring( 0, GameObject.Name.LastIndexOf( " - " ) );
+			Log.Info( ownerName );
+
+			var attackerGUID = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == ownerName ).Id;
+			other.Other.GameObject.Parent.Components.Get<EnemyAI>().TakeDamage( attackerGUID );
+		}
 		else
 		{
-			Log.Info( "IceArrow hit the obj" );
+			Log.Info( "icearrow hit the obj" );
 		}
 
 		GameObject.Destroy();

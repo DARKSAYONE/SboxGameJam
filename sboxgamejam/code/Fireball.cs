@@ -18,7 +18,7 @@ public sealed class Fireball : Component, Component.ICollisionListener
 	{
 		float timeSinceCreation = Time.Now - creationTime;
 
-		if (timeSinceCreation > 5f)
+		if (timeSinceCreation > 10f)
 		{
 			GameObject.Destroy();
 		}

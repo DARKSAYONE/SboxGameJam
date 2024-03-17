@@ -18,6 +18,7 @@ public sealed class PlayerController : Component, IStats
 	[Sync][Property] public int Fortitude { get; set; }
 	[Sync][Property] public float MovementSpeed { get; set; }
 	[Sync][Property] public float HitSpeed { get; set; }
+	
 
 
 	[Property] public CharacterController CharacterController { get; set; }
@@ -26,6 +27,7 @@ public sealed class PlayerController : Component, IStats
 	[Property] public float RunMoveSpeed { get; set; } = 190.0f;
 	[Property] public float SprintMoveSpeed { get; set; } = 320.0f;
 	[Property] public CameraComponent Cam;
+	[Property] public float JumpForce = 600;
 
 	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
 
@@ -120,7 +122,7 @@ public sealed class PlayerController : Component, IStats
 		if ( lastGrounded < 0.2f && lastJump > 0.3f && Input.Pressed( "jump" ) )
 		{
 			lastJump = 0;
-			cc.Punch( Vector3.Up * 300 );
+			cc.Punch( Vector3.Up * JumpForce );
 		}
 
 		if ( !WishVelocity.IsNearlyZero() )

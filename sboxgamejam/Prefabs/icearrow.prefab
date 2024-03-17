@@ -1,13 +1,13 @@
 {
   "RootObject": {
-    "__guid": "06b6dc85-bf4f-49db-838a-49fc1d46fcea",
+    "__guid": "658f0378-70df-46c1-991c-183b7dd7e99d",
     "Name": "icearrow",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "ModelRenderer",
-        "__guid": "a709049e-270f-4a47-ba29-37331513749d",
+        "__guid": "fb1a43f5-6b9b-428f-802b-0e7923a84407",
         "BodyGroups": 18446744073709551615,
         "MaterialOverride": "materials/particle/base_projected.vmat",
         "Model": "models/ice arrow.vmdl",
@@ -16,14 +16,14 @@
       },
       {
         "__type": "ModelCollider",
-        "__guid": "1f15acef-2ff5-4942-9767-8045b0048f58",
+        "__guid": "02359653-8467-45ce-9ed1-fec60c30c109",
         "IsTrigger": false,
         "Model": "models/ice arrow.vmdl",
         "Static": false
       },
       {
         "__type": "Rigidbody",
-        "__guid": "353545e5-d422-43c3-98c2-eacefdf97a1f",
+        "__guid": "95a70804-489f-4a63-abd2-2c5b46733ba4",
         "AngularDamping": 0,
         "Gravity": false,
         "LinearDamping": 0,
@@ -35,13 +35,13 @@
       },
       {
         "__type": "IceArrow",
-        "__guid": "f949f00c-323c-4431-8c1f-0f7307bf9fb2",
-        "speed": 1000
+        "__guid": "325a92e1-1e13-49ee-94b1-dfc4bb0b1848",
+        "speed": 1300
       }
     ],
     "Children": [
       {
-        "__guid": "6c0e6c98-fb87-43f0-8fe4-0d5f52f85f01",
+        "__guid": "333e18e3-d2b6-4c12-a2c5-eb782dcc88bc",
         "Name": "Smoke",
         "Position": "-22.04162,0,0",
         "Scale": "0.6438538,0.1102594,0.1102594",
@@ -51,7 +51,7 @@
         "Components": [
           {
             "__type": "ParticleEffect",
-            "__guid": "a9988ac8-5922-4ef7-bac9-76ad15d773b6",
+            "__guid": "357639a6-f64b-46c1-9525-d1fc5e9620d2",
             "Alpha": {
               "Type": "Curve",
               "CurveA": [
@@ -160,7 +160,7 @@
           },
           {
             "__type": "ParticleSpriteRenderer",
-            "__guid": "6b17260a-ad18-4f76-8619-7b654bdb7bce",
+            "__guid": "698b945a-70df-4534-bdaa-426efe01476a",
             "Additive": false,
             "BlurAmount": 0.5,
             "BlurOpacity": 0.91,
@@ -179,7 +179,7 @@
           },
           {
             "__type": "ParticleSphereEmitter",
-            "__guid": "28a70afe-7a31-42d2-95dd-34a347e9ba18",
+            "__guid": "52a08227-fef2-4c7b-9d41-44c945c31066",
             "Burst": 0,
             "Delay": 0,
             "DestroyOnEnd": false,
